@@ -1,0 +1,37 @@
+schema_version: 0.0.1
+model_id: SF32LB52x
+lifecycle: production
+
+docs:
+  - datasheet: {zh: "https://downloads.sifli.com/user%20manual/DS5201-SF32LB52x-%E8%8A%AF%E7%89%87%E6%8A%80%E6%9C%AF%E8%A7%84%E6%A0%BC%E4%B9%A6%20V2p5p3.pdf", en: "https://downloads.sifli.com/user%20manual/DS5201-SF32LB52x-Datasheet%20V2p5p3.pdf" }
+
+pads:
+  PA00: &PA00
+    type: bidirectional
+    pinmux: 
+      - {function: GPIO, select: 0}
+      - {function: LCDC1_SPI_RSTB, select: 1}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: LCDC1_8080_RSTB, select: 7}
+  PA32: &PA32
+    type: bidirectional
+    pinmux: 
+      - {function: GPIO, select: 0}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: GPADC_CH3, select: 7}
+  VBUS: &VBUS
+    type: power_input
+  VBAT: &VBAT
+    type: power_output
+
+variants:
+  - part_number: SF32LB520U36
+    description: "8Mb NOR Flash"
+    package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
+    pins:
+      - number: 1
+        pad: *PA00
