@@ -11,23 +11,26 @@ pads:
     pinmux:
       - {function: GPIO_A0, select: 0}
       - {function: LCDC1_SPI_RSTB, select: 1}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
       - {function: LCDC1_8080_RSTB, select: 7}
   PA01: &PA01
     type: bidirectional
     pinmux:
       - {function: GPIO_A1, select: 0}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
   PA02: &PA02
     type: bidirectional
     pinmux:
       - {function: GPIO_A2, select: 0}
       - {function: LCDC1_SPI_TE, select: 1}
       - {function: I2S1_MCLK, select: 3}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
       - {function: LCDC1_JDI_B2, select: 6}
       - {function: LCDC1_8080_TE, select: 7}
   PA03: &PA03
@@ -36,8 +39,9 @@ pads:
       - {function: GPIO_A3, select: 0}
       - {function: LCDC1_SPI_CS, select: 1}
       - {function: I2S1_SDO, select: 3}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
       - {function: LCDC1_JDI_B1, select: 6}
       - {function: LCDC1_8080_CS, select: 7}
   PA04: &PA04
@@ -46,8 +50,9 @@ pads:
       - {function: GPIO_A4, select: 0}
       - {function: LCDC1_SPI_CLK, select: 1}
       - {function: I2S1_SDI, select: 3}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
       - {function: LCDC1_JDI_G1, select: 6}
       - {function: LCDC1_8080_WR, select: 7}
   PA05: &PA05
@@ -56,8 +61,9 @@ pads:
       - {function: GPIO_A5, select: 0}
       - {function: LCDC1_SPI_DIO0, select: 1}
       - {function: I2S1_BCK, select: 3}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
       - {function: LCDC1_JDI_R1, select: 6}
       - {function: LCDC1_8080_RD, select: 7}
   PA06: &PA06
@@ -66,8 +72,9 @@ pads:
       - {function: GPIO_A6, select: 0}
       - {function: LCDC1_SPI_DIO1, select: 1}
       - {function: I2S1_LRCK, select: 3}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
       - {function: LCDC1_JDI_HST, select: 6}
       - {function: LCDC1_8080_DC, select: 7}
   PA07: &PA07
@@ -76,8 +83,9 @@ pads:
       - {function: GPIO_A7, select: 0}
       - {function: LCDC1_SPI_DIO2, select: 1}
       - {function: PDM1_CLK, select: 3}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
       - {function: LCDC1_JDI_ENB, select: 6}
       - {function: LCDC1_8080_DIO0, select: 7}
   PA08: &PA08
@@ -86,294 +94,331 @@ pads:
       - {function: GPIO_A8, select: 0}
       - {function: LCDC1_SPI_DIO3, select: 1}
       - {function: PDM1_DATA, select: 3}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
       - {function: LCDC1_JDI_VST, select: 6}
       - {function: LCDC1_8080_DIO1, select: 7}
   PA09: &PA09
     type: bidirectional
     pinmux:
       - {function: GPIO_A9, select: 0}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
   PA10: &PA10
     type: bidirectional
     pinmux:
       - {function: GPIO_A10, select: 0}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
   PA11: &PA11
     type: bidirectional
     pinmux:
       - {function: GPIO_A11, select: 0}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
   PA12: &PA12
     type: bidirectional
     pinmux:
       - {function: GPIO_A12, select: 0}
       - {function: MPI2_CS, select: 1}
       - {function: SD1_DIO2, select: 2}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
   PA13: &PA13
     type: bidirectional
     pinmux:
       - {function: GPIO_A13, select: 0}
       - {function: MPI2_DIO1, select: 1}
       - {function: SD1_DIO3, select: 2}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
   PA14: &PA14
     type: bidirectional
     pinmux:
       - {function: GPIO_A14, select: 0}
       - {function: MPI2_DIO2, select: 1}
       - {function: SD1_CLK, select: 2}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
   PA15: &PA15
     type: bidirectional
     pinmux:
       - {function: GPIO_A15, select: 0}
       - {function: MPI2_DIO0, select: 1}
       - {function: SD1_CMD, select: 2}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
   PA16: &PA16
     type: bidirectional
     pinmux:
       - {function: GPIO_A16, select: 0}
       - {function: MPI2_CLK, select: 1}
       - {function: SD1_DIO0, select: 2}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
   PA17: &PA17
     type: bidirectional
     pinmux:
       - {function: GPIO_A17, select: 0}
       - {function: MPI2_DIO3, select: 1}
       - {function: SD1_DIO1, select: 2}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
   PA18: &PA18
     type: bidirectional
     pinmux:
       - {function: GPIO_A18, select: 0}
       - {function: SWDIO, select: 2}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
   PA19: &PA19
     type: bidirectional
     pinmux:
       - {function: GPIO_A19, select: 0}
       - {function: SWCLK, select: 2}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
   PA20: &PA20
     type: bidirectional
     pinmux:
       - {function: GPIO_A20, select: 0}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
   PA21: &PA21
     type: bidirectional
     pinmux:
       - {function: GPIO_A21, select: 0}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
   PA22: &PA22
     type: bidirectional
     pinmux:
       - {function: GPIO_A22, select: 0}
       - {function: PDM1_CLK, select: 3}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
-      - {function: '#XTAL32K_XI', select: 8}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: XTAL32K_XI, select: 8}
   PA23: &PA23
     type: bidirectional
     pinmux:
       - {function: GPIO_A23, select: 0}
       - {function: PDM1_DATA, select: 3}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
-      - {function: '#XTAL32K_XO', select: 8}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: XTAL32K_XO, select: 8}
   PA24: &PA24
     type: bidirectional
     pinmux:
       - {function: GPIO_A24, select: 0}
       - {function: SPI1_DIO, select: 2}
       - {function: I2S1_MCLK, select: 3}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
-      - {function: '#WKUP_PIN0', select: 8}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: WKUP_PIN0, select: 8}
   PA25: &PA25
     type: bidirectional
     pinmux:
       - {function: GPIO_A25, select: 0}
       - {function: SPI1_DI, select: 2}
       - {function: I2S1_SDO, select: 3}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
-      - {function: '#XTAL32K_EXT', select: 7}
-      - {function: '#WKUP_PIN1', select: 8}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: XTAL32K_EXT, select: 7}
+      - {function: WKUP_PIN1, select: 8}
   PA26: &PA26
     type: bidirectional
     pinmux:
       - {function: GPIO_A26, select: 0}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
-      - {function: '#WKUP_PIN2', select: 8}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: WKUP_PIN2, select: 8}
   PA27: &PA27
     type: bidirectional
     pinmux:
       - {function: GPIO_A27, select: 0}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
-      - {function: '#WKUP_PIN3', select: 8}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: WKUP_PIN3, select: 8}
   PA28: &PA28
     type: bidirectional
     pinmux:
       - {function: GPIO_A28, select: 0}
       - {function: SPI1_CLK, select: 2}
       - {function: I2S1_SDI, select: 3}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
-      - {function: '#GPADC_CH0', select: 7}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: GPADC_CH0, select: 7}
   PA29: &PA29
     type: bidirectional
     pinmux:
       - {function: GPIO_A29, select: 0}
       - {function: SPI1_CS, select: 2}
       - {function: I2S1_BCK, select: 3}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
-      - {function: '#GPADC_CH1', select: 7}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: GPADC_CH1, select: 7}
   PA30: &PA30
     type: bidirectional
     pinmux:
       - {function: GPIO_A30, select: 0}
-      - {function: '#EFUSE_PWR', select: 2}
+      - {function: EFUSE_PWR, select: 2}
       - {function: I2S1_LRCK, select: 3}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
-      - {function: '#GPADC_CH2', select: 7}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: GPADC_CH2, select: 7}
   PA31: &PA31
     type: bidirectional
     pinmux:
       - {function: GPIO_A31, select: 0}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
-      - {function: '#GPADC_CH3', select: 7}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: GPADC_CH3, select: 7}
   PA32: &PA32
     type: bidirectional
     pinmux:
       - {function: GPIO_A32, select: 0}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
-      - {function: '#GPADC_CH4', select: 7}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: GPADC_CH4, select: 7}
   PA33: &PA33
     type: bidirectional
     pinmux:
       - {function: GPIO_A33, select: 0}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
-      - {function: '#GPADC_CH5', select: 7}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: GPADC_CH5, select: 7}
   PA34: &PA34
     type: bidirectional
     pinmux:
       - {function: GPIO_A34, select: 0}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
-      - {function: '#GPADC_CH6', select: 7}
-      - {function: '#WKUP_PIN10', select: 8}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: GPADC_CH6, select: 7}
+      - {function: WKUP_PIN10, select: 8}
   PA35: &PA35
     type: bidirectional
     pinmux:
       - {function: GPIO_A35, select: 0}
-      - {function: '#USB11_DP', select: 2}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
-      - {function: '#WKUP_PIN11', select: 8}
+      - {function: USB11_DP, select: 2}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: WKUP_PIN11, select: 8}
   PA36: &PA36
     type: bidirectional
     pinmux:
       - {function: GPIO_A36, select: 0}
-      - {function: '#USB11_DM', select: 2}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
-      - {function: '#WKUP_PIN12', select: 8}
+      - {function: USB11_DM, select: 2}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: WKUP_PIN12, select: 8}
   PA37: &PA37
     type: bidirectional
     pinmux:
       - {function: GPIO_A37, select: 0}
       - {function: SPI2_DIO, select: 2}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
       - {function: LCDC1_8080_DIO2, select: 7}
-      - {function: '#WKUP_PIN13', select: 8}
+      - {function: WKUP_PIN13, select: 8}
   PA38: &PA38
     type: bidirectional
     pinmux:
       - {function: GPIO_A38, select: 0}
       - {function: SPI2_DI, select: 2}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
-      - {function: '#WKUP_PIN14', select: 8}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: WKUP_PIN14, select: 8}
   PA39: &PA39
     type: bidirectional
     pinmux:
       - {function: GPIO_A39, select: 0}
       - {function: SPI2_CLK, select: 2}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
       - {function: LCDC1_JDI_VCK, select: 6}
       - {function: LCDC1_8080_DIO3, select: 7}
-      - {function: '#WKUP_PIN15', select: 8}
+      - {function: WKUP_PIN15, select: 8}
   PA40: &PA40
     type: bidirectional
     pinmux:
       - {function: GPIO_A40, select: 0}
       - {function: SPI2_CS, select: 2}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
       - {function: LCDC1_JDI_XRST, select: 6}
       - {function: LCDC1_8080_DIO4, select: 7}
-      - {function: '#WKUP_PIN16', select: 8}
+      - {function: WKUP_PIN16, select: 8}
   PA41: &PA41
     type: bidirectional
     pinmux:
       - {function: GPIO_A41, select: 0}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
       - {function: LCDC1_JDI_HCK, select: 6}
       - {function: LCDC1_8080_DIO5, select: 7}
-      - {function: '#WKUP_PIN17', select: 8}
+      - {function: WKUP_PIN17, select: 8}
   PA42: &PA42
     type: bidirectional
     pinmux:
       - {function: GPIO_A42, select: 0}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
       - {function: LCDC1_JDI_R2, select: 6}
       - {function: LCDC1_8080_DIO6, select: 7}
-      - {function: '#WKUP_PIN18', select: 8}
+      - {function: WKUP_PIN18, select: 8}
   PA43: &PA43
     type: bidirectional
     pinmux:
       - {function: GPIO_A43, select: 0}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
       - {function: LCDC1_JDI_G2, select: 6}
       - {function: LCDC1_8080_DIO7, select: 7}
-      - {function: '#WKUP_PIN19', select: 8}
+      - {function: WKUP_PIN19, select: 8}
   PA44: &PA44
     type: bidirectional
     pinmux:
       - {function: GPIO_A44, select: 0}
-      - {function: PA_I2C_UART, select: 4}
-      - {function: PA_TIM, select: 5}
-      - {function: '#WKUP_PIN20', select: 8}
+      - {function: I2C, select: 4}
+      - {function: UART, select: 4}
+      - {function: TIM, select: 5}
+      - {function: WKUP_PIN20, select: 8}
   VBUS: &VBUS
     type: power_input
     description: "VBUS input"
@@ -447,7 +492,7 @@ pads:
   DACN: &DACN
     type: output
     description: "Audio DAC negative output"
-  EPAD: &EPAD
+  GND: &GND
     type: power_input
     description: "Exposed pad ground"
 
@@ -524,4 +569,4 @@ variants:
       - {number: 66, pad: *PA34}
       - {number: 67, pad: *PA33}
       - {number: 68, pad: *GPADC_VREF}
-      - {number: 69, pad: *EPAD}
+      - {number: 69, pad: *GND}
