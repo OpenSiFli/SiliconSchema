@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opensifli.com/schemas/chip-series.schema.json",
+  "title": "OpenSiFli Chip Series Definition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "model_id",
+    "lifecycle",
+    "docs",
+    "pads",
+    "variants"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.0.1",
+      "description": "Semantic version of this schema; keep in sync with documentation."
+    },
+    "model_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "description": "Series-level identifier shared across variants."
+    },
+    "lifecycle": {
+      "type": "string",
+      "enum": [
+        "planning",
+        "prototype",
+        "sampling",
+        "production",
+        "maintenance",
+        "eol"
+      ],
+      "description": "Lifecycle state of the overall series."
+    },
+    "docs": {
+      "type": "array",
+      "description": "External documentation entries grouped by document type.",
+      "items": {
+        "$ref": "#/$defs/docEntry"
+      }
+    },
+    "pads": {
+      "type": "object",
+      "description": "Dictionary of wafer pads keyed by pad name.",
+      "minProperties": 1,
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[A-Z][A-Z0-9_]*$": {
+          "$ref": "#/$defs/pad"
+        }
+      }
+    },
+    "variants": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/variant"
+      }
+    }
+  },
+  "$defs": {
+    "pinType": {
+      "type": "string",
+      "enum": [
+        "input",
+        "output",
+        "bidirectional",
+        "tri-state",
+        "passive",
+        "free",
+        "unspecified",
+        "power_input",
+        "power_output",
+        "open_collector",
+        "open_emitter",
+        "unconnected"
+      ]
+    },
+    "pinmuxEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "function",
+        "select"
+      ],
+      "properties": {
+        "function": {
+          "type": "string",
+          "pattern": "^[A-Z0-9]+(?:_[A-Z0-9]+)*$",
+          "description": "Peripheral function name using UPPER_SNAKE_CASE."
+        },
+        "select": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Multiplexer select value to be programmed into the GPIO pinmux register."
+        },
+        "notes": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "pad": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "$ref": "#/$defs/pinType"
+        },
+        "pinmux": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/pinmuxEntry"
+          }
+        },
+        "description": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "docEntry": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "$ref": "#/$defs/localizedUri"
+      },
+      "description": "Map of document-type -> localized URIs (e.g. datasheet, reference_manual)."
+    },
+    "localizedUri": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[a-z]{2}(?:-[A-Z]{2})?$": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "description": "Language-tagged resource locator (e.g. zh, en, en-US)."
+    },
+    "pinPadRef": {
+      "description": "Pad definition or a list of pads bonded to the same pin.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/pad"
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/pad"
+          }
+        }
+      ]
+    },
+    "pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "number",
+        "pad"
+      ],
+      "properties": {
+        "number": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Package pin number or grid reference; always represented as a string."
+        },
+        "pad": {
+          "$ref": "#/$defs/pinPadRef"
+        },
+        "description": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "variant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "part_number",
+        "package",
+        "pins"
+      ],
+      "properties": {
+        "part_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "package": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pins": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/pin"
+          }
+        }
+      }
+    }
+  }
+}
