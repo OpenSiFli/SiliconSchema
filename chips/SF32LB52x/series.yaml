@@ -500,7 +500,7 @@ variants:
   - part_number: SF32LB520U36
     description: "8Mb NOR Flash"
     package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
-    pins:
+    pins: &SF32LB52x_QFN68_PINS
       - {number: 1, pad: *PA32}
       - {number: 2, pad: *PA31}
       - {number: 3, pad: *PA30}
@@ -570,3 +570,15 @@ variants:
       - {number: 67, pad: *PA33}
       - {number: 68, pad: *GPADC_VREF}
       - {number: 69, pad: *GND}
+  - part_number: SF32LB523UB6
+    description: "32Mb OPI-pSRAM"
+    package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
+    pins: *SF32LB52x_QFN68_PINS
+  - part_number: SF32LB525UC6
+    description: "64Mb OPI-pSRAM"
+    package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
+    pins: *SF32LB52x_QFN68_PINS
+  - part_number: SF32LB527UD6
+    description: "128Mb OPI-pSRAM"
+    package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
+    pins: *SF32LB52x_QFN68_PINS

@@ -487,9 +487,10 @@ pads:
     description: "Exposed pad ground"
 
 variants:
-  - part_number: SF32LB52X_QFN68
+  - part_number: SF32LB52BU36
+    description: "3.3V, 8Mb NOR Flash"
     package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
-    pins:
+    pins: &SF32LB52X_QFN68_PINS
       - {number: 1, pad: *PA32}
       - {number: 2, pad: *PA31}
       - {number: 3, pad: *PA30}
@@ -557,3 +558,23 @@ variants:
       - {number: 67, pad: *PA33}
       - {number: 68, pad: *GPADC_VREF}
       - {number: 69, pad: *GND}
+  - part_number: SF32LB52BU56
+    description: "3.3V, 32Mb NOR Flash"
+    package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
+    pins: *SF32LB52X_QFN68_PINS
+  - part_number: SF32LB52DUB6
+    description: "1.8V, 32Mb pSRAM"
+    package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
+    pins: *SF32LB52X_QFN68_PINS
+  - part_number: SF32LB52EUB6
+    description: "3.3V, 32Mb pSRAM"
+    package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
+    pins: *SF32LB52X_QFN68_PINS
+  - part_number: SF32LB52GUC6
+    description: "3.3V, 64Mb pSRAM"
+    package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
+    pins: *SF32LB52X_QFN68_PINS
+  - part_number: SF32LB52JUD6
+    description: "3.3V, 128Mb pSRAM"
+    package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
+    pins: *SF32LB52X_QFN68_PINS
