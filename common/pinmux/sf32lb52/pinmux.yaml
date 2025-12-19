@@ -328,3 +328,55 @@ pinmux:
     - {function: UART, select: 4, pinr: true}
     - {function: TIM, select: 5, pinr: true}
     - {function: WKUP_PIN20, select: 8}
+
+  # SA Port (MPI1 Flash Interface, internal SiP flash)
+  SA00:
+    - {function: MPI1_DM, select: 1}
+    - {function: MPI1_DIO2, select: 5}
+  SA01:
+    - {function: MPI1_DIO0, select: 1}
+    - {function: MPI1_CS, select: 5}
+  SA02:
+    - {function: MPI1_DIO1, select: 1}
+    - {function: MPI1_DIO1_ALT, select: 5}
+  SA03:
+    - {function: MPI1_DIO2, select: 1}
+    - {function: MPI1_DIO2_ALT, select: 5}
+  SA04:
+    - {function: MPI1_DIO3, select: 1}
+    - {function: MPI1_CS, select: 5}
+  SA05:
+    - {function: MPI1_CS, select: 1}
+    - {function: MPI1_DIO4, select: 3}
+    - {function: MPI1_DIO0, select: 4}
+  SA06:
+    - {function: MPI1_CLKB, select: 1}
+    - {function: MPI1_DIO5, select: 3}
+    - {function: MPI1_DIO2, select: 4}
+  SA07:
+    - {function: MPI1_CLK, select: 1}
+    - {function: MPI1_DIO6, select: 3}
+    - {function: MPI1_DIO1, select: 4}
+    - {function: MPI1_DIO0, select: 5}
+  SA08:
+    - {function: MPI1_DIO4, select: 1}
+    - {function: MPI1_DIO7, select: 3}
+    - {function: MPI1_CS, select: 4}
+    - {function: MPI1_DIO3, select: 5}
+  SA09:
+    - {function: MPI1_DIO5, select: 1}
+    - {function: MPI1_DQSDM, select: 3}
+    - {function: MPI1_CLK, select: 4}
+    - {function: MPI1_CLK_ALT, select: 5}
+  SA10:
+    - {function: MPI1_DIO6, select: 1}
+    - {function: MPI1_CLK, select: 3}
+    - {function: MPI1_DIO3, select: 4}
+    - {function: MPI1_DIO3_ALT, select: 5}
+  SA11:
+    - {function: MPI1_DIO7, select: 1}
+    - {function: MPI1_CS, select: 3}
+    - {function: MPI1_DIO0, select: 5}
+  SA12:
+    - {function: MPI1_DQS, select: 1}
+    - {function: MPI1_DQSDM, select: 2}
