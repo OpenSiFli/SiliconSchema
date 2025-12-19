@@ -1,0 +1,128 @@
+# SF32LB52 系列 PINR 寄存器定义
+# PINR (Pin Router) 用于配置 I2C/UART/TIM 等外设的具体信号连接到哪个 GPIO
+
+registers:
+  I2C1_PINR:
+    offset: 0x48
+    fields:
+      SDA: {bits: [13, 8]}
+      SCL: {bits: [5, 0]}
+
+  I2C2_PINR:
+    offset: 0x4C
+    fields:
+      SDA: {bits: [13, 8]}
+      SCL: {bits: [5, 0]}
+
+  I2C3_PINR:
+    offset: 0x50
+    fields:
+      SDA: {bits: [13, 8]}
+      SCL: {bits: [5, 0]}
+
+  I2C4_PINR:
+    offset: 0x54
+    fields:
+      SDA: {bits: [13, 8]}
+      SCL: {bits: [5, 0]}
+
+  USART1_PINR:
+    offset: 0x58
+    fields:
+      CTS: {bits: [29, 24]}
+      RTS: {bits: [21, 16]}
+      RXD: {bits: [13, 8]}
+      TXD: {bits: [5, 0]}
+
+  USART2_PINR:
+    offset: 0x5C
+    fields:
+      CTS: {bits: [29, 24]}
+      RTS: {bits: [21, 16]}
+      RXD: {bits: [13, 8]}
+      TXD: {bits: [5, 0]}
+
+  USART3_PINR:
+    offset: 0x60
+    fields:
+      CTS: {bits: [29, 24]}
+      RTS: {bits: [21, 16]}
+      RXD: {bits: [13, 8]}
+      TXD: {bits: [5, 0]}
+
+  GPTIM1_PINR:
+    offset: 0x64
+    fields:
+      CH4: {bits: [29, 24]}
+      CH3: {bits: [21, 16]}
+      CH2: {bits: [13, 8]}
+      CH1: {bits: [5, 0]}
+
+  GPTIM2_PINR:
+    offset: 0x68
+    fields:
+      CH4: {bits: [29, 24]}
+      CH3: {bits: [21, 16]}
+      CH2: {bits: [13, 8]}
+      CH1: {bits: [5, 0]}
+
+  ETR_PINR:
+    offset: 0x6C
+    fields:
+      GPTIM2_ETR: {bits: [13, 8]}
+      GPTIM1_ETR: {bits: [5, 0]}
+
+  LPTIM1_PINR:
+    offset: 0x70
+    fields:
+      ETR: {bits: [21, 16]}
+      OUT: {bits: [13, 8]}
+      IN: {bits: [5, 0]}
+
+  LPTIM2_PINR:
+    offset: 0x74
+    fields:
+      ETR: {bits: [21, 16]}
+      OUT: {bits: [13, 8]}
+      IN: {bits: [5, 0]}
+
+  ATIM1_PINR1:
+    offset: 0x78
+    fields:
+      CH4: {bits: [29, 24]}
+      CH3: {bits: [21, 16]}
+      CH2: {bits: [13, 8]}
+      CH1: {bits: [5, 0]}
+
+  ATIM1_PINR2:
+    offset: 0x7C
+    fields:
+      CH3N: {bits: [21, 16]}
+      CH2N: {bits: [13, 8]}
+      CH1N: {bits: [5, 0]}
+
+  ATIM1_PINR3:
+    offset: 0x80
+    fields:
+      ETR: {bits: [21, 16]}
+      BK2: {bits: [13, 8]}
+      BK: {bits: [5, 0]}
+
+# 外设信号映射：用于展开 pinmux 中的 pinr 标记
+peripherals:
+  I2C:
+    instances: [I2C1, I2C2, I2C3, I2C4]
+    signals: [SDA, SCL]
+
+  UART:
+    instances: [USART1, USART2, USART3]
+    signals: [TXD, RXD, CTS, RTS]
+
+  TIM:
+    instances: [GPTIM1, GPTIM2, LPTIM1, LPTIM2, ATIM1]
+    signals_by_instance:
+      GPTIM1: [CH1, CH2, CH3, CH4, ETR]
+      GPTIM2: [CH1, CH2, CH3, CH4, ETR]
+      LPTIM1: [IN, OUT, ETR]
+      LPTIM2: [IN, OUT, ETR]
+      ATIM1: [CH1, CH2, CH3, CH4, CH1N, CH2N, CH3N, ETR, BK, BK2]

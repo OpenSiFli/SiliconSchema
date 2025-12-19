@@ -1,328 +1,330 @@
 # SF32LB52 系列共享 Pinmux 定义
 # 仅包含 GPIO pad 的复用功能配置
 # 各芯片系列的 pad type 和专用引脚在 chip.yaml 中单独定义
+#
+# pinr: true 表示该功能需要通过 PINR 寄存器进行二次路由
 
 pinmux:
   PA00:
     - {function: GPIO_A0, select: 0}
     - {function: LCDC1_SPI_RSTB, select: 1}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: LCDC1_8080_RSTB, select: 7}
   PA01:
     - {function: GPIO_A1, select: 0}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
   PA02:
     - {function: GPIO_A2, select: 0}
     - {function: LCDC1_SPI_TE, select: 1}
     - {function: I2S1_MCLK, select: 3}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: LCDC1_JDI_B2, select: 6}
     - {function: LCDC1_8080_TE, select: 7}
   PA03:
     - {function: GPIO_A3, select: 0}
     - {function: LCDC1_SPI_CS, select: 1}
     - {function: I2S1_SDO, select: 3}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: LCDC1_JDI_B1, select: 6}
     - {function: LCDC1_8080_CS, select: 7}
   PA04:
     - {function: GPIO_A4, select: 0}
     - {function: LCDC1_SPI_CLK, select: 1}
     - {function: I2S1_SDI, select: 3}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: LCDC1_JDI_G1, select: 6}
     - {function: LCDC1_8080_WR, select: 7}
   PA05:
     - {function: GPIO_A5, select: 0}
     - {function: LCDC1_SPI_DIO0, select: 1}
     - {function: I2S1_BCK, select: 3}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: LCDC1_JDI_R1, select: 6}
     - {function: LCDC1_8080_RD, select: 7}
   PA06:
     - {function: GPIO_A6, select: 0}
     - {function: LCDC1_SPI_DIO1, select: 1}
     - {function: I2S1_LRCK, select: 3}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: LCDC1_JDI_HST, select: 6}
     - {function: LCDC1_8080_DC, select: 7}
   PA07:
     - {function: GPIO_A7, select: 0}
     - {function: LCDC1_SPI_DIO2, select: 1}
     - {function: PDM1_CLK, select: 3}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: LCDC1_JDI_ENB, select: 6}
     - {function: LCDC1_8080_DIO0, select: 7}
   PA08:
     - {function: GPIO_A8, select: 0}
     - {function: LCDC1_SPI_DIO3, select: 1}
     - {function: PDM1_DATA, select: 3}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: LCDC1_JDI_VST, select: 6}
     - {function: LCDC1_8080_DIO1, select: 7}
   PA09:
     - {function: GPIO_A9, select: 0}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
   PA10:
     - {function: GPIO_A10, select: 0}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
   PA11:
     - {function: GPIO_A11, select: 0}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
   PA12:
     - {function: GPIO_A12, select: 0}
     - {function: MPI2_CS, select: 1}
     - {function: SD1_DIO2, select: 2}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
   PA13:
     - {function: GPIO_A13, select: 0}
     - {function: MPI2_DIO1, select: 1}
     - {function: SD1_DIO3, select: 2}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
   PA14:
     - {function: GPIO_A14, select: 0}
     - {function: MPI2_DIO2, select: 1}
     - {function: SD1_CLK, select: 2}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
   PA15:
     - {function: GPIO_A15, select: 0}
     - {function: MPI2_DIO0, select: 1}
     - {function: SD1_CMD, select: 2}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
   PA16:
     - {function: GPIO_A16, select: 0}
     - {function: MPI2_CLK, select: 1}
     - {function: SD1_DIO0, select: 2}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
   PA17:
     - {function: GPIO_A17, select: 0}
     - {function: MPI2_DIO3, select: 1}
     - {function: SD1_DIO1, select: 2}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
   PA18:
     - {function: GPIO_A18, select: 0}
     - {function: SWDIO, select: 2}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
   PA19:
     - {function: GPIO_A19, select: 0}
     - {function: SWCLK, select: 2}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
   PA20:
     - {function: GPIO_A20, select: 0}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
   PA21:
     - {function: GPIO_A21, select: 0}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
   PA22:
     - {function: GPIO_A22, select: 0}
     - {function: PDM1_CLK, select: 3}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: XTAL32K_XI, select: 8}
   PA23:
     - {function: GPIO_A23, select: 0}
     - {function: PDM1_DATA, select: 3}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: XTAL32K_XO, select: 8}
   PA24:
     - {function: GPIO_A24, select: 0}
     - {function: SPI1_DIO, select: 2}
     - {function: I2S1_MCLK, select: 3}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: WKUP_PIN0, select: 8}
   PA25:
     - {function: GPIO_A25, select: 0}
     - {function: SPI1_DI, select: 2}
     - {function: I2S1_SDO, select: 3}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: XTAL32K_EXT, select: 7}
     - {function: WKUP_PIN1, select: 8}
   PA26:
     - {function: GPIO_A26, select: 0}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: WKUP_PIN2, select: 8}
   PA27:
     - {function: GPIO_A27, select: 0}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: WKUP_PIN3, select: 8}
   PA28:
     - {function: GPIO_A28, select: 0}
     - {function: SPI1_CLK, select: 2}
     - {function: I2S1_SDI, select: 3}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: GPADC_CH0, select: 7}
   PA29:
     - {function: GPIO_A29, select: 0}
     - {function: SPI1_CS, select: 2}
     - {function: I2S1_BCK, select: 3}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: GPADC_CH1, select: 7}
   PA30:
     - {function: GPIO_A30, select: 0}
     - {function: EFUSE_PWR, select: 2}
     - {function: I2S1_LRCK, select: 3}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: GPADC_CH2, select: 7}
   PA31:
     - {function: GPIO_A31, select: 0}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: GPADC_CH3, select: 7}
   PA32:
     - {function: GPIO_A32, select: 0}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: GPADC_CH4, select: 7}
   PA33:
     - {function: GPIO_A33, select: 0}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: GPADC_CH5, select: 7}
   PA34:
     - {function: GPIO_A34, select: 0}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: GPADC_CH6, select: 7}
     - {function: WKUP_PIN10, select: 8}
   PA35:
     - {function: GPIO_A35, select: 0}
     - {function: USB11_DP, select: 2}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: WKUP_PIN11, select: 8}
   PA36:
     - {function: GPIO_A36, select: 0}
     - {function: USB11_DM, select: 2}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: WKUP_PIN12, select: 8}
   PA37:
     - {function: GPIO_A37, select: 0}
     - {function: SPI2_DIO, select: 2}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: LCDC1_8080_DIO2, select: 7}
     - {function: WKUP_PIN13, select: 8}
   PA38:
     - {function: GPIO_A38, select: 0}
     - {function: SPI2_DI, select: 2}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: WKUP_PIN14, select: 8}
   PA39:
     - {function: GPIO_A39, select: 0}
     - {function: SPI2_CLK, select: 2}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: LCDC1_JDI_VCK, select: 6}
     - {function: LCDC1_8080_DIO3, select: 7}
     - {function: WKUP_PIN15, select: 8}
   PA40:
     - {function: GPIO_A40, select: 0}
     - {function: SPI2_CS, select: 2}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: LCDC1_JDI_XRST, select: 6}
     - {function: LCDC1_8080_DIO4, select: 7}
     - {function: WKUP_PIN16, select: 8}
   PA41:
     - {function: GPIO_A41, select: 0}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: LCDC1_JDI_HCK, select: 6}
     - {function: LCDC1_8080_DIO5, select: 7}
     - {function: WKUP_PIN17, select: 8}
   PA42:
     - {function: GPIO_A42, select: 0}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: LCDC1_JDI_R2, select: 6}
     - {function: LCDC1_8080_DIO6, select: 7}
     - {function: WKUP_PIN18, select: 8}
   PA43:
     - {function: GPIO_A43, select: 0}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: LCDC1_JDI_G2, select: 6}
     - {function: LCDC1_8080_DIO7, select: 7}
     - {function: WKUP_PIN19, select: 8}
   PA44:
     - {function: GPIO_A44, select: 0}
-    - {function: I2C, select: 4}
-    - {function: UART, select: 4}
-    - {function: TIM, select: 5}
+    - {function: I2C, select: 4, pinr: true}
+    - {function: UART, select: 4, pinr: true}
+    - {function: TIM, select: 5, pinr: true}
     - {function: WKUP_PIN20, select: 8}

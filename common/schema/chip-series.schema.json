@@ -115,8 +115,18 @@
         "type": {
           "$ref": "#/$defs/pinType"
         },
+        "functions": {
+          "type": "array",
+          "description": "List of available functions for this pad",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z0-9]+(?:_[A-Z0-9]+)*$"
+          }
+        },
         "pinmux": {
           "type": "array",
+          "description": "Legacy pinmux format (deprecated)",
           "minItems": 1,
           "items": {
             "$ref": "#/$defs/pinmuxEntry"
