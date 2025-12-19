@@ -23,30 +23,41 @@ def load_yaml(path: Path) -> dict:
         return yaml.safe_load(f)
 
 
-def save_yaml(path: Path, data: dict) -> None:
-    """Save data to a YAML file with anchors and aliases."""
-    with open(path, 'w', encoding='utf-8') as f:
-        yaml.dump(data, f, 
-                  default_flow_style=False, 
-                  allow_unicode=True,
-                  sort_keys=False,
-                  width=120)
+def expand_pinr_functions(function: str, pinr_data: dict) -> list[str]:
+    """Expand a generic function (I2C, UART, TIM) to specific signals.
+    
+    Returns a list of expanded function names like:
+    - I2C -> [I2C1_SDA, I2C1_SCL, I2C2_SDA, I2C2_SCL, ...]
+    - UART -> [USART1_TXD, USART1_RXD, USART1_CTS, USART1_RTS, ...]
+    - TIM -> [GPTIM1_CH1, GPTIM1_CH2, ..., ATIM1_CH1, ...]
+    """
+    peripherals = pinr_data.get('peripherals', {})
+    expanded = []
+    
+    if function == 'I2C' and 'I2C' in peripherals:
+        periph = peripherals['I2C']
+        for instance in periph.get('instances', []):
+            for signal in periph.get('signals', []):
+                expanded.append(f"{instance}_{signal}")
+    
+    elif function == 'UART' and 'UART' in peripherals:
+        periph = peripherals['UART']
+        for instance in periph.get('instances', []):
+            for signal in periph.get('signals', []):
+                expanded.append(f"{instance}_{signal}")
+    
+    elif function == 'TIM' and 'TIM' in peripherals:
+        periph = peripherals['TIM']
+        signals_by_instance = periph.get('signals_by_instance', {})
+        for instance in periph.get('instances', []):
+            signals = signals_by_instance.get(instance, [])
+            for signal in signals:
+                expanded.append(f"{instance}_{signal}")
+    
+    return expanded
 
 
-class SeriesYamlDumper(yaml.SafeDumper):
-    """Custom YAML dumper that generates anchors for pads."""
-    pass
-
-
-def represent_pad_dict(dumper: SeriesYamlDumper, data: dict) -> yaml.Node:
-    """Custom representer for pad dictionaries."""
-    return dumper.represent_mapping('tag:yaml.org,2002:map', data.items())
-
-
-SeriesYamlDumper.add_representer(dict, represent_pad_dict)
-
-
-def generate_series_yaml(chip_yaml: dict, pinmux_data: dict) -> str:
+def generate_series_yaml(chip_yaml: dict, pinmux_data: dict, pinr_data: dict) -> str:
     """Generate series.yaml content with YAML anchors and aliases.
     
     This function generates the YAML string manually to properly handle
@@ -89,11 +100,19 @@ def generate_series_yaml(chip_yaml: dict, pinmux_data: dict) -> str:
         
         # Merge pinmux from shared file if available
         if pad_name in pinmux_map:
-            lines.append("    pinmux:")
+            lines.append("    functions:")
             for entry in pinmux_map[pad_name]:
                 func = entry['function']
-                sel = entry['select']
-                lines.append(f"      - {{function: {func}, select: {sel}}}")
+                has_pinr = entry.get('pinr', False)
+                
+                if has_pinr and pinr_data:
+                    # Expand to specific signals
+                    expanded = expand_pinr_functions(func, pinr_data)
+                    for exp_func in expanded:
+                        lines.append(f"      - {exp_func}")
+                else:
+                    # Direct function
+                    lines.append(f"      - {func}")
     
     lines.append("")
     
@@ -142,17 +161,24 @@ def build_chip(chip_dir: Path, pinmux_dir: Path, output_dir: Path) -> bool:
     
     # Load shared pinmux if specified
     pinmux_data = {}
+    pinr_data = {}
     if 'shared_pinmux' in chip_data:
         pinmux_name = chip_data['shared_pinmux']
         pinmux_path = pinmux_dir / pinmux_name / "pinmux.yaml"
+        pinr_path = pinmux_dir / pinmux_name / "pinr.yaml"
+        
         if pinmux_path.exists():
             pinmux_data = load_yaml(pinmux_path)
             print(f"    Loaded shared pinmux: {pinmux_name}")
         else:
             print(f"    Warning: shared pinmux '{pinmux_name}' not found at {pinmux_path}")
+        
+        if pinr_path.exists():
+            pinr_data = load_yaml(pinr_path)
+            print(f"    Loaded PINR definitions: {pinmux_name}")
     
     # Generate series.yaml
-    series_content = generate_series_yaml(chip_data, pinmux_data)
+    series_content = generate_series_yaml(chip_data, pinmux_data, pinr_data)
     
     # Write output
     with open(series_yaml_path, 'w', encoding='utf-8') as f:
