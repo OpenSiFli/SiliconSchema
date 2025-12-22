@@ -1,0 +1,34 @@
+# SF32LB56 系列 MPI (Memory Port Interface) 配置
+
+mpis:
+  mpi1:
+    sip: true
+    base:
+      offset: 0x60000000
+      size: 0x400000
+    xip:
+      offset: 0x10000000
+      size: 0x400000
+
+  mpi2:
+    sip: true
+    base:
+      offset: 0x62040000
+      size: 0x4000000
+    xip:
+      offset: 0x10400000
+      size: 0x4000000
+
+  mpi3:
+    base:
+      offset: 0x64000000
+      size: 0x3C000000
+    xip:
+      offset: 0x14000000
+      size: 0xC000000
+
+  mpi5:
+    sip: true
+    base:
+      offset: 0x1C000000
+      size: 0x4000000

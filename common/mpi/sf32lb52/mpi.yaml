@@ -1,0 +1,19 @@
+# SF32LB52 系列 MPI (Memory Port Interface) 配置
+
+mpis:
+  mpi1:
+    sip: true
+    base:
+      offset: 0x60000000
+      size: 0x2000000
+    xip:
+      offset: 0x10000000
+      size: 0x1000000
+
+  mpi2:
+    base:
+      offset: 0x62000000
+      size: 0x3E000000
+    xip:
+      offset: 0x12000000
+      size: 0xE000000

@@ -1,0 +1,67 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://opensifli.com/schemas/mpi-config.schema.json",
+    "title": "MPI Configuration Schema",
+    "description": "Schema for SiFli chip MPI (Memory Port Interface) configuration",
+    "type": "object",
+    "required": [
+        "mpis"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "mpis": {
+            "type": "object",
+            "description": "Map of MPI instances",
+            "minProperties": 1,
+            "additionalProperties": {
+                "$ref": "#/$defs/mpiInstance"
+            }
+        }
+    },
+    "$defs": {
+        "mpiInstance": {
+            "type": "object",
+            "description": "MPI instance configuration",
+            "additionalProperties": false,
+            "required": [
+                "base"
+            ],
+            "properties": {
+                "sip": {
+                    "type": "boolean",
+                    "description": "Whether this is a System-in-Package internal memory interface",
+                    "default": false
+                },
+                "base": {
+                    "$ref": "#/$defs/addressRegion",
+                    "description": "Base address region for memory access"
+                },
+                "xip": {
+                    "$ref": "#/$defs/addressRegion",
+                    "description": "Execute-in-Place address region for code execution"
+                }
+            }
+        },
+        "addressRegion": {
+            "type": "object",
+            "description": "Memory address region definition",
+            "required": [
+                "offset",
+                "size"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "offset": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Starting address offset"
+                },
+                "size": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Size of the address region in bytes"
+                }
+            }
+        }
+    }
+}
