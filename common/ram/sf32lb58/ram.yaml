@@ -1,0 +1,234 @@
+# SF32LB58 系列 RAM 配置
+
+hpsys:
+  itcm:
+    # 64KB zero-wait-cycle I-TCM, HCPU专用
+    owner: hcpu
+    hcpu:
+      offset: 0x00010000
+      size: 0x10000      # 64KB
+
+  ram:
+    retention_ram:
+      # 64KB Retention SRAM in ITCM region
+      owner: hcpu
+      retention: true
+      hcpu:
+        offset: 0x00020000
+        size: 0x10000    # 64KB
+
+    ram0:
+      # 128KB DTCM, shared with HCPU zero-wait-cycle
+      owner: hcpu
+      retention: true
+      hcpu:
+        offset: 0x20000000
+        size: 0x20000    # 128KB
+      lcpu:
+        offset: 0x2A000000
+        size: 0x20000    # 128KB
+      acpu:
+        offset: 0x20000000
+        size: 0x20000    # 128KB
+
+    ram1:
+      # 128KB zero-wait-cycle SRAM
+      owner: hcpu
+      hcpu:
+        offset: 0x20020000
+        size: 0x20000    # 128KB
+      lcpu:
+        offset: 0x2A020000
+        size: 0x20000    # 128KB
+      acpu:
+        offset: 0x20020000
+        size: 0x20000    # 128KB
+
+    ram2:
+      # 256KB zero-wait-cycle SRAM
+      owner: hcpu
+      hcpu:
+        offset: 0x20040000
+        size: 0x40000    # 256KB
+      lcpu:
+        offset: 0x2A040000
+        size: 0x40000    # 256KB
+      acpu:
+        offset: 0x20040000
+        size: 0x40000    # 256KB
+
+    ram3:
+      # 512KB zero-wait-cycle SRAM
+      owner: hcpu
+      hcpu:
+        offset: 0x20080000
+        size: 0x80000    # 512KB
+      lcpu:
+        offset: 0x2A080000
+        size: 0x80000    # 512KB
+
+    ram4:
+      # 512KB zero-wait-cycle SRAM
+      owner: hcpu
+      hcpu:
+        offset: 0x20100000
+        size: 0x80000    # 512KB
+      lcpu:
+        offset: 0x2A100000
+        size: 0x80000    # 512KB
+
+    ram5:
+      # 512KB zero-wait-cycle SRAM, ACPU only
+      owner: acpu
+      hcpu:
+        offset: 0x20180000
+        size: 0x80000    # 512KB
+      acpu:
+        offset: 0x20180000
+        size: 0x80000    # 512KB
+
+    ram6:
+      # 128KB ACPU SRAM
+      owner: acpu
+      hcpu:
+        offset: 0x20200000
+        size: 0x20000    # 128KB
+      acpu:
+        offset: 0x00020000
+        size: 0x20000    # 128KB
+
+    ram7:
+      # 128KB ACPU SRAM
+      owner: acpu
+      hcpu:
+        offset: 0x20220000
+        size: 0x20000    # 128KB
+      acpu:
+        offset: 0x00030000
+        size: 0x20000    # 128KB
+
+    ram8:
+      # 128KB ACPU SRAM
+      owner: acpu
+      hcpu:
+        offset: 0x20240000
+        size: 0x20000    # 128KB
+      acpu:
+        offset: 0x00050000
+        size: 0x20000    # 128KB
+
+    ram9:
+      # 128KB ACPU SRAM
+      owner: acpu
+      hcpu:
+        offset: 0x20260000
+        size: 0x20000    # 128KB
+      acpu:
+        offset: 0x00070000
+        size: 0x20000    # 128KB
+
+lpsys:
+  itcm:
+    # 16KB zero-wait-cycle I-TCM, LCPU专用
+    owner: lcpu
+    hcpu:
+      offset: 0x20BFC000
+      size: 0x4000       # 16KB
+    lcpu:
+      offset: 0x003FC000
+      size: 0x4000       # 16KB
+    acpu:
+      offset: 0x20BFC000
+      size: 0x4000       # 16KB
+
+  dtcm:
+    # 16KB zero-wait-cycle D-TCM, LCPU专用
+    owner: lcpu
+    hcpu:
+      offset: 0x203FC000
+      size: 0x4000       # 16KB
+    lcpu:
+      offset: 0x203FC000
+      size: 0x4000       # 16KB
+    acpu:
+      offset: 0x203FC000
+      size: 0x4000       # 16KB
+
+  ram:
+    ram0:
+      # 128KB one-wait-cycle SRAM
+      owner: lcpu
+      hcpu:
+        offset: 0x20C00000
+        size: 0x20000    # 128KB
+      lcpu:
+        offset: 0x00400000
+        size: 0x20000    # 128KB
+      acpu:
+        offset: 0x20C00000
+        size: 0x20000    # 128KB
+
+    ram1:
+      # 128KB one-wait-cycle SRAM
+      owner: lcpu
+      hcpu:
+        offset: 0x20C20000
+        size: 0x20000    # 128KB
+      lcpu:
+        offset: 0x00430000
+        size: 0x20000    # 128KB
+      acpu:
+        offset: 0x20C20000
+        size: 0x20000    # 128KB
+
+    ram2:
+      # 256KB one-wait-cycle SRAM
+      owner: lcpu
+      hcpu:
+        offset: 0x20C40000
+        size: 0x40000    # 256KB
+      lcpu:
+        offset: 0x00440000
+        size: 0x40000    # 256KB
+      acpu:
+        offset: 0x20C40000
+        size: 0x40000    # 256KB
+
+    ram3:
+      # 256KB one-wait-cycle SRAM
+      owner: lcpu
+      hcpu:
+        offset: 0x20C80000
+        size: 0x40000    # 256KB
+      lcpu:
+        offset: 0x00480000
+        size: 0x40000    # 256KB
+      acpu:
+        offset: 0x20C80000
+        size: 0x40000    # 256KB
+
+    ram4:
+      # 128KB one-wait-cycle SRAM
+      owner: lcpu
+      hcpu:
+        offset: 0x20CC0000
+        size: 0x20000    # 128KB
+      lcpu:
+        offset: 0x004C0000
+        size: 0x20000    # 128KB
+      acpu:
+        offset: 0x20CC0000
+        size: 0x20000    # 128KB
+
+    ram5:
+      # 128KB EM SRAM
+      owner: lcpu
+      hcpu:
+        offset: 0x20CE0000
+        size: 0x20000    # 128KB
+      lcpu:
+        offset: 0x004E0000
+        size: 0x20000    # 128KB
+      acpu:
+        offset: 0x20CE0000
+        size: 0x20000    # 128KB

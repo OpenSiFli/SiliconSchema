@@ -1,0 +1,34 @@
+# SF32LB52 系列 RAM 配置
+# 注意: SF32LB52 系列没有 LPSYS RAM
+
+hpsys:
+  ram:
+    ram0:
+      # DTCM, 128KB zero-wait-cycle, shared with D-TCM
+      retention: true
+      hcpu:
+        offset: 0x20000000
+        size: 0x20000    # 128KB
+      lcpu:
+        offset: 0x2A000000
+        size: 0x20000    # 128KB
+
+    ram1:
+      # 128KB zero-wait-cycle SRAM
+      retention: true
+      hcpu:
+        offset: 0x20020000
+        size: 0x20000    # 128KB
+      lcpu:
+        offset: 0x2A020000
+        size: 0x20000    # 128KB
+
+    ram2:
+      # 256KB zero-wait-cycle SRAM
+      retention: true
+      hcpu:
+        offset: 0x20040000
+        size: 0x40000    # 256KB
+      lcpu:
+        offset: 0x2A040000
+        size: 0x40000    # 256KB

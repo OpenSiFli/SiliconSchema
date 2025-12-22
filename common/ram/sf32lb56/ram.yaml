@@ -1,0 +1,87 @@
+# SF32LB56 系列 RAM 配置
+
+hpsys:
+  ram:
+    ram0:
+      # Retention RAM, 128KB zero-wait-cycle
+      retention: true
+      hcpu:
+        offset: 0x20000000
+        size: 0x20000    # 128KB
+      lcpu:
+        offset: 0x2A000000
+        size: 0x20000    # 128KB
+
+    ram1:
+      # 128KB zero-wait-cycle SRAM
+      hcpu:
+        offset: 0x20020000
+        size: 0x20000    # 128KB
+      lcpu:
+        offset: 0x2A020000
+        size: 0x20000    # 128KB
+
+    ram2:
+      # 256KB zero-wait-cycle SRAM
+      hcpu:
+        offset: 0x20040000
+        size: 0x40000    # 256KB
+      lcpu:
+        offset: 0x2A040000
+        size: 0x40000    # 256KB
+
+    ram3:
+      # 288KB zero-wait-cycle SRAM
+      hcpu:
+        offset: 0x20080000
+        size: 0x48000    # 288KB
+      lcpu:
+        offset: 0x2A080000
+        size: 0x48000    # 288KB
+
+lpsys:
+  itcm:
+    # 16KB zero-wait-cycle I-TCM, LCPU专用
+    hcpu:
+      offset: 0x20BFC000
+      size: 0x4000       # 16KB
+    lcpu:
+      offset: 0x003FC000
+      size: 0x4000       # 16KB
+
+  dtcm:
+    # 16KB zero-wait-cycle D-TCM, LCPU专用
+    hcpu:
+      offset: 0x203FC000
+      size: 0x4000       # 16KB
+    lcpu:
+      offset: 0x203FC000
+      size: 0x4000       # 16KB
+
+  ram:
+    ram0:
+      # 64KB one-wait-cycle SRAM
+      hcpu:
+        offset: 0x20C00000
+        size: 0x10000    # 64KB
+      lcpu:
+        offset: 0x00400000
+        size: 0x10000    # 64KB
+
+    ram1:
+      # 32KB one-wait-cycle SRAM
+      hcpu:
+        offset: 0x20C10000
+        size: 0x8000     # 32KB
+      lcpu:
+        offset: 0x00410000
+        size: 0x8000     # 32KB
+
+    ram2:
+      # 32KB EM SRAM
+      hcpu:
+        offset: 0x20C18000
+        size: 0x8000     # 32KB
+      lcpu:
+        offset: 0x00418000
+        size: 0x8000     # 32KB

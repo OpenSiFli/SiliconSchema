@@ -1,0 +1,82 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://opensifli.com/schemas/ram-config.schema.json",
+    "title": "RAM Configuration Schema",
+    "description": "Schema for SiFli chip RAM region configuration",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "hpsys": {
+            "$ref": "#/$defs/subsystem"
+        },
+        "lpsys": {
+            "$ref": "#/$defs/subsystem"
+        }
+    },
+    "$defs": {
+        "subsystem": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "itcm": {
+                    "$ref": "#/$defs/ramBank"
+                },
+                "dtcm": {
+                    "$ref": "#/$defs/ramBank"
+                },
+                "ram": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/$defs/ramBank"
+                    }
+                }
+            }
+        },
+        "ramBank": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "retention": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "owner": {
+                    "type": "string",
+                    "enum": [
+                        "hcpu",
+                        "lcpu",
+                        "acpu"
+                    ],
+                    "description": "Core with fastest access to this RAM region. Defaults to hcpu for hpsys, lcpu for lpsys"
+                },
+                "hcpu": {
+                    "$ref": "#/$defs/addressRegion"
+                },
+                "lcpu": {
+                    "$ref": "#/$defs/addressRegion"
+                },
+                "acpu": {
+                    "$ref": "#/$defs/addressRegion"
+                }
+            }
+        },
+        "addressRegion": {
+            "type": "object",
+            "required": [
+                "offset",
+                "size"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "offset": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "size": {
+                    "type": "integer",
+                    "minimum": 1
+                }
+            }
+        }
+    }
+}
