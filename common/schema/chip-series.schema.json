@@ -199,6 +199,35 @@
         }
       }
     },
+    "sipMemory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "size"
+      ],
+      "properties": {
+        "mpi": {
+          "type": "string",
+          "pattern": "^mpi[0-9]+$",
+          "description": "MPI interface identifier (e.g., mpi1, mpi2)"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "nor",
+            "nand",
+            "psram"
+          ],
+          "description": "Memory type"
+        },
+        "size": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Memory size in bytes"
+        }
+      }
+    },
     "variant": {
       "type": "object",
       "additionalProperties": false,
@@ -218,6 +247,13 @@
         "package": {
           "type": "string",
           "minLength": 1
+        },
+        "memory": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sipMemory"
+          },
+          "description": "SiP memory configurations"
         },
         "pins": {
           "type": "array",

@@ -140,6 +140,10 @@ pads:
 variants:
   - part_number: SF32LB520U36
     description: "8Mb NOR Flash"
+    memory:
+      - mpi: mpi1
+        type: nor
+        size: 1048576      # 8Mb = 1MB
     package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
     pins: &SF32LB52x_QFN68_PINS
       - {number: "1", pad: PA32}
@@ -214,15 +218,27 @@ variants:
 
   - part_number: SF32LB523UB6
     description: "32Mb OPI-pSRAM"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 4194304      # 32Mb = 4MB
     package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
     pins: *SF32LB52x_QFN68_PINS
 
   - part_number: SF32LB525UC6
     description: "64Mb OPI-pSRAM"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 8388608      # 64Mb = 8MB
     package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
     pins: *SF32LB52x_QFN68_PINS
 
   - part_number: SF32LB527UD6
     description: "128Mb OPI-pSRAM"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 16777216     # 128Mb = 16MB
     package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
     pins: *SF32LB52x_QFN68_PINS

@@ -31,7 +31,41 @@ def load_json(path: Path) -> dict:
         return json.load(f)
 
 
-def validate_chip(chip_dir: Path, schema: dict) -> tuple[bool, list[str]]:
+def get_sip_mpis(mpi_data: dict) -> set[str]:
+    """Get set of MPI identifiers that have sip: true."""
+    sip_mpis = set()
+    mpis = mpi_data.get('mpis', {})
+    for mpi_name, mpi_config in mpis.items():
+        if mpi_config.get('sip', False):
+            sip_mpis.add(mpi_name)
+    return sip_mpis
+
+
+def validate_memory_sip(chip_data: dict, sip_mpis: set[str]) -> list[str]:
+    """Validate that memory configurations only use SiP MPI interfaces.
+    
+    Returns:
+        List of error messages (empty if valid)
+    """
+    errors = []
+    variants = chip_data.get('variants', [])
+    
+    for variant in variants:
+        part_number = variant.get('part_number', 'unknown')
+        memory_list = variant.get('memory', [])
+        
+        for mem in memory_list:
+            mpi = mem.get('mpi')
+            if mpi and mpi not in sip_mpis:
+                errors.append(
+                    f"Variant '{part_number}': memory uses '{mpi}' which is not a SiP interface. "
+                    f"Only SiP MPIs ({', '.join(sorted(sip_mpis)) or 'none'}) can have memory defined."
+                )
+    
+    return errors
+
+
+def validate_chip(chip_dir: Path, schema: dict, mpi_dir: Path = None) -> tuple[bool, list[str]]:
     """Validate a single chip's series.yaml against the schema.
     
     Returns:
@@ -48,6 +82,7 @@ def validate_chip(chip_dir: Path, schema: dict) -> tuple[bool, list[str]]:
     except yaml.YAMLError as e:
         return False, [f"YAML parse error: {e}"]
     
+    # JSON Schema validation
     validator = jsonschema.Draft202012Validator(schema)
     validation_errors = list(validator.iter_errors(data))
     
@@ -56,6 +91,51 @@ def validate_chip(chip_dir: Path, schema: dict) -> tuple[bool, list[str]]:
             path = '.'.join(str(p) for p in error.absolute_path) or '(root)'
             errors.append(f"  {path}: {error.message}")
         return False, errors
+    
+    return True, []
+
+
+def validate_chip_source(chip_source_dir: Path, mpi_dir: Path) -> tuple[bool, list[str]]:
+    """Validate chip source (chip.yaml) for SiP memory constraints.
+    
+    Returns:
+        Tuple of (success, list of error messages)
+    """
+    chip_yaml_path = chip_source_dir / "chip.yaml"
+    errors = []
+    
+    if not chip_yaml_path.exists():
+        return True, []
+    
+    try:
+        chip_data = load_yaml(chip_yaml_path)
+    except yaml.YAMLError as e:
+        return False, [f"chip.yaml parse error: {e}"]
+    
+    # Get shared_pinmux to find the correct MPI config
+    shared_pinmux = chip_data.get('shared_pinmux')
+    if not shared_pinmux:
+        # No shared pinmux, skip MPI validation
+        return True, []
+    
+    # Load MPI config
+    mpi_yaml_path = mpi_dir / shared_pinmux / "mpi.yaml"
+    if not mpi_yaml_path.exists():
+        # No MPI config, skip validation
+        return True, []
+    
+    try:
+        mpi_data = load_yaml(mpi_yaml_path)
+    except yaml.YAMLError as e:
+        return False, [f"mpi.yaml parse error: {e}"]
+    
+    # Get SiP MPIs
+    sip_mpis = get_sip_mpis(mpi_data)
+    
+    # Validate memory configurations
+    memory_errors = validate_memory_sip(chip_data, sip_mpis)
+    if memory_errors:
+        return False, memory_errors
     
     return True, []
 
@@ -85,6 +165,7 @@ def main() -> int:
     
     chips_dir = root / "chips"
     output_dir = root / "out"
+    mpi_dir = root / "common" / "mpi"
     schema_path = root / "common" / "schema" / "chip-series.schema.json"
     
     print(f"SiliconSchema Validator")
@@ -107,29 +188,44 @@ def main() -> int:
     if args.chip:
         # Validate single chip
         chip_output_dir = output_dir / args.chip
+        chip_source_dir = chips_dir / args.chip
         if not chip_output_dir.exists():
             print(f"Error: output directory '{args.chip}' not found in out/", file=sys.stderr)
             return 1
-        chip_dirs = [chip_output_dir]
+        chip_dirs = [(chip_output_dir, chip_source_dir)]
     else:
         # Validate all chips in output directory
         if not output_dir.exists():
             print(f"Error: output directory not found. Run 'uv run build-schema' first.", file=sys.stderr)
             return 1
-        chip_dirs = sorted(d for d in output_dir.iterdir() if d.is_dir())
+        chip_dirs = [
+            (d, chips_dir / d.name) 
+            for d in sorted(output_dir.iterdir()) 
+            if d.is_dir()
+        ]
     
     print("Validating chips...")
-    for chip_dir in chip_dirs:
-        success, messages = validate_chip(chip_dir, schema)
+    for chip_output_dir, chip_source_dir in chip_dirs:
+        chip_name = chip_output_dir.name
+        
+        # Validate generated series.yaml
+        success, messages = validate_chip(chip_output_dir, schema, mpi_dir)
+        
+        # Also validate source chip.yaml for SiP constraints
+        if success and chip_source_dir.exists():
+            sip_success, sip_errors = validate_chip_source(chip_source_dir, mpi_dir)
+            if not sip_success:
+                success = False
+                messages = sip_errors
         
         if success:
             if messages:  # Skipped
-                print(f"  ⊘ {chip_dir.name}: {messages[0]}")
+                print(f"  ⊘ {chip_name}: {messages[0]}")
             else:
-                print(f"  ✓ {chip_dir.name}: valid")
+                print(f"  ✓ {chip_name}: valid")
                 validated += 1
         else:
-            print(f"  ✗ {chip_dir.name}: INVALID")
+            print(f"  ✗ {chip_name}: INVALID")
             for msg in messages:
                 print(f"    {msg}")
             failed += 1

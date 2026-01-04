@@ -130,6 +130,10 @@ pads:
 variants:
   - part_number: SF32LB52BU36
     description: "3.3V, 8Mb NOR Flash"
+    memory:
+      - mpi: mpi1
+        type: nor
+        size: 1048576      # 8Mb = 1MB
     package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
     pins: &SF32LB52X_QFN68_PINS
       - {number: "1", pad: PA32}
@@ -202,25 +206,45 @@ variants:
 
   - part_number: SF32LB52BU56
     description: "3.3V, 32Mb NOR Flash"
+    memory:
+      - mpi: mpi1
+        type: nor
+        size: 4194304      # 32Mb = 4MB
     package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
     pins: *SF32LB52X_QFN68_PINS
 
   - part_number: SF32LB52DUB6
     description: "1.8V, 32Mb pSRAM"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 4194304      # 32Mb = 4MB
     package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
     pins: *SF32LB52X_QFN68_PINS
 
   - part_number: SF32LB52EUB6
     description: "3.3V, 32Mb pSRAM"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 4194304      # 32Mb = 4MB
     package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
     pins: *SF32LB52X_QFN68_PINS
 
   - part_number: SF32LB52GUC6
     description: "3.3V, 64Mb pSRAM"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 8388608      # 64Mb = 8MB
     package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
     pins: *SF32LB52X_QFN68_PINS
 
   - part_number: SF32LB52JUD6
     description: "3.3V, 128Mb pSRAM"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 16777216     # 128Mb = 16MB
     package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
     pins: *SF32LB52X_QFN68_PINS
