@@ -1,0 +1,14 @@
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "master"'
+      when: always
+    - when: never
+
+stages:
+  - sync_to_gerrit
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+include:
+  - local: ".gitlab/ci/sync_to_gerrit.yml"

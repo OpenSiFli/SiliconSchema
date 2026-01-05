@@ -1,0 +1,22 @@
+sync_to_gerrit:
+  stage: sync_to_gerrit
+  image: $CI_DOCKER_BASE_REGISTRY:latest
+  variables:
+    GIT_STRATEGY: clone
+  before_script:
+    - eval "$(ssh-agent -s)"
+    - echo "$GERRIT_SSH_PRIVATE_KEY" | base64 -d | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - printf "Host *\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+    - git config --global user.name "$GIT_CI_USER_NAME"
+    - git config --global user.email "$GIT_CI_USER_EMAIL"
+    - git remote add gerrit "$TARGET_REPO_SSH_URL" || git remote set-url gerrit "$TARGET_REPO_SSH_URL"
+  script:
+    - git fetch --tags --force
+    - git push gerrit "HEAD:refs/heads/master"
+    - git push gerrit --tags
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "master"'
+      when: always
+    - when: never

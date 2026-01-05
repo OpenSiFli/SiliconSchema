@@ -1,0 +1,37 @@
+name: Mirror Sync
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 18 * * *"
+
+jobs:
+  mirror-to-gitee:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mirror to gitee
+        uses: OpenSiFli/hub-mirror-action@v1
+        with:
+          src: github/${{ github.repository_owner }}
+          dst: gitee/SiFli
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          static_list: "SiliconSchema"
+          force_update: true
+
+  mirror-to-gitlab:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mirror to gitlab
+        uses: OpenSiFli/hub-mirror-action@v1
+        with:
+          src: github/${{ github.repository_owner }}
+          dst: gitlab/${{ secrets.GITLAB_NAMESPACE }}
+          dst_account_type: "group"
+          dst_key: ${{ secrets.GITLAB_PRIVATE_KEY }}
+          dst_token: ${{ secrets.GITLAB_TOKEN }}
+          static_list: "SiliconSchema"
+          force_update: true
+          dst_endpoint: ${{ secrets.GITLAB_HOST }}
