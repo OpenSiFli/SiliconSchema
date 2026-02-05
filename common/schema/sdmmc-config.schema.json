@@ -1,0 +1,38 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://opensifli.com/schemas/sdmmc-config.schema.json",
+    "title": "SDMMC Configuration Schema",
+    "description": "Schema for SiFli chip SDMMC (SD/MMC Host Controller) configuration",
+    "type": "object",
+    "required": [
+        "sdmmcs"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "sdmmcs": {
+            "type": "object",
+            "description": "Map of SDMMC instances",
+            "minProperties": 1,
+            "additionalProperties": {
+                "$ref": "#/$defs/sdmmcInstance"
+            }
+        }
+    },
+    "$defs": {
+        "sdmmcInstance": {
+            "type": "object",
+            "description": "SDMMC instance configuration",
+            "additionalProperties": false,
+            "required": [
+                "base"
+            ],
+            "properties": {
+                "base": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Base address of the SDMMC controller"
+                }
+            }
+        }
+    }
+}

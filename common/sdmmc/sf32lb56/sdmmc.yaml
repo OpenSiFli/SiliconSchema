@@ -1,0 +1,8 @@
+# SF32LB56 系列 SDMMC (SD/MMC Host Controller) 配置
+
+sdmmcs:
+  sdmmc1:
+    base: 0xA0000000
+
+  sdmmc2:
+    base: 0x64000000
