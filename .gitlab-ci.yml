@@ -12,31 +12,64 @@ stages:
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
-include:
-  - component: $CI_SERVER_FQDN/sifli/forge-mirror/hub-mirror@v2
-    inputs:
-      job-name: sync_to_gerrit
-      stage: sync_to_gerrit
-      image: $CI_REGISTRY/sifli/forge-mirror:latest
-      src-platform: gitlab
-      src-account: $CI_PROJECT_NAMESPACE
-      src-account-type: group
-      src-transport: ssh
-      src-endpoint: $CI_SERVER_HOST
-      dst-platform: git
-      dst-account: ""
-      dst-transport: ssh
-      dst-endpoint: $GERRIT_ENDPOINT
-      ssh-user: $GERRIT_SSH_USER
-      src-key: '$(printf "%s" "$GITLAB_SSH_PRIVATE_KEY" | base64 -d | tr -d "\r")'
-      dst-key: '$(printf "%s" "$GERRIT_SSH_PRIVATE_KEY" | base64 -d | tr -d "\r")'
-      dst-token: dummy-token
-      push-strategy: no
-      repos: |
-        static:
-          - $CI_PROJECT_NAME
-        refs:
-          branches:
-            include: [master]
-          tags:
-            include: ['*']
+sync_to_gerrit:
+  stage: sync_to_gerrit
+  image:
+    name: $CI_REGISTRY/sifli/forge-mirror:latest
+    entrypoint: [""]
+  variables:
+    GIT_STRATEGY: none
+  cache:
+    key: hub-mirror-$CI_RUNNER_EXECUTABLE_ARCH
+    paths:
+      - hub-mirror-cache
+  script:
+    - set -eu
+    - SRC_KEY="$(printf "%s" "$GITLAB_SSH_PRIVATE_KEY" | base64 -d | tr -d '\r')"
+    - DST_KEY="$(printf "%s" "$GERRIT_SSH_PRIVATE_KEY" | base64 -d | tr -d '\r')"
+    - |
+      if [ -z "$SRC_KEY" ]; then
+        echo "GITLAB_SSH_PRIVATE_KEY is required" >&2
+        exit 1
+      fi
+    - |
+      if [ -z "$DST_KEY" ]; then
+        echo "GERRIT_SSH_PRIVATE_KEY is required" >&2
+        exit 1
+      fi
+    - mkdir -p ~/.ssh
+    - printf "%s\n" "$SRC_KEY" > ~/.ssh/id_rsa_src
+    - chmod 600 ~/.ssh/id_rsa_src
+    - printf "%s\n" "$DST_KEY" > ~/.ssh/id_rsa_dst
+    - chmod 600 ~/.ssh/id_rsa_dst
+    - printf "StrictHostKeyChecking no\nUserKnownHostsFile /dev/null\n" >> ~/.ssh/config
+    - mkdir -p "$CI_PROJECT_DIR/hub-mirror-cache"
+    - |
+      REPOS_CFG="$(cat <<EOF
+      static:
+        - $CI_PROJECT_NAME
+      refs:
+        branches:
+          include: [master]
+        tags:
+          include: ['*']
+      EOF
+      )"
+    - |
+      hubmirror \
+        --src-platform "gitlab" \
+        --src-account "$CI_PROJECT_NAMESPACE" \
+        --dst-platform "git" \
+        --dst-account "" \
+        --src-account-type "group" \
+        --src-endpoint "$CI_SERVER_SHELL_SSH_HOST:8218" \
+        --dst-endpoint "$GERRIT_ENDPOINT" \
+        --src-transport "ssh" \
+        --dst-transport "ssh" \
+        --dst-ssh-user "$GERRIT_SSH_USER" \
+        --src-ssh-user "git" \
+        --cache-path "$CI_PROJECT_DIR/hub-mirror-cache" \
+        --repos "$REPOS_CFG" \
+        --push-strategy "force" \
+        --dst-token "dummy" \
+        --src-token $CI_JOB_TOKEN
