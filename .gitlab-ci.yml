@@ -11,4 +11,30 @@ variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
 include:
-  - local: ".gitlab/ci/sync_to_gerrit.yml"
+  - component: $CI_SERVER_FQDN/sifli/forge-mirror/hub-mirror@v2
+    inputs:
+      job-name: sync_to_gerrit
+      stage: sync_to_gerrit
+      image: $CI_REGISTRY/sifli/forge-mirror:latest
+      src-platform: gitlab
+      src-account: $CI_PROJECT_NAMESPACE
+      src-account-type: group
+      src-transport: ssh
+      src-endpoint: $CI_SERVER_HOST
+      dst-platform: git
+      dst-account: ""
+      dst-transport: ssh
+      dst-endpoint: $GERRIT_ENDPOINT
+      ssh-user: $GERRIT_SSH_USER
+      src-key: '$(printf "%s" "$GITLAB_SSH_PRIVATE_KEY" | base64 -d | tr -d "\r")'
+      dst-key: '$(printf "%s" "$GERRIT_SSH_PRIVATE_KEY" | base64 -d | tr -d "\r")'
+      dst-token: dummy-token
+      push-strategy: no
+      repos: |
+        static:
+          - $CI_PROJECT_NAME
+        refs:
+          branches:
+            include: [master]
+          tags:
+            include: ['*']

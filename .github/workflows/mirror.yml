@@ -12,26 +12,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Mirror to gitee
-        uses: OpenSiFli/hub-mirror-action@v1
+        uses: OpenSiFli/forge-mirror@v2
         with:
-          src: github/${{ github.repository_owner }}
-          dst: gitee/SiFli
+          src_platform: github
+          src_account: ${{ github.repository_owner }}
+          src_account_type: org
+          dst_platform: gitee
+          dst_account: SiFli
+          dst_account_type: org
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
           dst_token: ${{ secrets.GITEE_TOKEN }}
-          static_list: "SiliconSchema"
-          force_update: true
+          repos: |
+            static:
+              - SiliconSchema
+          push_strategy: force
 
   mirror-to-gitlab:
     runs-on: ubuntu-latest
     steps:
       - name: Mirror to gitlab
-        uses: OpenSiFli/hub-mirror-action@v1
+        uses: OpenSiFli/forge-mirror@v2
         with:
-          src: github/${{ github.repository_owner }}
-          dst: gitlab/${{ secrets.GITLAB_NAMESPACE }}
+          src_platform: github
+          src_account: ${{ github.repository_owner }}
+          src_account_type: org
+          dst_platform: gitlab
+          dst_account: ${{ secrets.GITLAB_NAMESPACE }}
           dst_account_type: "group"
           dst_key: ${{ secrets.GITLAB_PRIVATE_KEY }}
           dst_token: ${{ secrets.GITLAB_TOKEN }}
-          static_list: "SiliconSchema"
-          force_update: true
-          dst_endpoint: ${{ secrets.GITLAB_HOST }}
+          repos: |
+            static:
+              - SiliconSchema
+          push_strategy: force
+          dst_endpoint: ${{ secrets.GITLAB_SSH_URL }}
+          dst_api_endpoint: ${{ secrets.GITLAB_URL }}
