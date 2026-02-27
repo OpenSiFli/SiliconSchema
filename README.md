@@ -34,7 +34,7 @@ SiliconSchema/
 ├── out/                           # 构建输出（.gitignore）
 │   └── <chip>/
 │       ├── series.yaml            # 完整芯片定义
-│       └── sf32lb52x-pinctrl.h    # Zephyr pinctrl 头文件
+│       └── <model_id>-pinctrl.h   # Zephyr pinctrl 头文件（部分系列可选）
 └── docs/
     └── chip_data_model.md         # 数据模型文档
 ```
@@ -61,7 +61,7 @@ uv run build-schema --chip SF32LB52x
 
 **输出：**
 - `out/<chip>/series.yaml` — 合并后的完整芯片定义
-- `out/<chip>/<model_id>-pinctrl.h` — Zephyr pinctrl 头文件
+- `out/<chip>/<model_id>-pinctrl.h` — Zephyr pinctrl 头文件（可选；`sf32lb56`/`sf32lb58` 不生成）
 
 ### validate-schema
 

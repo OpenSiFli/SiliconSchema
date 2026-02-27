@@ -234,21 +234,36 @@ def generate_series_yaml(chip_yaml: dict, pinmux_data: dict, pinr_data: dict) ->
     # Variants
     b.add("variants:")
     model_id = chip_yaml['model_id']
-    pins_anchor = f"{model_id}_QFN68_PINS"
-    
-    for i, variant in enumerate(chip_yaml['variants']):
+    used_anchors: set[str] = set()
+    pins_anchor_by_key: dict[tuple[tuple[str, str], ...], str] = {}
+
+    def sanitize_anchor(text: str) -> str:
+        text = re.sub(r'[^A-Za-z0-9]+', '_', text or '')
+        return text.strip('_') or 'PINS'
+
+    for variant in chip_yaml['variants']:
         b.add(f"- part_number: {variant['part_number']}", 1)
         b.add(f'description: "{variant["description"]}"', 2)
         b.add(f"package: {variant['package']}", 2)
-        
-        if i == 0:
-            b.add(f"pins: &{pins_anchor}", 2)
-            for pin in variant['pins']:
+
+        pins = variant.get('pins', [])
+        key = tuple((str(pin['number']), str(pin['pad'])) for pin in pins)
+
+        anchor = pins_anchor_by_key.get(key)
+        if anchor is None:
+            anchor = f"{model_id}_{sanitize_anchor(variant.get('package', ''))}_{sanitize_anchor(variant['part_number'])}_PINS"
+            while anchor in used_anchors:
+                anchor = f"{anchor}_X"
+            used_anchors.add(anchor)
+            pins_anchor_by_key[key] = anchor
+
+            b.add(f"pins: &{anchor}", 2)
+            for pin in pins:
                 pad_name = pin['pad']
                 b.add(f'- {{number: "{pin["number"]}", pad: *{pad_name}}}', 3)
         else:
-            b.add(f"pins: *{pins_anchor}", 2)
-    b.add_blank()
+            b.add(f"pins: *{anchor}", 2)
+        b.add_blank()
     
     return b.build()
 
@@ -269,6 +284,7 @@ def build_chip(chip_dir: Path, pinmux_dir: Path, output_dir: Path) -> bool:
     
     pinmux_data = {}
     pinr_data = {}
+    pinmux_name = None
     if 'shared_pinmux' in chip_data:
         pinmux_name = chip_data['shared_pinmux']
         pinmux_path = pinmux_dir / pinmux_name / "pinmux.yaml"
@@ -290,13 +306,22 @@ def build_chip(chip_dir: Path, pinmux_dir: Path, output_dir: Path) -> bool:
         f.write(series_content)
     print(f"    Generated: {series_yaml_path}")
     
-    # Generate Zephyr pinctrl header
+    # Generate Zephyr pinctrl header (optional)
     header_filename = f"{model_id.lower()}-pinctrl.h"
     header_path = output_dir / chip_dir.name / header_filename
-    header_content = generate_pinctrl_header(model_id, pinmux_data, pinr_data)
-    with open(header_path, 'w', encoding='utf-8') as f:
-        f.write(header_content)
-    print(f"    Generated: {header_path}")
+
+    skip_pinctrl_for_pinmux = {"sf32lb56", "sf32lb58"}
+    generate_pinctrl = pinmux_name not in skip_pinctrl_for_pinmux
+
+    if generate_pinctrl:
+        header_content = generate_pinctrl_header(model_id, pinmux_data, pinr_data)
+        with open(header_path, 'w', encoding='utf-8') as f:
+            f.write(header_content)
+        print(f"    Generated: {header_path}")
+    else:
+        if header_path.exists():
+            header_path.unlink()
+        print(f"    Skipped: pinctrl header not generated for {pinmux_name}")
     
     return True
 
