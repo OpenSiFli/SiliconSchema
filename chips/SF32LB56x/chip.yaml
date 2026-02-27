@@ -138,118 +138,118 @@ pads:
   # 专用 Pads
   ADCN:
     type: input
-    description: "差分模拟 输入 或 MIC N GND"
+    description: "Differential analog input (N) / MIC N / GND"
   ADCP:
     type: input
-    description: "差分 或单端模拟 输入 P MIC"
+    description: "Differential or single-ended analog input (P) / MIC P"
   AUD_VREF:
     type: input
-    description: "音频 输入 VREF"
+    description: "Audio reference input (VREF)"
   AVDD33_ANA:
     type: power_input
-    description: "模拟电源 射频 电源输入 + PA"
+    description: "3.3 V analog/RF/PA supply input"
   AVDD33_AUD:
     type: power_input
-    description: "模拟音频电源输入"
+    description: "3.3 V audio analog supply input"
   AVDD_BRF:
     type: power_input
-    description: "射频电源输入"
+    description: "RF analog supply input"
   AVSS:
     type: power_input
-    description: "模拟地"
+    description: "Analog ground"
   AVSS_RF1:
     type: power_input
-    description: "射频地"
+    description: "RF ground"
   AVSS_RF2:
     type: power_input
-    description: "射频地"
+    description: "RF ground"
   AVSS_RF3:
     type: power_input
-    description: "射频地"
+    description: "RF ground"
   AVSS_RF4:
     type: power_input
-    description: "射频地"
+    description: "RF ground"
   BOOT_MODE:
     type: input
-    description: "启动模式"
+    description: "Boot mode select"
   BRF_ANT:
     type: bidirectional
-    description: "射频天线"
+    description: "Bluetooth RF antenna port"
   BUCK_FB:
     type: power_input
-    description: "内部电源输入"
+    description: "Buck feedback input"
   BUCK_LX:
     type: bidirectional
-    description: "输出 BUCK_LX"
+    description: "Buck switching node (LX)"
   DACN:
     type: output
-    description: "差分模拟输出 N"
+    description: "Differential analog output (N)"
   DACP:
     type: output
-    description: "差分模拟输出 P"
+    description: "Differential analog output (P)"
   GPADC_VREFP:
     type: input
-    description: "参考电压外挂电容脚 GPADC"
+    description: "GPADC reference voltage pin (external capacitor)"
   LDO1_VOUT:
     type: power_output
-    description: "输出 LDO1"
+    description: "LDO1 output"
   LDO2_VOUT:
     type: power_output
-    description: "输出 LDO2"
+    description: "LDO2 output"
   MIC_BIAS:
     type: power_output
-    description: "电源输出 MIC"
+    description: "Microphone bias output"
   PVDD:
     type: power_input
-    description: "电源输入 PVDD"
+    description: "Main supply input (PVDD)"
   PVSS:
     type: power_input
-    description: "地 BUCK"
+    description: "Buck ground (PVSS)"
   VDDIO1:
     type: power_input
-    description: "内部大核合封存储器电源输入"
+    description: "HCPU SiP memory I/O supply input"
   VDDIO2:
     type: power_input
-    description: "除外 电源输入 PAGPIO(PA6~11 )"
+    description: "GPIOA bank supply input (PA6~PA11)"
   VDDIO3:
     type: power_input
-    description: "电源输入∗ PA6~11"
+    description: "GPIOA bank supply input* (PA6~PA11)"
   VDDIO4:
     type: power_input
-    description: "和内部小核合封 电源输入 PBGPIO Flash"
+    description: "GPIOB / Flash I/O supply input (LCPU SiP)"
   VDDIOA:
     type: power_input
-    description: "除外 电源输入 PAGPIO(PA0~11 )"
+    description: "GPIOA bank supply input (PA0~PA11)"
   VDDIOA2:
     type: power_input
-    description: "电源输入 PA0~11"
+    description: "GPIOA bank supply input (PA0~PA11)"
   VDDIOB:
     type: power_input
-    description: "电源输入 GPIOB"
+    description: "GPIOB bank supply input"
   VDDIOSA:
     type: power_input
-    description: "电源输入 SIPA"
+    description: "SiP-A I/O supply input"
   VDDIOSB:
     type: power_input
-    description: "电源输入 SIPB"
+    description: "SiP-B I/O supply input"
   VDDIOSC:
     type: power_input
-    description: "电源输入 SIPC"
+    description: "SiP-C I/O supply input"
   VDD_RET:
     type: power_output
-    description: "输出 RETLDO"
+    description: "Retention LDO output"
   VDD_RTC:
     type: power_output
-    description: "输出 RTCLDO"
+    description: "RTC LDO output"
   VSS:
     type: power_input
-    description: "地"
+    description: "Ground"
   XTAL48M_XI:
     type: input
-    description: "晶体接口 48MHz"
+    description: "48 MHz crystal input"
   XTAL48M_XO:
     type: output
-    description: "晶体接口 48MHz"
+    description: "48 MHz crystal output"
 
 variants:
   - part_number: SF32LB560
