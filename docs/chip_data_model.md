@@ -101,6 +101,7 @@ pinmux:
 ```yaml
 registers:
   I2C1_PINR:
+    # owner 可选：不写默认是 hpsys；如位于 lpsys_cfg 则写 owner: lpsys
     offset: 0x48
     fields:
       SDA: {bits: [13, 8]}

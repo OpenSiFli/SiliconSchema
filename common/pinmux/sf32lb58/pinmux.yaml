@@ -1,0 +1,1070 @@
+# SF32LB58 series shared Pinmux definitions
+# Generated from temp/58x_pinmux.xlsx
+
+pinmux:
+  PA00:
+    - {function: GPIO_A0, select: 0}
+    - {function: SD1_DIO7, select: 1}
+    - {function: CAN1_TXD, select: 3}
+    - {function: I2C1_SCL, select: 4}
+    - {function: ATIM1_CH1, select: 5}
+    - {function: USART3_RXD, select: 6}
+  PA01:
+    - {function: GPIO_A1, select: 0}
+    - {function: SD1_DIO2, select: 1}
+    - {function: MPI4_DIO2, select: 2}
+  PA02:
+    - {function: GPIO_A2, select: 0}
+    - {function: SD1_CLKIN, select: 2}
+    - {function: CAN2_RXD, select: 3}
+    - {function: ATIM1_CH1N, select: 5}
+    - {function: USART3_RXD, select: 6}
+  PA03:
+    - {function: GPIO_A3, select: 0}
+    - {function: SD1_DIO5, select: 1}
+    - {function: CAN1_RXD, select: 3}
+    - {function: I2C1_SDA, select: 4}
+    - {function: ATIM1_CH2, select: 5}
+    - {function: USART3_TXD, select: 6}
+  PA04:
+    - {function: GPIO_A4, select: 0}
+    - {function: SD1_DIO1, select: 1}
+    - {function: MPI4_DIO1, select: 2}
+  PA05:
+    - {function: GPIO_A5, select: 0}
+    - {function: SD1_DIO0, select: 1}
+    - {function: MPI4_DIO0, select: 2}
+  PA06:
+    - {function: GPIO_A6, select: 0}
+    - {function: SD1_DIO3, select: 1}
+    - {function: MPI4_DIO3, select: 2}
+  PA07:
+    - {function: GPIO_A7, select: 0}
+    - {function: SD1_DIO4, select: 1}
+    - {function: SCI_CLK, select: 2}
+    - {function: USART2_TXD, select: 3}
+    - {function: ATIM1_CH2N, select: 5}
+  PA08:
+    - {function: GPIO_A8, select: 0}
+    - {function: SD1_DIO6, select: 1}
+    - {function: SCI_DIO, select: 2}
+    - {function: USART2_RXD, select: 3}
+    - {function: ATIM1_CH3, select: 5}
+  PA09:
+    - {function: GPIO_A9, select: 0}
+    - {function: SD1_CLK, select: 1}
+    - {function: MPI4_CLK, select: 2}
+  PA10:
+    - {function: GPIO_A10, select: 0}
+    - {function: SD1_CMD, select: 1}
+    - {function: MPI4_CS, select: 2}
+  PA11:
+    - {function: GPIO_A11, select: 0}
+    - {function: SCI_RST, select: 2}
+    - {function: CAN2_TXD, select: 3}
+    - {function: I2C1_SDA, select: 4}
+    - {function: ATIM1_CH3N, select: 5}
+    - {function: USART3_TXD, select: 6}
+  PA12:
+    - {function: GPIO_A12, select: 0}
+    - {function: GPTIM1_CH1, select: 4}
+    - {function: ATIM1_CH4, select: 5}
+    - {function: LCDC1_DPI_CLK, select: 7}
+    - {function: DBG_DO0, select: 9}
+  PA13:
+    - {function: GPIO_A13, select: 0}
+    - {function: GPTIM1_CH2, select: 4}
+    - {function: ATIM1_BKIN, select: 5}
+    - {function: LCDC1_DPI_DE, select: 7}
+    - {function: DBG_DO1, select: 9}
+  PA14:
+    - {function: GPIO_A14, select: 0}
+    - {function: I2S1_LRCK, select: 2}
+    - {function: LCDC1_DPI_HSYNC, select: 7}
+  PA15:
+    - {function: GPIO_A15, select: 0}
+    - {function: GPTIM1_CH3, select: 4}
+    - {function: ATIM1_BKIN2, select: 5}
+    - {function: LCDC1_DPI_VSYNC, select: 7}
+    - {function: DBG_DO2, select: 9}
+  PA16:
+    - {function: GPIO_A16, select: 0}
+    - {function: I2C1_SDA, select: 1}
+    - {function: USART2_TXD, select: 2}
+  PA17:
+    - {function: GPIO_A17, select: 0}
+    - {function: I2C1_SCL, select: 1}
+    - {function: USART2_RXD, select: 2}
+  PA18:
+    - {function: GPIO_A18, select: 0}
+    - {function: PDM1_DATA, select: 1}
+    - {function: I2S1_SDI, select: 2}
+    - {function: USART2_RTS, select: 3}
+    - {function: I2C2_SCL, select: 4}
+    - {function: LCDC1_DPI_SD, select: 7}
+  PA19:
+    - {function: GPIO_A19, select: 0}
+    - {function: SCI_RST, select: 2}
+    - {function: GPTIM1_CH4, select: 4}
+    - {function: ATIM1_ETR, select: 5}
+    - {function: LCDC1_DPI_CM, select: 7}
+    - {function: LCDC1_JDI_VCK, select: 8}
+  PA20:
+    - {function: GPIO_A20, select: 0}
+    - {function: USART3_RXD, select: 1}
+    - {function: SPI1_DI, select: 2}
+    - {function: USART2_CTS, select: 3}
+    - {function: DBG_DO3, select: 9}
+  PA21:
+    - {function: GPIO_A21, select: 0}
+    - {function: USART3_TXD, select: 1}
+    - {function: SPI1_DO, select: 2}
+    - {function: USART2_RTS, select: 3}
+    - {function: DBG_DO4, select: 9}
+  PA22:
+    - {function: GPIO_A22, select: 0}
+    - {function: PDM2_DATA, select: 1}
+    - {function: GPTIM1_ETR, select: 4}
+    - {function: ATIM2_CH1, select: 5}
+    - {function: LCDC1_DPI_R0, select: 7}
+    - {function: LCDC1_JDI_VST, select: 8}
+  PA23:
+    - {function: GPIO_A23, select: 0}
+    - {function: PDM1_CLK, select: 1}
+    - {function: I2S1_BCK, select: 2}
+    - {function: USART2_CTS, select: 3}
+    - {function: I2C2_SDA, select: 4}
+    - {function: LCDC1_DPI_R1, select: 7}
+  PA24:
+    - {function: GPIO_A24, select: 0}
+    - {function: LCDC1_8080_RSTB, select: 5}
+    - {function: LCDC1_SPI_RSTB, select: 6}
+    - {function: LCDC1_DPI_R2, select: 7}
+  PA25:
+    - {function: GPIO_A25, select: 0}
+    - {function: PDM2_CLK, select: 1}
+    - {function: SD1_CLKIN, select: 2}
+    - {function: GPTIM2_CH1, select: 4}
+    - {function: ATIM2_CH1N, select: 5}
+    - {function: LCDC1_DPI_R3, select: 7}
+    - {function: LCDC1_JDI_XRST, select: 8}
+  PA26:
+    - {function: GPIO_A26, select: 0}
+    - {function: SCI_CLK, select: 2}
+    - {function: GPTIM2_CH2, select: 4}
+    - {function: ATIM2_CH2, select: 5}
+    - {function: LCDC1_8080_DIO2, select: 6}
+    - {function: LCDC1_DPI_R4, select: 7}
+  PA27:
+    - {function: GPIO_A27, select: 0}
+    - {function: SCI_DIO, select: 2}
+    - {function: GPTIM2_CH3, select: 4}
+    - {function: ATIM2_CH2N, select: 5}
+    - {function: LCDC1_8080_DIO3, select: 6}
+    - {function: LCDC1_DPI_R5, select: 7}
+    - {function: LCDC1_JDI_XRST, select: 8}
+  PA28:
+    - {function: GPIO_A28, select: 0}
+    - {function: USART2_TXD, select: 1}
+    - {function: SPI1_CLK, select: 2}
+    - {function: I2C2_SCL, select: 4}
+    - {function: DBG_DO5, select: 9}
+  PA29:
+    - {function: GPIO_A29, select: 0}
+    - {function: USART2_RXD, select: 1}
+    - {function: SPI1_CS, select: 2}
+    - {function: I2C2_SDA, select: 4}
+    - {function: DBG_DO6, select: 9}
+  PA30:
+    - {function: GPIO_A30, select: 0}
+    - {function: SPI2_CS, select: 1}
+    - {function: SD1_DIO1, select: 2}
+    - {function: MPI4_CS, select: 3}
+  PA31:
+    - {function: GPIO_A31, select: 0}
+    - {function: USART1_TXD, select: 1}
+    - {function: I2C3_SCL, select: 4}
+    - {function: DBG_DO7, select: 9}
+  PA32:
+    - {function: GPIO_A32, select: 0}
+    - {function: USART1_RXD, select: 1}
+    - {function: I2C3_SDA, select: 4}
+    - {function: DBG_DO8, select: 9}
+  PA33:
+    - {function: GPIO_A33, select: 0}
+    - {function: SD1_DIO7, select: 2}
+    - {function: USART2_CTS, select: 5}
+  PA34:
+    - {function: GPIO_A34, select: 0}
+    - {function: SD1_CMD, select: 2}
+    - {function: USART2_RTS, select: 5}
+  PA35:
+    - {function: GPIO_A35, select: 0}
+    - {function: SD1_DIO6, select: 2}
+    - {function: USART3_CTS, select: 5}
+  PA36:
+    - {function: GPIO_A36, select: 0}
+    - {function: SD1_DIO2, select: 2}
+    - {function: MPI4_DIO2, select: 3}
+  PA37:
+    - {function: GPIO_A37, select: 0}
+    - {function: SPI2_DO, select: 1}
+    - {function: SD1_DIO5, select: 2}
+    - {function: MPI4_DIO1, select: 3}
+    - {function: SPI2_DIO, select: 4}
+  PA38:
+    - {function: GPIO_A38, select: 0}
+    - {function: SD1_DIO4, select: 2}
+    - {function: MPI4_DIO3, select: 3}
+  PA39:
+    - {function: GPIO_A39, select: 0}
+    - {function: SPI2_CLK, select: 1}
+    - {function: SD1_CLK, select: 2}
+    - {function: MPI4_CLK, select: 3}
+  PA40:
+    - {function: GPIO_A40, select: 0}
+    - {function: SPI2_DI, select: 1}
+    - {function: SD1_DIO3, select: 2}
+    - {function: MPI4_DIO0, select: 3}
+  PA41:
+    - {function: GPIO_A41, select: 0}
+    - {function: SD1_DIO0, select: 2}
+    - {function: USART3_RTS, select: 5}
+  PA42:
+    - {function: GPIO_A42, select: 0}
+    - {function: GPTIM2_CH4, select: 4}
+    - {function: ATIM2_CH3, select: 5}
+    - {function: LCDC1_8080_DIO4, select: 6}
+    - {function: DBG_DO9, select: 9}
+  PA43:
+    - {function: GPIO_A43, select: 0}
+    - {function: LCDC1_8080_TE, select: 5}
+    - {function: LCDC1_SPI_TE, select: 6}
+    - {function: LCDC1_DPI_R6, select: 7}
+    - {function: LCDC1_JDI_HCK, select: 8}
+  PA44:
+    - {function: GPIO_A44, select: 0}
+    - {function: MPI3_CS, select: 1}
+    - {function: LCDC1_8080_CS, select: 5}
+    - {function: LCDC1_SPI_CS, select: 6}
+    - {function: LCDC1_DPI_R7, select: 7}
+    - {function: LCDC1_JDI_HST, select: 8}
+  PA45:
+    - {function: GPIO_A45, select: 0}
+    - {function: MPI3_DIO3, select: 1}
+    - {function: LCDC1_8080_DIO1, select: 5}
+    - {function: LCDC1_SPI_DIO3, select: 6}
+    - {function: LCDC1_DPI_G0, select: 7}
+    - {function: LCDC1_JDI_ENB, select: 8}
+  PA46:
+    - {function: GPIO_A46, select: 0}
+    - {function: MPI3_CLK, select: 1}
+    - {function: LCDC1_8080_WR, select: 5}
+    - {function: LCDC1_SPI_CLK, select: 6}
+    - {function: LCDC1_DPI_G1, select: 7}
+    - {function: LCDC1_JDI_R1, select: 8}
+  PA47:
+    - {function: GPIO_A47, select: 0}
+    - {function: MPI3_DIO2, select: 1}
+    - {function: LCDC1_8080_DIO0, select: 5}
+    - {function: LCDC1_SPI_DIO2, select: 6}
+    - {function: LCDC1_DPI_G2, select: 7}
+    - {function: LCDC1_JDI_R2, select: 8}
+  PA48:
+    - {function: GPIO_A48, select: 0}
+    - {function: MPI3_DIO1, select: 1}
+    - {function: LCDC1_8080_DC, select: 5}
+    - {function: LCDC1_SPI_DIO1, select: 6}
+    - {function: LCDC1_DPI_G3, select: 7}
+    - {function: LCDC1_JDI_G1, select: 8}
+  PA49:
+    - {function: GPIO_A49, select: 0}
+    - {function: GPTIM1_CH1, select: 4}
+    - {function: ATIM2_CH3N, select: 5}
+  PA50:
+    - {function: GPIO_A50, select: 0}
+    - {function: MPI3_DIO0, select: 1}
+    - {function: LCDC1_8080_RD, select: 5}
+    - {function: LCDC1_SPI_DIO0, select: 6}
+    - {function: LCDC1_DPI_G4, select: 7}
+    - {function: LCDC1_JDI_G2, select: 8}
+  PA51:
+    - {function: SWCLK, select: 0}
+    - {function: GPIO_A51, select: 1}
+    - {function: GPTIM1_CH2, select: 4}
+    - {function: ATIM2_CH4, select: 5}
+    - {function: LCDC1_8080_DIO5, select: 6}
+    - {function: DBG_DO10, select: 9}
+  PA52:
+    - {function: SWDIO, select: 0}
+    - {function: GPIO_A52, select: 1}
+    - {function: GPTIM1_CH3, select: 4}
+    - {function: ATIM2_BKIN, select: 5}
+    - {function: LCDC1_8080_DIO6, select: 6}
+    - {function: DBG_DO11, select: 9}
+  PA53:
+    - {function: GPIO_A53, select: 0}
+    - {function: LCDC1_DPI_G5, select: 7}
+  PA54:
+    - {function: GPIO_A54, select: 0}
+    - {function: SPI1_DO, select: 1}
+    - {function: SPI1_DIO, select: 2}
+    - {function: USART2_RTS, select: 3}
+    - {function: LCDC1_DPI_G6, select: 7}
+  PA55:
+    - {function: GPIO_A55, select: 0}
+    - {function: GPTIM1_CH4, select: 4}
+    - {function: ATIM2_BKIN2, select: 5}
+    - {function: LCDC1_DPI_G7, select: 7}
+  PA56:
+    - {function: GPIO_A56, select: 0}
+    - {function: SPI1_CLK, select: 1}
+    - {function: USART2_CTS, select: 3}
+    - {function: LCDC1_DPI_B0, select: 7}
+  PA57:
+    - {function: GPIO_A57, select: 0}
+    - {function: SPI1_DI, select: 1}
+    - {function: USART2_RXD, select: 2}
+    - {function: LCDC1_DPI_B1, select: 7}
+  PA58:
+    - {function: GPIO_A58, select: 0}
+    - {function: LPTIM1_ETR, select: 3}
+    - {function: GPTIM2_CH1, select: 4}
+    - {function: ATIM2_ETR, select: 5}
+    - {function: LCDC1_8080_DIO7, select: 6}
+    - {function: LCDC1_DPI_B2, select: 7}
+  PA59:
+    - {function: GPIO_A59, select: 0}
+    - {function: I2C4_SDA, select: 1}
+    - {function: USART1_TXD, select: 2}
+    - {function: USART3_RTS, select: 3}
+    - {function: DBG_DO12, select: 9}
+  PA60:
+    - {function: GPIO_A60, select: 0}
+    - {function: I2C4_SCL, select: 1}
+    - {function: USART1_RXD, select: 2}
+    - {function: USART3_CTS, select: 3}
+    - {function: DBG_DO13, select: 9}
+  PA61:
+    - {function: GPIO_A61, select: 0}
+    - {function: SPI1_CS, select: 1}
+    - {function: USART2_TXD, select: 2}
+    - {function: LCDC1_DPI_B3, select: 7}
+    - {function: DBG_DO14, select: 9}
+  PA62:
+    - {function: GPIO_A62, select: 0}
+    - {function: I2C2_SCL, select: 1}
+    - {function: USART1_RTS, select: 2}
+    - {function: GPCOMP_P, select: 3}
+    - {function: LCDC1_DPI_B4, select: 7}
+    - {function: DBG_DO15, select: 9}
+  PA63:
+    - {function: GPIO_A63, select: 0}
+    - {function: I2C2_SDA, select: 1}
+    - {function: USART1_CTS, select: 2}
+    - {function: GPCOMP_N, select: 3}
+    - {function: LCDC1_DPI_B5, select: 7}
+    - {function: DBG_CLK, select: 9}
+  PA64:
+    - {function: GPIO_A64, select: 0}
+    - {function: WKUP_PIN6, select: 3}
+  PA65:
+    - {function: GPIO_A65, select: 0}
+    - {function: WKUP_PIN7, select: 3}
+    - {function: GPTIM2_CH2, select: 4}
+    - {function: ATIM1_CH1, select: 5}
+    - {function: LCDC1_DPI_B6, select: 7}
+    - {function: LCDC1_JDI_B1, select: 8}
+  PA66:
+    - {function: GPIO_A66, select: 0}
+    - {function: WKUP_PIN8, select: 3}
+  PA67:
+    - {function: GPIO_A67, select: 0}
+    - {function: WKUP_PIN9, select: 3}
+    - {function: GPTIM2_CH3, select: 4}
+    - {function: ATIM1_CH1N, select: 5}
+    - {function: LCDC1_DPI_B7, select: 7}
+    - {function: LCDC1_JDI_B2, select: 8}
+  PA68:
+    - {function: GPIO_A68, select: 0}
+    - {function: WKUP_PIN10, select: 3}
+  PA69:
+    - {function: GPIO_A69, select: 0}
+    - {function: WKUP_PIN11, select: 3}
+  PA70:
+    - {function: GPIO_A70, select: 0}
+    - {function: SD2_CMD, select: 1}
+    - {function: SPI2_CS, select: 2}
+    - {function: DBG_DO0, select: 9}
+  PA71:
+    - {function: GPIO_A71, select: 0}
+    - {function: BT_ACTIVE, select: 1}
+    - {function: DBG_DO1, select: 9}
+  PA72:
+    - {function: GPIO_A72, select: 0}
+    - {function: BT_PRIORITY, select: 1}
+    - {function: DBG_DO2, select: 9}
+  PA73:
+    - {function: GPIO_A73, select: 0}
+    - {function: BT_COLLISION, select: 1}
+    - {function: USART1_RTS, select: 2}
+    - {function: LPTIM1_OUT, select: 3}
+    - {function: GPTIM2_CH4, select: 4}
+    - {function: ATIM1_CH2, select: 5}
+    - {function: DBG_DO3, select: 9}
+  PA74:
+    - {function: GPIO_A74, select: 0}
+    - {function: WLAN_ACTIVE, select: 1}
+    - {function: USART1_CTS, select: 2}
+    - {function: LPTIM1_IN, select: 3}
+    - {function: GPTIM2_ETR, select: 4}
+    - {function: ATIM1_CH2N, select: 5}
+    - {function: LCDC1_SPI_RSTB, select: 6}
+    - {function: LCDC1_8080_RSTB, select: 7}
+    - {function: DBG_DO4, select: 9}
+  PA75:
+    - {function: GPIO_A75, select: 0}
+    - {function: SD2_DIO1, select: 1}
+    - {function: SPI2_DI, select: 2}
+    - {function: DBG_DO5, select: 9}
+  PA76:
+    - {function: GPIO_A76, select: 0}
+    - {function: SD2_DIO0, select: 1}
+    - {function: SPI2_DO, select: 2}
+    - {function: DBG_DO6, select: 9}
+  PA77:
+    - {function: GPIO_A77, select: 0}
+    - {function: SD2_CLK, select: 1}
+    - {function: SPI2_CLK, select: 2}
+    - {function: DBG_DO7, select: 9}
+  PA78:
+    - {function: GPIO_A78, select: 0}
+    - {function: SPI2_DI, select: 1}
+    - {function: SD2_CLKIN, select: 2}
+    - {function: GPTIM2_ETR, select: 4}
+    - {function: ATIM1_CH3, select: 5}
+    - {function: DBG_DO8, select: 9}
+  PA79:
+    - {function: GPIO_A79, select: 0}
+    - {function: SD2_DIO2, select: 1}
+    - {function: DBG_DO9, select: 9}
+  PA80:
+    - {function: GPIO_A80, select: 0}
+    - {function: LCDC1_SPI_TE, select: 6}
+    - {function: LCDC1_8080_TE, select: 7}
+    - {function: DBG_DO10, select: 9}
+  PA81:
+    - {function: GPIO_A81, select: 0}
+    - {function: SD2_DIO3, select: 1}
+    - {function: DBG_DO11, select: 9}
+  PA82:
+    - {function: GPIO_A82, select: 0}
+    - {function: I2S2_SDO, select: 2}
+    - {function: GPTIM1_CH1, select: 4}
+    - {function: ATIM1_CH3N, select: 5}
+    - {function: LCDC1_SPI_DIO1, select: 6}
+    - {function: LCDC1_8080_DC, select: 7}
+    - {function: LCDC1_JDI_SCS, select: 8}
+  PA83:
+    - {function: GPIO_A83, select: 0}
+    - {function: SPI2_CLK, select: 1}
+    - {function: DBG_DO12, select: 9}
+  PA84:
+    - {function: GPIO_A84, select: 0}
+    - {function: I2S2_LRCK, select: 2}
+    - {function: GPTIM1_CH2, select: 4}
+    - {function: ATIM2_CH1, select: 5}
+    - {function: LCDC1_SPI_DIO2, select: 6}
+    - {function: LCDC1_8080_DIO0, select: 7}
+    - {function: LCDC1_JDI_SCLK, select: 8}
+  PA85:
+    - {function: GPIO_A85, select: 0}
+    - {function: DBG_DO13, select: 9}
+  PA86:
+    - {function: GPIO_A86, select: 0}
+    - {function: I2S2_SDI, select: 2}
+    - {function: GPTIM1_CH3, select: 4}
+    - {function: ATIM2_CH1N, select: 5}
+    - {function: LCDC1_SPI_DIO3, select: 6}
+    - {function: LCDC1_8080_DIO1, select: 7}
+    - {function: LCDC1_JDI_SO, select: 8}
+  PA87:
+    - {function: GPIO_A87, select: 0}
+    - {function: SPI2_CS, select: 1}
+    - {function: DBG_DO14, select: 9}
+  PA88:
+    - {function: GPIO_A88, select: 0}
+    - {function: LCDC1_SPI_CS, select: 6}
+    - {function: LCDC1_8080_CS, select: 7}
+    - {function: DBG_DO15, select: 9}
+  PA89:
+    - {function: GPIO_A89, select: 0}
+    - {function: SPI2_DO, select: 1}
+    - {function: SPI2_DIO, select: 3}
+    - {function: DBG_CLK, select: 9}
+  PA90:
+    - {function: GPIO_A90, select: 0}
+    - {function: I2S2_MCLK, select: 2}
+    - {function: GPTIM1_CH4, select: 4}
+    - {function: ATIM2_CH2, select: 5}
+    - {function: LCDC1_SPI_CLK, select: 6}
+    - {function: LCDC1_8080_WR, select: 7}
+    - {function: LCDC1_JDI_DISP, select: 8}
+  PA91:
+    - {function: GPIO_A91, select: 0}
+    - {function: I2S2_BCK, select: 2}
+    - {function: GPTIM1_ETR, select: 4}
+    - {function: ATIM2_CH2N, select: 5}
+    - {function: LCDC1_SPI_DIO0, select: 6}
+    - {function: LCDC1_8080_RD, select: 7}
+    - {function: LCDC1_JDI_EXTCOMIN, select: 8}
+  PA92:
+    - {function: GPIO_A92, select: 0}
+    - {function: I2C3_SCL, select: 1}
+    - {function: USART3_RXD, select: 2}
+    - {function: USART3_CTS, select: 3}
+  PA93:
+    - {function: GPIO_A93, select: 0}
+    - {function: I2C3_SDA, select: 1}
+    - {function: USART3_TXD, select: 2}
+    - {function: USART3_RTS, select: 3}
+  PB00:
+    - {function: GPIO_B0, select: 0}
+    - {function: I2C7_SDA, select: 1}
+    - {function: USART6_RXD, select: 2}
+    - {function: GPTIM3_CH1, select: 5}
+    - {function: LPTIM3_IN, select: 6}
+  PB01:
+    - {function: GPIO_B1, select: 0}
+    - {function: I2C7_SCL, select: 1}
+    - {function: USART6_TXD, select: 2}
+    - {function: GPTIM3_CH2, select: 5}
+    - {function: LPTIM3_OUT, select: 6}
+  PB02:
+    - {function: GPIO_B2, select: 0}
+    - {function: LCDC2_JDI_B1, select: 2}
+    - {function: LCDC2_SPI_TE, select: 3}
+    - {function: LCDC2_JDI_SCLK, select: 4}
+    - {function: GPTIM3_CH3, select: 5}
+    - {function: DBG_DO0, select: 7}
+  PB03:
+    - {function: GPIO_B3, select: 0}
+    - {function: LCDC2_JDI_B2, select: 2}
+    - {function: LCDC2_SPI_DIO1, select: 3}
+    - {function: LCDC2_JDI_SCS, select: 4}
+    - {function: GPTIM3_CH4, select: 5}
+    - {function: USART4_RTS, select: 6}
+    - {function: DBG_DO1, select: 7}
+  PB04:
+    - {function: GPIO_B4, select: 0}
+    - {function: LCDC2_JDI_G2, select: 2}
+    - {function: LCDC2_SPI_DIO2, select: 3}
+    - {function: LCDC2_JDI_DISP, select: 4}
+    - {function: GPTIM4_CH1, select: 5}
+    - {function: USART4_CTS, select: 6}
+    - {function: DBG_DO2, select: 7}
+  PB05:
+    - {function: GPIO_B5, select: 0}
+    - {function: LCDC2_JDI_HCK, select: 2}
+    - {function: LCDC2_SPI_RSTB, select: 3}
+    - {function: LCDC2_JDI_EXTCOMIN, select: 4}
+    - {function: GPTIM4_CH2, select: 5}
+    - {function: USART6_RTS, select: 6}
+    - {function: DBG_DO3, select: 7}
+  PB06:
+    - {function: GPIO_B6, select: 0}
+    - {function: LCDC2_JDI_R2, select: 2}
+    - {function: LCDC2_SPI_DIO3, select: 3}
+    - {function: LCDC2_JDI_SO, select: 4}
+    - {function: GPTIM4_CH3, select: 5}
+    - {function: USART6_CTS, select: 6}
+    - {function: DBG_DO4, select: 7}
+  PB07:
+    - {function: SWCLK, select: 0}
+    - {function: GPIO_B7, select: 1}
+    - {function: USART4_RXD, select: 2}
+    - {function: GPTIM4_CH4, select: 5}
+  PB08:
+    - {function: GPIO_B8, select: 0}
+    - {function: LCDC2_JDI_G1, select: 2}
+    - {function: LCDC2_SPI_CS, select: 3}
+    - {function: GPTIM5_CH1, select: 5}
+    - {function: BT_ACTIVE, select: 6}
+    - {function: DBG_DO5, select: 7}
+  PB09:
+    - {function: GPIO_B9, select: 0}
+    - {function: LCDC2_JDI_R1, select: 2}
+    - {function: LCDC2_SPI_DIO0, select: 3}
+    - {function: USART6_TXD, select: 4}
+    - {function: GPTIM5_CH2, select: 5}
+    - {function: WLAN_ACTIVE, select: 6}
+    - {function: DBG_DO6, select: 7}
+  PB10:
+    - {function: GPIO_B10, select: 0}
+    - {function: LCDC2_JDI_HST, select: 2}
+    - {function: LCDC2_SPI_CLK, select: 3}
+    - {function: USART6_RXD, select: 4}
+    - {function: GPTIM5_CH3, select: 5}
+    - {function: DBG_DO7, select: 7}
+  PB11:
+    - {function: SWDIO, select: 0}
+    - {function: GPIO_B11, select: 1}
+    - {function: USART4_TXD, select: 2}
+    - {function: GPTIM5_CH4, select: 5}
+  PB12:
+    - {function: GPIO_B12, select: 0}
+    - {function: SPI4_CLK, select: 1}
+    - {function: LCDC2_JDI_ENB, select: 2}
+    - {function: I2C7_SCL, select: 3}
+  PB13:
+    - {function: GPIO_B13, select: 0}
+    - {function: USART6_RXD, select: 1}
+    - {function: USART4_CTS, select: 2}
+    - {function: GPTIM3_CH1, select: 5}
+    - {function: DBG_DO8, select: 7}
+  PB14:
+    - {function: GPIO_B14, select: 0}
+    - {function: USART6_TXD, select: 1}
+    - {function: USART4_RTS, select: 2}
+    - {function: GPTIM3_CH2, select: 5}
+    - {function: DBG_DO9, select: 7}
+  PB15:
+    - {function: GPIO_B15, select: 0}
+    - {function: SPI4_DI, select: 1}
+    - {function: LCDC2_JDI_VCK, select: 2}
+    - {function: USART6_CTS, select: 3}
+  PB16:
+    - {function: GPIO_B16, select: 0}
+    - {function: SPI4_DO, select: 1}
+    - {function: LCDC2_JDI_XRST, select: 2}
+    - {function: I2C7_SDA, select: 3}
+    - {function: SPI4_DIO, select: 4}
+  PB17:
+    - {function: GPIO_B17, select: 0}
+    - {function: USART5_RXD, select: 1}
+    - {function: SPI3_CLK, select: 2}
+  PB18:
+    - {function: GPIO_B18, select: 0}
+    - {function: USART5_TXD, select: 1}
+    - {function: SPI3_DI, select: 2}
+  PB19:
+    - {function: GPIO_B19, select: 0}
+    - {function: SPI4_CS, select: 1}
+    - {function: LCDC2_JDI_VST, select: 2}
+    - {function: USART6_RTS, select: 3}
+  PB20:
+    - {function: GPIO_B20, select: 0}
+    - {function: GPTIM3_CH3, select: 5}
+    - {function: EXT_S_TX_EN, select: 6}
+    - {function: DBG_DO0, select: 7}
+  PB21:
+    - {function: GPIO_B21, select: 0}
+    - {function: SPI3_CLK, select: 3}
+    - {function: GPTIM3_CH4, select: 5}
+    - {function: EXT_S_RX_EN, select: 6}
+    - {function: DBG_DO1, select: 7}
+  PB22:
+    - {function: GPIO_B22, select: 0}
+    - {function: SPI3_DO, select: 3}
+    - {function: SPI3_DIO, select: 4}
+    - {function: GPTIM4_CH1, select: 5}
+    - {function: EXT_S_LE_2M, select: 6}
+    - {function: DBG_DO2, select: 7}
+  PB23:
+    - {function: GPIO_B23, select: 0}
+    - {function: USART5_CTS, select: 1}
+    - {function: SPI3_DO, select: 2}
+    - {function: SPI3_DIO, select: 4}
+    - {function: GPTIM4_CH2, select: 5}
+  PB24:
+    - {function: GPIO_B24, select: 0}
+    - {function: I2S3_SDO, select: 3}
+    - {function: GPTIM4_CH3, select: 5}
+    - {function: EXT_S_LE_MODE, select: 6}
+    - {function: DBG_DO10, select: 7}
+  PB25:
+    - {function: GPIO_B25, select: 0}
+    - {function: SPI3_DI, select: 3}
+    - {function: GPTIM4_CH4, select: 5}
+    - {function: EXT_S_TX_BIT0, select: 6}
+    - {function: DBG_DO3, select: 7}
+  PB26:
+    - {function: GPIO_B26, select: 0}
+    - {function: USART5_RTS, select: 1}
+    - {function: SPI3_CS, select: 2}
+    - {function: GPTIM5_CH1, select: 5}
+    - {function: DCTEST0, select: 8}
+  PB27:
+    - {function: GPIO_B27, select: 0}
+    - {function: SPI4_CLK, select: 2}
+    - {function: I2S3_SDI, select: 3}
+    - {function: GPTIM5_CH2, select: 5}
+    - {function: EXT_S_TX_BIT1, select: 6}
+    - {function: DBG_DO11, select: 7}
+    - {function: DCTEST1, select: 8}
+  PB28:
+    - {function: GPIO_B28, select: 0}
+    - {function: I2C6_SCL, select: 1}
+    - {function: USART6_RXD, select: 2}
+    - {function: LPCOMP1_P, select: 8}
+  PB29:
+    - {function: GPIO_B29, select: 0}
+    - {function: I2C6_SDA, select: 1}
+    - {function: USART6_TXD, select: 2}
+    - {function: LPCOMP1_N, select: 8}
+  PB30:
+    - {function: GPIO_B30, select: 0}
+    - {function: SPI4_DO, select: 2}
+    - {function: I2S3_BCK, select: 3}
+    - {function: SPI4_DIO, select: 4}
+    - {function: GPTIM5_CH3, select: 5}
+    - {function: EXT_S_TX_BIT2, select: 6}
+    - {function: DBG_DO12, select: 7}
+    - {function: LPCOMP2_P, select: 8}
+  PB31:
+    - {function: GPIO_B31, select: 0}
+    - {function: SPI4_DI, select: 2}
+    - {function: I2S3_LRCK, select: 3}
+    - {function: AUD_CLK_EXT, select: 4}
+    - {function: GPTIM5_CH4, select: 5}
+    - {function: EXT_S_TX_FLAG, select: 6}
+    - {function: DBG_DO13, select: 7}
+    - {function: LPCOMP2_N, select: 8}
+  PB32:
+    - {function: GPIO_B32, select: 0}
+    - {function: EXT_S_EDR2_MODE, select: 6}
+    - {function: DBG_DO4, select: 7}
+    - {function: GPADC_CH0, select: 8}
+  PB33:
+    - {function: GPIO_B33, select: 0}
+    - {function: LPTIM3_ETR, select: 5}
+    - {function: EXT_S_EDR3_MODE, select: 6}
+    - {function: DBG_DO14, select: 7}
+    - {function: GPADC_CH1, select: 8}
+  PB34:
+    - {function: GPIO_B34, select: 0}
+    - {function: SPI4_CS, select: 2}
+    - {function: I2S3_MCLK, select: 3}
+    - {function: EXT_S_BR_LAST_BIT, select: 6}
+    - {function: DBG_DO15, select: 7}
+    - {function: GPADC_CH2, select: 8}
+  PB35:
+    - {function: GPIO_B35, select: 0}
+    - {function: DBG_CLK, select: 7}
+    - {function: GPADC_CH3, select: 8}
+  PB36:
+    - {function: GPIO_B36, select: 0}
+    - {function: USART4_RXD, select: 1}
+    - {function: GPTIM3_CH1, select: 5}
+    - {function: GPADC_CH4, select: 8}
+  PB37:
+    - {function: GPIO_B37, select: 0}
+    - {function: USART4_TXD, select: 1}
+    - {function: GPTIM3_CH2, select: 5}
+    - {function: GPADC_CH5, select: 8}
+  PB38:
+    - {function: GPIO_B38, select: 0}
+    - {function: USART6_CTS, select: 2}
+    - {function: GPTIM3_CH3, select: 5}
+    - {function: EXT_S_EDR_LAST_BIT, select: 6}
+    - {function: DBG_DO5, select: 7}
+    - {function: GPADC_CH6, select: 8}
+  PB39:
+    - {function: GPIO_B39, select: 0}
+    - {function: USART6_RTS, select: 2}
+    - {function: GPTIM3_CH4, select: 5}
+    - {function: EXT_S_EDR_BIT_FLAG, select: 6}
+    - {function: DBG_DO6, select: 7}
+    - {function: GPADC_CH7, select: 8}
+  PB40:
+    - {function: GPIO_B40, select: 0}
+    - {function: SPI3_CS, select: 3}
+    - {function: GPTIM3_ETR, select: 5}
+    - {function: EXT_S_RAMP_UP_IND, select: 6}
+    - {function: DBG_DO7, select: 7}
+    - {function: SDADC_CH0, select: 8}
+  PB41:
+    - {function: GPIO_B41, select: 0}
+    - {function: WLAN_ACTIVE, select: 2}
+    - {function: I2S3_SDO, select: 4}
+    - {function: GPTIM4_CH1, select: 5}
+    - {function: EXT_S_EDR_EN, select: 6}
+    - {function: DBG_DO8, select: 7}
+    - {function: SDADC_CH1, select: 8}
+  PB42:
+    - {function: GPIO_B42, select: 0}
+    - {function: I2S3_SDI, select: 4}
+    - {function: GPTIM4_CH2, select: 5}
+    - {function: EXT_S_SYNC_CLK, select: 6}
+    - {function: DBG_DO9, select: 7}
+    - {function: SDADC_CH2, select: 8}
+  PB43:
+    - {function: GPIO_B43, select: 0}
+    - {function: USART4_CTS, select: 2}
+    - {function: USART5_CTS, select: 3}
+    - {function: I2S3_BCK, select: 4}
+    - {function: GPTIM4_CH3, select: 5}
+    - {function: EXT_S_SYNC_DAT, select: 6}
+    - {function: DBG_DO10, select: 7}
+    - {function: SDADC_CH3, select: 8}
+  PB44:
+    - {function: GPIO_B44, select: 0}
+    - {function: USART4_RTS, select: 2}
+    - {function: USART5_RTS, select: 3}
+    - {function: I2S3_LRCK, select: 4}
+    - {function: GPTIM4_CH4, select: 5}
+    - {function: EXT_S_SCLK, select: 6}
+    - {function: DBG_DO11, select: 7}
+    - {function: ACTEST0, select: 8}
+  PB45:
+    - {function: GPIO_B45, select: 0}
+    - {function: BT_ACTIVE, select: 2}
+    - {function: GPTIM4_ETR, select: 5}
+    - {function: DBG_DO12, select: 7}
+    - {function: ACTEST1, select: 8}
+  PB46:
+    - {function: GPIO_B46, select: 0}
+    - {function: AUD_CLK_EXT, select: 3}
+    - {function: I2S3_MCLK, select: 4}
+    - {function: GPTIM5_CH1, select: 5}
+    - {function: EXT_S_SDO, select: 6}
+    - {function: DBG_DO13, select: 7}
+  PB47:
+    - {function: GPIO_B47, select: 0}
+    - {function: I2C5_SDA, select: 1}
+    - {function: USART6_RXD, select: 2}
+    - {function: GPTIM5_CH2, select: 5}
+  PB48:
+    - {function: GPIO_B48, select: 0}
+    - {function: I2C5_SCL, select: 1}
+    - {function: USART6_TXD, select: 2}
+    - {function: GPTIM5_CH3, select: 5}
+  PB49:
+    - {function: GPIO_B49, select: 0}
+    - {function: USART6_CTS, select: 2}
+    - {function: USART6_RXD, select: 3}
+    - {function: GPTIM5_CH4, select: 5}
+    - {function: EXT_S_RX_BIT0, select: 6}
+    - {function: DBG_DO14, select: 7}
+  PB50:
+    - {function: GPIO_B50, select: 0}
+    - {function: USART6_RTS, select: 2}
+    - {function: USART6_TXD, select: 3}
+    - {function: GPTIM5_ETR, select: 5}
+    - {function: EXT_S_RX_BIT1, select: 6}
+    - {function: DBG_DO15, select: 7}
+  PB51:
+    - {function: GPIO_B51, select: 0}
+    - {function: PMIC_SDA, select: 1}
+    - {function: USART4_CTS, select: 2}
+    - {function: USART5_CTS, select: 3}
+    - {function: LPCOMP1_OUT, select: 5}
+    - {function: EXT_S_RX_BIT2, select: 6}
+  PB52:
+    - {function: GPIO_B52, select: 0}
+    - {function: PMIC_SCLK, select: 1}
+    - {function: USART4_RTS, select: 2}
+    - {function: USART5_RTS, select: 3}
+    - {function: LPCOMP2_OUT, select: 5}
+    - {function: EXT_S_RX_FLAG, select: 6}
+  PB53:
+    - {function: GPIO_B53, select: 0}
+    - {function: DBG_CLK, select: 7}
+  PB54:
+    - {function: GPIO_B54, select: 0}
+    - {function: WKUP_PIN0, select: 8}
+  PB55:
+    - {function: GPIO_B55, select: 0}
+    - {function: WKUP_PIN1, select: 8}
+  PB56:
+    - {function: GPIO_B56, select: 0}
+    - {function: USART4_CTS, select: 2}
+    - {function: SPI3_CLK, select: 3}
+    - {function: WKUP_PIN2, select: 8}
+  PB57:
+    - {function: GPIO_B57, select: 0}
+    - {function: USART4_RTS, select: 2}
+    - {function: SPI3_DO, select: 3}
+    - {function: SPI3_DIO, select: 4}
+    - {function: WKUP_PIN3, select: 8}
+  PB58:
+    - {function: GPIO_B58, select: 0}
+    - {function: USART6_RXD, select: 2}
+    - {function: SPI3_DI, select: 3}
+    - {function: WKUP_PIN4, select: 8}
+  PB59:
+    - {function: GPIO_B59, select: 0}
+    - {function: USART6_TXD, select: 2}
+    - {function: SPI3_CS, select: 3}
+    - {function: WKUP_PIN5, select: 8}
+  SA00:
+    - {function: SAIO_D0, select: 0}
+    - {function: MPI1_DIO0, select: 1}
+  SA01:
+    - {function: SAIO_D1, select: 0}
+    - {function: MPI1_DIO1, select: 1}
+    - {function: MPI1_CS, select: 3}
+  SA02:
+    - {function: SAIO_D2, select: 0}
+    - {function: MPI1_DIO2, select: 1}
+    - {function: MPI1_DIO1, select: 3}
+  SA03:
+    - {function: SAIO_D3, select: 0}
+    - {function: MPI1_DIO3, select: 1}
+    - {function: MPI1_DIO2, select: 3}
+  SA04:
+    - {function: SAIO_D4, select: 0}
+    - {function: MPI1_DIO4, select: 1}
+    - {function: MPI1_DIO0, select: 2}
+  SA05:
+    - {function: SAIO_D5, select: 0}
+    - {function: MPI1_DIO5, select: 1}
+    - {function: MPI1_DIO1, select: 2}
+    - {function: MPI1_DIO2, select: 3}
+  SA06:
+    - {function: SAIO_D6, select: 0}
+    - {function: MPI1_DIO6, select: 1}
+    - {function: MPI1_DIO2, select: 2}
+    - {function: MPI1_DIO1, select: 3}
+  SA07:
+    - {function: SAIO_D7, select: 0}
+    - {function: MPI1_DIO7, select: 1}
+    - {function: MPI1_DIO3, select: 2}
+    - {function: MPI1_CS, select: 3}
+  SA08:
+    - {function: SAIO_D8, select: 0}
+    - {function: MPI1_DQS0, select: 1}
+  SA09:
+    - {function: SAIO_D9, select: 0}
+    - {function: MPI1_CLK, select: 1}
+    - {function: MPI1_CS, select: 2}
+  SA10:
+    - {function: SAIO_D10, select: 0}
+    - {function: MPI1_CS, select: 1}
+    - {function: MPI1_CLK, select: 2}
+    - {function: MPI1_DIO0, select: 3}
+  SA11:
+    - {function: SAIO_D11, select: 0}
+    - {function: MPI1_DIO8, select: 1}
+    - {function: MPI1_DIO4, select: 2}
+    - {function: MPI1_CLK, select: 3}
+  SA12:
+    - {function: SAIO_D12, select: 0}
+    - {function: MPI1_DIO9, select: 1}
+    - {function: MPI1_DIO5, select: 2}
+    - {function: MPI1_DIO3, select: 3}
+  SA13:
+    - {function: SAIO_D13, select: 0}
+    - {function: MPI1_DIO10, select: 1}
+    - {function: MPI1_DIO6, select: 2}
+    - {function: MPI1_CLK, select: 3}
+  SA14:
+    - {function: SAIO_D14, select: 0}
+    - {function: MPI1_DIO11, select: 1}
+    - {function: MPI1_DIO7, select: 2}
+    - {function: MPI1_DIO0, select: 3}
+  SA15:
+    - {function: SAIO_D15, select: 0}
+    - {function: MPI1_DIO12, select: 1}
+    - {function: MPI1_DQS0, select: 2}
+  SA16:
+    - {function: SAIO_D16, select: 0}
+    - {function: MPI1_DIO13, select: 1}
+  SA17:
+    - {function: SAIO_D17, select: 0}
+    - {function: MPI1_DIO14, select: 1}
+  SA18:
+    - {function: SAIO_D18, select: 0}
+    - {function: MPI1_DIO15, select: 1}
+  SA19:
+    - {function: SAIO_D19, select: 0}
+    - {function: MPI1_DQS1, select: 1}
+  SB00:
+    - {function: SBIO_D0, select: 0}
+    - {function: MPI2_DIO0, select: 1}
+  SB01:
+    - {function: SBIO_D1, select: 0}
+    - {function: MPI2_DIO1, select: 1}
+  SB02:
+    - {function: SBIO_D2, select: 0}
+    - {function: MPI2_DIO2, select: 1}
+  SB03:
+    - {function: SBIO_D3, select: 0}
+    - {function: MPI2_DIO3, select: 1}
+  SB04:
+    - {function: SBIO_D4, select: 0}
+    - {function: MPI2_DIO4, select: 1}
+    - {function: MPI2_DIO0, select: 2}
+  SB05:
+    - {function: SBIO_D5, select: 0}
+    - {function: MPI2_DIO5, select: 1}
+    - {function: MPI2_DIO1, select: 2}
+  SB06:
+    - {function: SBIO_D6, select: 0}
+    - {function: MPI2_DIO6, select: 1}
+    - {function: MPI2_DIO2, select: 2}
+  SB07:
+    - {function: SBIO_D7, select: 0}
+    - {function: MPI2_DIO7, select: 1}
+    - {function: MPI2_DIO3, select: 2}
+  SB08:
+    - {function: SBIO_D8, select: 0}
+    - {function: MPI2_DQS0, select: 1}
+  SB09:
+    - {function: SBIO_D9, select: 0}
+    - {function: MPI2_CLK, select: 1}
+    - {function: MPI2_CS, select: 2}
+  SB10:
+    - {function: SBIO_D10, select: 0}
+    - {function: MPI2_CS, select: 1}
+    - {function: MPI2_CLK, select: 2}
+  SB11:
+    - {function: SBIO_D11, select: 0}
+    - {function: MPI2_DIO8, select: 1}
+    - {function: MPI2_DIO4, select: 2}
+  SB12:
+    - {function: SBIO_D12, select: 0}
+    - {function: MPI2_DIO9, select: 1}
+    - {function: MPI2_DIO5, select: 2}
+  SB13:
+    - {function: SBIO_D13, select: 0}
+    - {function: MPI2_DIO10, select: 1}
+    - {function: MPI2_DIO6, select: 2}
+  SB14:
+    - {function: SBIO_D14, select: 0}
+    - {function: MPI2_DIO11, select: 1}
+    - {function: MPI2_DIO7, select: 2}
+  SB15:
+    - {function: SBIO_D15, select: 0}
+    - {function: MPI2_DIO12, select: 1}
+    - {function: MPI2_DQS0, select: 2}
+  SB16:
+    - {function: SBIO_D16, select: 0}
+    - {function: MPI2_DIO13, select: 1}
+  SB17:
+    - {function: SBIO_D17, select: 0}
+    - {function: MPI2_DIO14, select: 1}
+  SB18:
+    - {function: SBIO_D18, select: 0}
+    - {function: MPI2_DIO15, select: 1}
+  SB19:
+    - {function: SBIO_D19, select: 0}
+    - {function: MPI2_DQS1, select: 1}
+  SC00:
+    - {function: MPI5_DIO2, select: 0}
+    - {function: SCIO_D0, select: 1}
+  SC01:
+    - {function: MPI5_DIO1, select: 0}
+    - {function: SCIO_D1, select: 1}
+  SC02:
+    - {function: MPI5_CS, select: 0}
+    - {function: SCIO_D2, select: 1}
+  SC03:
+    - {function: MPI5_DIO0, select: 0}
+    - {function: SCIO_D3, select: 1}
+  SC04:
+    - {function: MPI5_DIO3, select: 0}
+    - {function: SCIO_D4, select: 1}
+  SC05:
+    - {function: MPI5_CLK, select: 0}
+    - {function: SCIO_D5, select: 1}

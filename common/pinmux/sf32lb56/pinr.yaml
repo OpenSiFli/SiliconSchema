@@ -1,0 +1,196 @@
+# SF32LB56 series PINR register definitions
+# Generated from temp/56x_hpsys_cfg_regmap.xlsx and temp/56x_lpsys_cfg_regmap.xlsx
+#
+# PINR (Pin Router) is used to route I2C/UART/TIM signals to specific pads
+#
+# owner is optional; default is hpsys. Use owner: lpsys for registers located in LPSYS_CFG.
+
+registers:
+  I2C1_PINR:
+    offset: 0x60
+    fields:
+      SDA: {bits: [14, 8]}
+      SCL: {bits: [6, 0]}
+
+  I2C2_PINR:
+    offset: 0x64
+    fields:
+      SDA: {bits: [14, 8]}
+      SCL: {bits: [6, 0]}
+
+  I2C3_PINR:
+    offset: 0x68
+    fields:
+      SDA: {bits: [14, 8]}
+      SCL: {bits: [6, 0]}
+
+  I2C4_PINR:
+    offset: 0x6C
+    fields:
+      SDA: {bits: [14, 8]}
+      SCL: {bits: [6, 0]}
+
+  I2C5_PINR:
+    owner: lpsys
+    offset: 0x40
+    fields:
+      SDA: {bits: [13, 8]}
+      SCL: {bits: [5, 0]}
+
+  I2C6_PINR:
+    owner: lpsys
+    offset: 0x44
+    fields:
+      SDA: {bits: [13, 8]}
+      SCL: {bits: [5, 0]}
+
+  I2C7_PINR:
+    owner: lpsys
+    offset: 0x48
+    fields:
+      SDA: {bits: [13, 8]}
+      SCL: {bits: [5, 0]}
+
+  USART1_PINR:
+    offset: 0x70
+    fields:
+      CTS: {bits: [30, 24]}
+      RTS: {bits: [22, 16]}
+      RXD: {bits: [14, 8]}
+      TXD: {bits: [6, 0]}
+
+  USART2_PINR:
+    offset: 0x74
+    fields:
+      CTS: {bits: [30, 24]}
+      RTS: {bits: [22, 16]}
+      RXD: {bits: [14, 8]}
+      TXD: {bits: [6, 0]}
+
+  USART3_PINR:
+    offset: 0x78
+    fields:
+      CTS: {bits: [30, 24]}
+      RTS: {bits: [22, 16]}
+      RXD: {bits: [14, 8]}
+      TXD: {bits: [6, 0]}
+
+  USART4_PINR:
+    owner: lpsys
+    offset: 0x4C
+    fields:
+      CTS: {bits: [29, 24]}
+      RTS: {bits: [21, 16]}
+      RXD: {bits: [13, 8]}
+      TXD: {bits: [5, 0]}
+
+  USART5_PINR:
+    owner: lpsys
+    offset: 0x50
+    fields:
+      CTS: {bits: [29, 24]}
+      RTS: {bits: [21, 16]}
+      RXD: {bits: [13, 8]}
+      TXD: {bits: [5, 0]}
+
+  USART6_PINR:
+    owner: lpsys
+    offset: 0x54
+    fields:
+      CTS: {bits: [29, 24]}
+      RTS: {bits: [21, 16]}
+      RXD: {bits: [13, 8]}
+      TXD: {bits: [5, 0]}
+
+  GPTIM1_PINR:
+    offset: 0x7C
+    fields:
+      CH4: {bits: [30, 24]}
+      CH3: {bits: [22, 16]}
+      CH2: {bits: [14, 8]}
+      CH1: {bits: [6, 0]}
+
+  GPTIM2_PINR:
+    offset: 0x80
+    fields:
+      CH4: {bits: [30, 24]}
+      CH3: {bits: [22, 16]}
+      CH2: {bits: [14, 8]}
+      CH1: {bits: [6, 0]}
+
+  GPTIM3_PINR:
+    owner: lpsys
+    offset: 0x58
+    fields:
+      CH4: {bits: [29, 24]}
+      CH3: {bits: [21, 16]}
+      CH2: {bits: [13, 8]}
+      CH1: {bits: [5, 0]}
+
+  GPTIM4_PINR:
+    owner: lpsys
+    offset: 0x5C
+    fields:
+      CH4: {bits: [29, 24]}
+      CH3: {bits: [21, 16]}
+      CH2: {bits: [13, 8]}
+      CH1: {bits: [5, 0]}
+
+  GPTIM5_PINR:
+    owner: lpsys
+    offset: 0x60
+    fields:
+      CH4: {bits: [29, 24]}
+      CH3: {bits: [21, 16]}
+      CH2: {bits: [13, 8]}
+      CH1: {bits: [5, 0]}
+
+  ETR_PINR:
+    offset: 0x84
+    fields:
+      GPTIM2_ETR: {bits: [14, 8]}
+      GPTIM1_ETR: {bits: [6, 0]}
+
+  ETR_PINR2:
+    owner: lpsys
+    offset: 0x64
+    fields:
+      GPTIM5_ETR: {bits: [21, 16]}
+      GPTIM4_ETR: {bits: [13, 8]}
+      GPTIM3_ETR: {bits: [5, 0]}
+
+  LPTIM1_PINR:
+    offset: 0x88
+    fields:
+      ETR: {bits: [22, 16]}
+      OUT: {bits: [14, 8]}
+      IN: {bits: [6, 0]}
+
+  LPTIM3_PINR:
+    owner: lpsys
+    offset: 0x68
+    fields:
+      ETR: {bits: [21, 16]}
+      OUT: {bits: [13, 8]}
+      IN: {bits: [5, 0]}
+
+# Peripheral signal mapping for expanding pinmux pinr groups
+peripherals:
+  I2C:
+    instances: [I2C1, I2C2, I2C3, I2C4, I2C5, I2C6, I2C7]
+    signals: [SCL, SDA]
+
+  UART:
+    instances: [USART1, USART2, USART3, USART4, USART5, USART6]
+    signals: [TXD, RXD, RTS, CTS]
+
+  TIM:
+    instances: [GPTIM1, GPTIM2, GPTIM3, GPTIM4, GPTIM5, LPTIM1, LPTIM3]
+    signals_by_instance:
+      GPTIM1: [CH1, CH2, CH3, CH4, ETR]
+      GPTIM2: [CH1, CH2, CH3, CH4, ETR]
+      GPTIM3: [CH1, CH2, CH3, CH4, ETR]
+      GPTIM4: [CH1, CH2, CH3, CH4, ETR]
+      GPTIM5: [CH1, CH2, CH3, CH4, ETR]
+      LPTIM1: [IN, OUT, ETR]
+      LPTIM3: [IN, OUT, ETR]
