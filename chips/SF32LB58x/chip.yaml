@@ -1,0 +1,665 @@
+# SF32LB58x 系列芯片定义
+# pinmux 配置从 common/pinmux/sf32lb58/pinmux.yaml 合并
+# 引脚定义来自 DS5801-SF32LB58x 芯片技术规格书 V1.8.3 表 5-2/5-3/5-4
+
+schema_version: 0.0.1
+model_id: SF32LB58x
+lifecycle: production
+shared_pinmux: sf32lb58
+
+docs:
+  - datasheet:
+      zh: "https://downloads.sifli.com/user%20manual/DS5801-SF32LB58x-%E8%8A%AF%E7%89%87%E6%8A%80%E6%9C%AF%E8%A7%84%E6%A0%BC%E4%B9%A6%20V1p8p3.pdf"
+      en: "https://downloads.sifli.com/user%20manual/DS5801-SF32LB58x-Datasheet%20V1p8p3.pdf"
+
+# GPIO Pads（pinmux 从共享文件合并）
+pads:
+  PA00: {type: bidirectional}
+  PA01: {type: bidirectional}
+  PA02: {type: bidirectional}
+  PA03: {type: bidirectional}
+  PA04: {type: bidirectional}
+  PA05: {type: bidirectional}
+  PA06: {type: bidirectional}
+  PA07: {type: bidirectional}
+  PA08: {type: bidirectional}
+  PA09: {type: bidirectional}
+  PA10: {type: bidirectional}
+  PA11: {type: bidirectional}
+  PA12: {type: bidirectional}
+  PA13: {type: bidirectional}
+  PA14: {type: bidirectional}
+  PA15: {type: bidirectional}
+  PA16: {type: bidirectional}
+  PA17: {type: bidirectional}
+  PA18: {type: bidirectional}
+  PA19: {type: bidirectional}
+  PA20: {type: bidirectional}
+  PA21: {type: bidirectional}
+  PA22: {type: bidirectional}
+  PA23: {type: bidirectional}
+  PA24: {type: bidirectional}
+  PA25: {type: bidirectional}
+  PA26: {type: bidirectional}
+  PA27: {type: bidirectional}
+  PA28: {type: bidirectional}
+  PA29: {type: bidirectional}
+  PA30: {type: bidirectional}
+  PA31: {type: bidirectional}
+  PA32: {type: bidirectional}
+  PA33: {type: bidirectional}
+  PA34: {type: bidirectional}
+  PA35: {type: bidirectional}
+  PA36: {type: bidirectional}
+  PA37: {type: bidirectional}
+  PA38: {type: bidirectional}
+  PA39: {type: bidirectional}
+  PA40: {type: bidirectional}
+  PA41: {type: bidirectional}
+  PA42: {type: bidirectional}
+  PA43: {type: bidirectional}
+  PA44: {type: bidirectional}
+  PA45: {type: bidirectional}
+  PA46: {type: bidirectional}
+  PA47: {type: bidirectional}
+  PA48: {type: bidirectional}
+  PA49: {type: bidirectional}
+  PA50: {type: bidirectional}
+  PA51: {type: bidirectional}
+  PA52: {type: bidirectional}
+  PA53: {type: bidirectional}
+  PA54: {type: bidirectional}
+  PA55: {type: bidirectional}
+  PA56: {type: bidirectional}
+  PA57: {type: bidirectional}
+  PA58: {type: bidirectional}
+  PA59: {type: bidirectional}
+  PA60: {type: bidirectional}
+  PA61: {type: bidirectional}
+  PA62: {type: bidirectional}
+  PA63: {type: bidirectional}
+  PA64: {type: bidirectional}
+  PA65: {type: bidirectional}
+  PA66: {type: bidirectional}
+  PA67: {type: bidirectional}
+  PA68: {type: bidirectional}
+  PA69: {type: bidirectional}
+  PA70: {type: bidirectional}
+  PA71: {type: bidirectional}
+  PA72: {type: bidirectional}
+  PA73: {type: bidirectional}
+  PA74: {type: bidirectional}
+  PA75: {type: bidirectional}
+  PA76: {type: bidirectional}
+  PA77: {type: bidirectional}
+  PA78: {type: bidirectional}
+  PA79: {type: bidirectional}
+  PA80: {type: bidirectional}
+  PA81: {type: bidirectional}
+  PA82: {type: bidirectional}
+  PA83: {type: bidirectional}
+  PA84: {type: bidirectional}
+  PA85: {type: bidirectional}
+  PA86: {type: bidirectional}
+  PA87: {type: bidirectional}
+  PA88: {type: bidirectional}
+  PA89: {type: bidirectional}
+  PA90: {type: bidirectional}
+  PA91: {type: bidirectional}
+  PA92: {type: bidirectional}
+  PA93: {type: bidirectional}
+  PB00: {type: bidirectional}
+  PB01: {type: bidirectional}
+  PB02: {type: bidirectional}
+  PB03: {type: bidirectional}
+  PB04: {type: bidirectional}
+  PB05: {type: bidirectional}
+  PB06: {type: bidirectional}
+  PB07: {type: bidirectional}
+  PB08: {type: bidirectional}
+  PB09: {type: bidirectional}
+  PB10: {type: bidirectional}
+  PB11: {type: bidirectional}
+  PB12: {type: bidirectional}
+  PB13: {type: bidirectional}
+  PB14: {type: bidirectional}
+  PB15: {type: bidirectional}
+  PB16: {type: bidirectional}
+  PB17: {type: bidirectional}
+  PB18: {type: bidirectional}
+  PB19: {type: bidirectional}
+  PB20: {type: bidirectional}
+  PB21: {type: bidirectional}
+  PB22: {type: bidirectional}
+  PB23: {type: bidirectional}
+  PB24: {type: bidirectional}
+  PB25: {type: bidirectional}
+  PB26: {type: bidirectional}
+  PB27: {type: bidirectional}
+  PB28: {type: bidirectional}
+  PB29: {type: bidirectional}
+  PB30: {type: bidirectional}
+  PB31: {type: bidirectional}
+  PB32: {type: bidirectional}
+  PB33: {type: bidirectional}
+  PB34: {type: bidirectional}
+  PB35: {type: bidirectional}
+  PB36: {type: bidirectional}
+  PB37: {type: bidirectional}
+  PB38: {type: bidirectional}
+  PB39: {type: bidirectional}
+  PB40: {type: bidirectional}
+  PB41: {type: bidirectional}
+  PB42: {type: bidirectional}
+  PB43: {type: bidirectional}
+  PB44: {type: bidirectional}
+  PB45: {type: bidirectional}
+  PB46: {type: bidirectional}
+  PB47: {type: bidirectional}
+  PB48: {type: bidirectional}
+  PB49: {type: bidirectional}
+  PB50: {type: bidirectional}
+  PB51: {type: bidirectional}
+  PB52: {type: bidirectional}
+  PB53: {type: bidirectional}
+  PB54: {type: bidirectional}
+  PB55: {type: bidirectional}
+  PB56: {type: bidirectional}
+  PB57: {type: bidirectional}
+  PB58: {type: bidirectional}
+  PB59: {type: bidirectional}
+
+  # Dedicated pads
+  ADC1N:
+    type: input
+    description: "ADC1 negative input"
+  ADC1P:
+    type: input
+    description: "ADC1 positive input"
+  ADC2N:
+    type: input
+    description: "ADC2 negative input"
+  ADC2P:
+    type: input
+    description: "ADC2 positive input"
+  AUD_VREF:
+    type: input
+    description: "Audio reference voltage input (VREF)"
+  AUD_VREF_GND:
+    type: power_input
+    description: "Audio reference ground"
+  AVDD18_DSI:
+    type: power_input
+    description: "1.8 V DSI supply input"
+  AVDD33_ANA:
+    type: power_input
+    description: "3.3 V analog supply input"
+  AVDD33_AUD:
+    type: power_input
+    description: "3.3 V audio analog supply input"
+  AVDD33_USB:
+    type: power_input
+    description: "3.3 V USB analog supply input"
+  AVDD_BRF:
+    type: power_input
+    description: "RF analog supply input"
+  AVSS33_ANA:
+    type: power_input
+    description: "3.3 V analog ground"
+  AVSS33_AUD:
+    type: power_input
+    description: "3.3 V audio ground"
+  AVSS_BB:
+    type: power_input
+    description: "RF ground"
+  AVSS_CAU:
+    type: power_input
+    description: "Ground"
+  AVSS_DSI:
+    type: power_input
+    description: "DSI ground"
+  AVSS_RRF:
+    type: power_input
+    description: "RF ground"
+  AVSS_TRF:
+    type: power_input
+    description: "RF ground"
+  AVSS_TRF2:
+    type: power_input
+    description: "RF ground"
+  AVSS_VCO:
+    type: power_input
+    description: "RF ground"
+  BOOT_MODE:
+    type: input
+    description: "Boot mode select"
+  BRF_ANT:
+    type: bidirectional
+    description: "Bluetooth RF antenna port"
+  DAC1N:
+    type: output
+    description: "DAC1 differential output (N)"
+  DAC1P:
+    type: output
+    description: "DAC1 differential output (P)"
+  DAC2N:
+    type: output
+    description: "DAC2 differential output (N)"
+  DAC2P:
+    type: output
+    description: "DAC2 differential output (P)"
+  DSI_CLKN:
+    type: bidirectional
+    description: "DSI differential clock (N)"
+  DSI_CLKP:
+    type: bidirectional
+    description: "DSI differential clock (P)"
+  DSI_D0N:
+    type: bidirectional
+    description: "DSI lane 0 (N)"
+  DSI_D0P:
+    type: bidirectional
+    description: "DSI lane 0 (P)"
+  DSI_D1N:
+    type: bidirectional
+    description: "DSI lane 1 (N)"
+  DSI_D1P:
+    type: bidirectional
+    description: "DSI lane 1 (P)"
+  DSI_REXT:
+    type: output
+    description: "DSI REXT resistor pin"
+  GPADC_VREFN:
+    type: power_input
+    description: "GPADC reference ground (VREFN)"
+  GPADC_VREFP:
+    type: input
+    description: "GPADC reference voltage input (VREFP)"
+  HPSYS_LDO_VOUT:
+    type: power_output
+    description: "HPSYS LDO output (external capacitor)"
+  LPMU_VDD07_RET:
+    type: power_output
+    description: "Retention LDO output (external capacitor)"
+  LPMU_VDD11_RTC:
+    type: power_output
+    description: "RTC LDO output (external capacitor)"
+  MIC_BIAS:
+    type: power_output
+    description: "Microphone bias output"
+  PBR00:
+    type: bidirectional
+    description: "Always-on GPIO (PBR0)"
+  PBR01:
+    type: bidirectional
+    description: "Always-on GPIO (PBR1)"
+  PBR02:
+    type: bidirectional
+    description: "Always-on GPIO (PBR2)"
+  PBR03:
+    type: bidirectional
+    description: "Always-on GPIO (PBR3)"
+  PBR04:
+    type: bidirectional
+    description: "Always-on GPIO (PBR4)"
+  PBR05:
+    type: bidirectional
+    description: "Always-on GPIO (PBR5)"
+  PMU_BUCK1_VOUT:
+    type: power_input
+    description: "Buck1 feedback input"
+  PMU_BUCK1_VSW:
+    type: bidirectional
+    description: "Buck1 switching node (LX)"
+  PMU_BUCK2_VOUT:
+    type: power_input
+    description: "Buck2 feedback input"
+  PMU_BUCK2_VSW:
+    type: bidirectional
+    description: "Buck2 switching node (LX)"
+  PVDD_PMU1:
+    type: power_input
+    description: "PMU supply input (PVDD_PMU1)"
+  PVDD_PMU2:
+    type: power_input
+    description: "PMU supply input (PVDD_PMU2)"
+  PVSS_PMU1:
+    type: power_input
+    description: "PMU ground (PVSS_PMU1)"
+  PVSS_PMU2:
+    type: power_input
+    description: "PMU ground (PVSS_PMU2)"
+  RSTN:
+    type: input
+    description: "Reset (active low) input"
+  SDMADC_INPUT:
+    type: input
+    description: "SDMADC input"
+  SDMADC_VREF:
+    type: input
+    description: "SDMADC reference voltage input (VREF)"
+  SDMADC_VSS_VREF:
+    type: power_input
+    description: "SDMADC reference ground"
+  USB2_DN:
+    type: bidirectional
+    description: "USB2 D-"
+  USB2_DP:
+    type: bidirectional
+    description: "USB2 D+"
+  USB2_REXT:
+    type: output
+    description: "USB2 REXT resistor pin"
+  VDDIOA:
+    type: power_input
+    description: "GPIOA bank supply input (PA12~PA93)"
+  VDDIOA2:
+    type: power_input
+    description: "GPIOA bank supply input (PA0~PA11)"
+  VDDIOB:
+    type: power_input
+    description: "GPIOB/PBR bank supply input"
+  VDDIOSA:
+    type: power_input
+    description: "SiP-A I/O supply input"
+  VDDIOSB:
+    type: power_input
+    description: "SiP-B I/O supply input"
+  VDDIOSC:
+    type: power_input
+    description: "SiP-C I/O supply input"
+  VDD_EXT:
+    type: power_input
+    description: "External VDD supply input"
+  VSS:
+    type: power_input
+    description: "Ground"
+  XTAL32K_XI:
+    type: input
+    description: "32 kHz crystal input"
+  XTAL32K_XO:
+    type: output
+    description: "32 kHz crystal output"
+  XTAL48M_XI:
+    type: input
+    description: "48 MHz crystal input"
+  XTAL48M_XO:
+    type: output
+    description: "48 MHz crystal output"
+
+variants:
+  - part_number: SF32LB583VCC36
+    description: "8MB x8 PSRAM + 8MB x8 PSRAM + 1MB NOR Flash"
+    package: SiFli_BGA-256_8.5x6.5mm_Layout21x16_P0.4mm
+    pins: &SF32LB58x_BGA256_PINS
+      - {number: "A1", pad: VSS}
+      - {number: "A2", pad: PMU_BUCK2_VSW}
+      - {number: "A3", pad: VSS}
+      - {number: "A4", pad: VSS}
+      - {number: "A6", pad: XTAL32K_XO}
+      - {number: "A8", pad: PA71}
+      - {number: "A9", pad: PA74}
+      - {number: "A11", pad: PA87}
+      - {number: "A12", pad: PBR05}
+      - {number: "A14", pad: PBR02}
+      - {number: "A15", pad: PBR00}
+      - {number: "A17", pad: XTAL48M_XI}
+      - {number: "A18", pad: XTAL48M_XO}
+      - {number: "A19", pad: PB44}
+      - {number: "A20", pad: PB45}
+      - {number: "A21", pad: VSS}
+      - {number: "B1", pad: PMU_BUCK2_VOUT}
+      - {number: "B2", pad: PVDD_PMU1}
+      - {number: "B3", pad: PVDD_PMU2}
+      - {number: "B4", pad: VDD_EXT}
+      - {number: "B5", pad: VDD_EXT}
+      - {number: "B6", pad: VSS}
+      - {number: "B7", pad: XTAL32K_XI}
+      - {number: "B8", pad: PA72}
+      - {number: "B9", pad: PA73}
+      - {number: "B10", pad: PA80}
+      - {number: "B11", pad: PA85}
+      - {number: "B12", pad: PBR04}
+      - {number: "B13", pad: PBR03}
+      - {number: "B14", pad: PBR01}
+      - {number: "B15", pad: PB53}
+      - {number: "B16", pad: PB47}
+      - {number: "B17", pad: AVSS_CAU}
+      - {number: "B18", pad: AVSS_BB}
+      - {number: "B19", pad: PB46}
+      - {number: "B20", pad: AVSS_RRF}
+      - {number: "B21", pad: AVSS_RRF}
+      - {number: "C1", pad: PMU_BUCK1_VSW}
+      - {number: "C2", pad: PVSS_PMU1}
+      - {number: "C3", pad: PVSS_PMU2}
+      - {number: "C4", pad: LPMU_VDD07_RET}
+      - {number: "C5", pad: LPMU_VDD11_RTC}
+      - {number: "C7", pad: PA66}
+      - {number: "C10", pad: PA81}
+      - {number: "C11", pad: PA89}
+      - {number: "C14", pad: PB54}
+      - {number: "C15", pad: PB55}
+      - {number: "C17", pad: PB48}
+      - {number: "C19", pad: PB49}
+      - {number: "C20", pad: AVSS_VCO}
+      - {number: "C21", pad: BRF_ANT}
+      - {number: "D1", pad: PMU_BUCK1_VOUT}
+      - {number: "D2", pad: HPSYS_LDO_VOUT}
+      - {number: "D4", pad: RSTN}
+      - {number: "D5", pad: PA64}
+      - {number: "D6", pad: PA65}
+      - {number: "D7", pad: PA67}
+      - {number: "D9", pad: PA75}
+      - {number: "D10", pad: PA79}
+      - {number: "D12", pad: PA91}
+      - {number: "D14", pad: PB57}
+      - {number: "D15", pad: PB58}
+      - {number: "D16", pad: PB56}
+      - {number: "D17", pad: PB52}
+      - {number: "D18", pad: PB51}
+      - {number: "D19", pad: PB50}
+      - {number: "D20", pad: AVSS_TRF}
+      - {number: "D21", pad: AVSS_TRF}
+      - {number: "E2", pad: PA63}
+      - {number: "E3", pad: PA60}
+      - {number: "E4", pad: PA59}
+      - {number: "E5", pad: PA58}
+      - {number: "E6", pad: BOOT_MODE}
+      - {number: "E7", pad: PA68}
+      - {number: "E8", pad: PA69}
+      - {number: "E9", pad: PA76}
+      - {number: "E10", pad: PA78}
+      - {number: "E11", pad: PA83}
+      - {number: "E12", pad: PA84}
+      - {number: "E13", pad: PA90}
+      - {number: "E14", pad: PA93}
+      - {number: "E15", pad: PB59}
+      - {number: "E17", pad: VDDIOB}
+      - {number: "E19", pad: VSS}
+      - {number: "E20", pad: AVDD_BRF}
+      - {number: "E21", pad: AVSS_TRF2}
+      - {number: "F1", pad: PA61}
+      - {number: "F2", pad: PA62}
+      - {number: "F4", pad: PA57}
+      - {number: "F6", pad: PA52}
+      - {number: "F9", pad: PA70}
+      - {number: "F10", pad: PA77}
+      - {number: "F12", pad: PA82}
+      - {number: "F13", pad: PA86}
+      - {number: "F15", pad: PA92}
+      - {number: "F16", pad: PB37}
+      - {number: "F18", pad: ADC2N}
+      - {number: "F19", pad: ADC2P}
+      - {number: "F20", pad: MIC_BIAS}
+      - {number: "F21", pad: AUD_VREF}
+      - {number: "G1", pad: VDDIOSB}
+      - {number: "G2", pad: PA56}
+      - {number: "G3", pad: VSS}
+      - {number: "G4", pad: PA54}
+      - {number: "G5", pad: PA53}
+      - {number: "G6", pad: PA51}
+      - {number: "G8", pad: VSS}
+      - {number: "G14", pad: PA88}
+      - {number: "G16", pad: PB36}
+      - {number: "G17", pad: VSS}
+      - {number: "G18", pad: ADC1N}
+      - {number: "G19", pad: ADC1P}
+      - {number: "G20", pad: AVSS33_AUD}
+      - {number: "H2", pad: PA55}
+      - {number: "H6", pad: VDDIOA}
+      - {number: "H8", pad: VSS}
+      - {number: "H9", pad: VSS}
+      - {number: "H10", pad: VSS}
+      - {number: "H11", pad: VSS}
+      - {number: "H12", pad: VSS}
+      - {number: "H13", pad: VSS}
+      - {number: "H14", pad: VSS}
+      - {number: "H16", pad: PB33}
+      - {number: "H17", pad: PB41}
+      - {number: "H19", pad: AUD_VREF_GND}
+      - {number: "H20", pad: DAC2N}
+      - {number: "H21", pad: DAC2P}
+      - {number: "J1", pad: PA50}
+      - {number: "J2", pad: PA49}
+      - {number: "J4", pad: PA48}
+      - {number: "J5", pad: PA47}
+      - {number: "J6", pad: PA43}
+      - {number: "J8", pad: VSS}
+      - {number: "J9", pad: VSS}
+      - {number: "J10", pad: VSS}
+      - {number: "J11", pad: VSS}
+      - {number: "J12", pad: VSS}
+      - {number: "J13", pad: VSS}
+      - {number: "J14", pad: VSS}
+      - {number: "J16", pad: PB20}
+      - {number: "J17", pad: AVSS33_ANA}
+      - {number: "J18", pad: AVDD33_AUD}
+      - {number: "J20", pad: DAC1P}
+      - {number: "J21", pad: DAC1N}
+      - {number: "K1", pad: PA46}
+      - {number: "K2", pad: PA45}
+      - {number: "K3", pad: PA44}
+      - {number: "K4", pad: PA40}
+      - {number: "K5", pad: PA38}
+      - {number: "K6", pad: PA42}
+      - {number: "K16", pad: PB14}
+      - {number: "K17", pad: PB38}
+      - {number: "K18", pad: AVDD33_ANA}
+      - {number: "K19", pad: SDMADC_VREF}
+      - {number: "K20", pad: SDMADC_VSS_VREF}
+      - {number: "L2", pad: PA41}
+      - {number: "L5", pad: PA37}
+      - {number: "L6", pad: PA34}
+      - {number: "L7", pad: PA27}
+      - {number: "L8", pad: PA21}
+      - {number: "L9", pad: PA20}
+      - {number: "L10", pad: PA11}
+      - {number: "L11", pad: PA09}
+      - {number: "L12", pad: PA02}
+      - {number: "L13", pad: PB01}
+      - {number: "L14", pad: VDDIOSC}
+      - {number: "L15", pad: PB07}
+      - {number: "L16", pad: PB13}
+      - {number: "L17", pad: PB35}
+      - {number: "L18", pad: PB40}
+      - {number: "L19", pad: SDMADC_INPUT}
+      - {number: "L20", pad: GPADC_VREFN}
+      - {number: "L21", pad: GPADC_VREFP}
+      - {number: "M1", pad: PA39}
+      - {number: "M2", pad: VDDIOSA}
+      - {number: "M4", pad: PA35}
+      - {number: "M5", pad: PA30}
+      - {number: "M6", pad: PA28}
+      - {number: "M7", pad: PA26}
+      - {number: "M8", pad: PA25}
+      - {number: "M9", pad: PA19}
+      - {number: "M10", pad: PA12}
+      - {number: "M11", pad: PA10}
+      - {number: "M12", pad: PA03}
+      - {number: "M13", pad: PB00}
+      - {number: "M14", pad: PB02}
+      - {number: "M15", pad: PB08}
+      - {number: "M16", pad: PB11}
+      - {number: "M18", pad: PB39}
+      - {number: "M20", pad: PB42}
+      - {number: "M21", pad: PB43}
+      - {number: "N1", pad: PA36}
+      - {number: "N2", pad: VSS}
+      - {number: "N3", pad: PA33}
+      - {number: "N4", pad: PA32}
+      - {number: "N5", pad: PA31}
+      - {number: "N6", pad: PA29}
+      - {number: "N8", pad: PA22}
+      - {number: "N9", pad: PA14}
+      - {number: "N10", pad: PA13}
+      - {number: "N12", pad: PA08}
+      - {number: "N13", pad: PA00}
+      - {number: "N15", pad: PB10}
+      - {number: "N16", pad: PB12}
+      - {number: "N17", pad: PB19}
+      - {number: "N18", pad: PB21}
+      - {number: "N19", pad: PB32}
+      - {number: "N20", pad: PB34}
+      - {number: "P2", pad: AVSS_DSI}
+      - {number: "P3", pad: AVDD18_DSI}
+      - {number: "P4", pad: DSI_REXT}
+      - {number: "P5", pad: AVDD33_USB}
+      - {number: "P9", pad: PA18}
+      - {number: "P12", pad: VDDIOA2}
+      - {number: "P15", pad: PB09}
+      - {number: "P17", pad: PB15}
+      - {number: "P18", pad: PB22}
+      - {number: "P19", pad: PB24}
+      - {number: "P20", pad: PB30}
+      - {number: "P21", pad: PB31}
+      - {number: "R1", pad: DSI_D0N}
+      - {number: "R2", pad: DSI_D0P}
+      - {number: "R3", pad: DSI_D1N}
+      - {number: "R4", pad: DSI_D1P}
+      - {number: "R5", pad: VSS}
+      - {number: "R6", pad: USB2_DN}
+      - {number: "R7", pad: VSS}
+      - {number: "R8", pad: PA24}
+      - {number: "R9", pad: PA17}
+      - {number: "R10", pad: PA15}
+      - {number: "R11", pad: PA06}
+      - {number: "R12", pad: PA04}
+      - {number: "R13", pad: PA01}
+      - {number: "R14", pad: PB03}
+      - {number: "R15", pad: PB05}
+      - {number: "R16", pad: PB16}
+      - {number: "R17", pad: PB18}
+      - {number: "R18", pad: PB23}
+      - {number: "R19", pad: PB26}
+      - {number: "R20", pad: PB27}
+      - {number: "R21", pad: PB28}
+      - {number: "T1", pad: AVSS_DSI}
+      - {number: "T2", pad: DSI_CLKN}
+      - {number: "T3", pad: DSI_CLKP}
+      - {number: "T5", pad: USB2_REXT}
+      - {number: "T6", pad: USB2_DP}
+      - {number: "T8", pad: PA23}
+      - {number: "T9", pad: PA16}
+      - {number: "T11", pad: PA07}
+      - {number: "T12", pad: PA05}
+      - {number: "T14", pad: PB04}
+      - {number: "T15", pad: PB06}
+      - {number: "T17", pad: PB17}
+      - {number: "T19", pad: PB25}
+      - {number: "T20", pad: PB29}
+      - {number: "T21", pad: VSS}
+
+  - part_number: SF32LB585V5E56
+    description: "4MB NOR Flash + 32MB x16 PSRAM + 4MB NOR Flash"
+    package: SiFli_BGA-256_8.5x6.5mm_Layout21x16_P0.4mm
+    pins: *SF32LB58x_BGA256_PINS
+
+  - part_number: SF32LB586VDD36
+    description: "16MB x16 PSRAM + 16MB x16 PSRAM + 1MB NOR Flash"
+    package: SiFli_BGA-256_8.5x6.5mm_Layout21x16_P0.4mm
+    pins: *SF32LB58x_BGA256_PINS
+
+  - part_number: SF32LB587VEE56
+    description: "32MB x16 PSRAM + 32MB x16 PSRAM + 4MB NOR Flash"
+    package: SiFli_BGA-256_8.5x6.5mm_Layout21x16_P0.4mm
+    pins: *SF32LB58x_BGA256_PINS
