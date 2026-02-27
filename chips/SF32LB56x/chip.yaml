@@ -252,9 +252,9 @@ pads:
     description: "48 MHz crystal output"
 
 variants:
-  - part_number: SF32LB560
-    description: "QFN68L"
-    package: QFN68L
+  - part_number: SF32LB560UNN26
+    description: "4Mb Nor Flash"
+    package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
     pins: &SF32LB56x_QFN68L_560_PINS
       - {number: "1", pad: BOOT_MODE}
       - {number: "2", pad: PA51}
@@ -325,9 +325,9 @@ variants:
       - {number: "67", pad: BUCK_FB}
       - {number: "68", pad: BUCK_LX}
 
-  - part_number: SF32LB561
-    description: "QFN68L"
-    package: QFN68L
+  - part_number: SF32LB561UBN26
+    description: "32Mb pSRAM + 4Mb Nor Flash"
+    package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
     pins: &SF32LB56x_QFN68L_561_563_PINS
       - {number: "1", pad: BOOT_MODE}
       - {number: "2", pad: PA51}
@@ -398,14 +398,14 @@ variants:
       - {number: "67", pad: BUCK_FB}
       - {number: "68", pad: BUCK_LX}
 
-  - part_number: SF32LB563
-    description: "QFN68L"
-    package: QFN68L
+  - part_number: SF32LB563UCN26
+    description: "64Mb pSRAM + 4Mb Nor Flash"
+    package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
     pins: *SF32LB56x_QFN68L_561_563_PINS
 
   - part_number: SF32LB565
     description: "BGA175"
-    package: BGA175
+    package: SiFli_BGA-175_6.5x6.1mm_Layout16x15_P0.4mm
     pins: &SF32LB56x_BGA175_PINS
       - {number: "A1", pad: VSS}
       - {number: "A2", pad: PVDD}
@@ -583,12 +583,12 @@ variants:
       - {number: "R15", pad: PB21}
       - {number: "R16", pad: VSS}
 
-  - part_number: SF32LB566
-    description: "BGA175"
-    package: BGA175
+  - part_number: SF32LB566VCB36
+    description: "64Mb pSRAM + 32Mb pSRAM + 4Mb Nor Flash"
+    package: SiFli_BGA-175_6.5x6.1mm_Layout16x15_P0.4mm
     pins: *SF32LB56x_BGA175_PINS
 
-  - part_number: SF32LB567
-    description: "BGA175"
-    package: BGA175
+  - part_number: SF32LB567VND36
+    description: "128Mb pSRAM + 8Mb Nor Flash"
+    package: SiFli_BGA-175_6.5x6.1mm_Layout16x15_P0.4mm
     pins: *SF32LB56x_BGA175_PINS
