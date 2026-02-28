@@ -378,6 +378,7 @@ pads:
     description: "PMU ground (PVSS_PMU2)"
   RSTN:
     type: input
+    subsystem: strapping
     description: "Reset (active low) input"
   SDMADC_INPUT:
     type: input
