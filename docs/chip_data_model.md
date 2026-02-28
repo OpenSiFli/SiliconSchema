@@ -50,7 +50,7 @@ SiliconSchema/
 ### chip.yaml（芯片专属定义）
 
 ```yaml
-schema_version: 0.0.1
+schema_version: 0.2.0
 model_id: SF32LB52x
 lifecycle: production
 shared_pinmux: sf32lb52           # 引用共享 pinmux
@@ -69,6 +69,7 @@ pads:
   # 电源/模拟专用 Pads（完整定义）
   VBUS:
     type: power_input
+    subsystem: power
     description: "VBUS input"
   # ...
 
@@ -149,7 +150,7 @@ peripherals:
 由构建脚本合并 `chip.yaml` 和共享 pinmux 后生成：
 
 ```yaml
-schema_version: 0.0.1
+schema_version: 0.2.0
 model_id: SF32LB52x
 lifecycle: production
 
@@ -177,6 +178,7 @@ pads:
 
   VBUS: &VBUS
     type: power_input
+    subsystem: power
     description: "VBUS input"
 
 variants:
@@ -197,6 +199,7 @@ variants:
 ## 约束补充
 
 - `schema_version` 与 JSON Schema 中的版本同步维护。
+- `pads.<PAD>.subsystem` 可选，用于标记 pad 所属子系统（如 `power`、`audio`、`crystal`、`rf`、`analog`、`strapping`、`mipi`、`usb`）。
 - `docs` 数组元素可扩展为 `datasheet`、`user_manual` 等类型，每个字段允许按语言拆分。
 - `functions` 使用大写下划线命名（如 `I2C1_SDA`、`GPTIM1_CH1`）。
 - `pins.number` 统一为字符串类型（即使是数字也写成 `"1"`），以兼容 BGA 字母脚位。

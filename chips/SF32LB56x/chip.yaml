@@ -2,7 +2,7 @@
 # pinmux 配置从 common/pinmux/sf32lb56/pinmux.yaml 合并
 # 引脚定义来自 DS5601-SF32LB56x 芯片技术规格书 V1.9.2 表 5-2/5-3/5-4
 
-schema_version: 0.0.1
+schema_version: 0.2.0
 model_id: SF32LB56x
 lifecycle: production
 shared_pinmux: sf32lb56
@@ -138,117 +138,155 @@ pads:
   # 专用 Pads
   ADCN:
     type: input
+    subsystem: audio
     description: "Differential analog input (N) / MIC N / GND"
   ADCP:
     type: input
+    subsystem: audio
     description: "Differential or single-ended analog input (P) / MIC P"
   AUD_VREF:
     type: input
+    subsystem: audio
     description: "Audio reference input (VREF)"
   AVDD33_ANA:
     type: power_input
+    subsystem: analog
     description: "3.3 V analog/RF/PA supply input"
   AVDD33_AUD:
     type: power_input
+    subsystem: audio
     description: "3.3 V audio analog supply input"
   AVDD_BRF:
     type: power_input
+    subsystem: rf
     description: "RF analog supply input"
   AVSS:
     type: power_input
+    subsystem: analog
     description: "Analog ground"
   AVSS_RF1:
     type: power_input
+    subsystem: rf
     description: "RF ground"
   AVSS_RF2:
     type: power_input
+    subsystem: rf
     description: "RF ground"
   AVSS_RF3:
     type: power_input
+    subsystem: rf
     description: "RF ground"
   AVSS_RF4:
     type: power_input
+    subsystem: rf
     description: "RF ground"
   BOOT_MODE:
     type: input
+    subsystem: strapping
     description: "Boot mode select"
   BRF_ANT:
     type: bidirectional
+    subsystem: rf
     description: "Bluetooth RF antenna port"
   BUCK_FB:
     type: power_input
+    subsystem: power
     description: "Buck feedback input"
   BUCK_LX:
     type: bidirectional
+    subsystem: power
     description: "Buck switching node (LX)"
   DACN:
     type: output
+    subsystem: audio
     description: "Differential analog output (N)"
   DACP:
     type: output
+    subsystem: audio
     description: "Differential analog output (P)"
   GPADC_VREFP:
     type: input
+    subsystem: analog
     description: "GPADC reference voltage pin (external capacitor)"
   LDO1_VOUT:
     type: power_output
+    subsystem: power
     description: "LDO1 output"
   LDO2_VOUT:
     type: power_output
+    subsystem: power
     description: "LDO2 output"
   MIC_BIAS:
     type: power_output
+    subsystem: audio
     description: "Microphone bias output"
   PVDD:
     type: power_input
+    subsystem: power
     description: "Main supply input (PVDD)"
   PVSS:
     type: power_input
+    subsystem: power
     description: "Buck ground (PVSS)"
   VDDIO1:
     type: power_input
+    subsystem: power
     description: "HCPU SiP memory I/O supply input"
   VDDIO2:
     type: power_input
+    subsystem: power
     description: "GPIOA bank supply input (PA6~PA11)"
   VDDIO3:
     type: power_input
+    subsystem: power
     description: "GPIOA bank supply input* (PA6~PA11)"
   VDDIO4:
     type: power_input
+    subsystem: power
     description: "GPIOB / Flash I/O supply input (LCPU SiP)"
   VDDIOA:
     type: power_input
+    subsystem: power
     description: "GPIOA bank supply input (PA0~PA11)"
   VDDIOA2:
     type: power_input
+    subsystem: power
     description: "GPIOA bank supply input (PA0~PA11)"
   VDDIOB:
     type: power_input
+    subsystem: power
     description: "GPIOB bank supply input"
   VDDIOSA:
     type: power_input
+    subsystem: power
     description: "SiP-A I/O supply input"
   VDDIOSB:
     type: power_input
+    subsystem: power
     description: "SiP-B I/O supply input"
   VDDIOSC:
     type: power_input
+    subsystem: power
     description: "SiP-C I/O supply input"
   VDD_RET:
     type: power_output
+    subsystem: power
     description: "Retention LDO output"
   VDD_RTC:
     type: power_output
+    subsystem: power
     description: "RTC LDO output"
   VSS:
     type: power_input
+    subsystem: power
     description: "Ground"
   XTAL48M_XI:
     type: input
+    subsystem: crystal
     description: "48 MHz crystal input"
   XTAL48M_XO:
     type: output
+    subsystem: crystal
     description: "48 MHz crystal output"
 
 variants:

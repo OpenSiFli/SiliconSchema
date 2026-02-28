@@ -212,6 +212,9 @@ def generate_series_yaml(chip_yaml: dict, pinmux_data: dict, pinr_data: dict) ->
     for pad_name, pad_def in chip_yaml['pads'].items():
         b.add(f"{pad_name}: &{pad_name}", 1)
         b.add(f"type: {pad_def['type']}", 2)
+
+        if 'subsystem' in pad_def:
+            b.add(f"subsystem: {pad_def['subsystem']}", 2)
         
         if 'description' in pad_def:
             b.add(f'description: "{pad_def["description"]}"', 2)

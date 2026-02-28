@@ -92,7 +92,7 @@ uv run validate-schema --verbose
 
 ### 核心概念
 
-- **Pad（焊盘）**：晶圆级引脚，包含电气类型和功能列表
+- **Pad（焊盘）**：晶圆级引脚，包含电气类型、可选 `subsystem` 和功能列表
 - **Functions（功能）**：Pad 支持的复用功能（GPIO、I2C、UART、TIM 等）
 - **PINR（二次路由）**：I2C/UART/TIM 需要的额外寄存器配置
 - **Variant（变体）**：不同封装/容量的具体料号

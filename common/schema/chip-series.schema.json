@@ -15,7 +15,7 @@
   "properties": {
     "schema_version": {
       "type": "string",
-      "const": "0.0.1",
+      "const": "0.2.0",
       "description": "Semantic version of this schema; keep in sync with documentation."
     },
     "model_id": {
@@ -79,6 +79,20 @@
         "unconnected"
       ]
     },
+    "padSubsystem": {
+      "type": "string",
+      "enum": [
+        "power",
+        "analog",
+        "audio",
+        "rf",
+        "crystal",
+        "strapping",
+        "mipi",
+        "usb"
+      ],
+      "description": "Functional subsystem grouping for a pad (optional)."
+    },
     "pinmuxEntry": {
       "type": "object",
       "additionalProperties": false,
@@ -114,6 +128,9 @@
       "properties": {
         "type": {
           "$ref": "#/$defs/pinType"
+        },
+        "subsystem": {
+          "$ref": "#/$defs/padSubsystem"
         },
         "functions": {
           "type": "array",

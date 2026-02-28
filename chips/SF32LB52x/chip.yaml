@@ -1,7 +1,7 @@
 # SF32LB52x 系列芯片定义
 # pinmux 配置从 common/pinmux/sf32lb52/pinmux.yaml 合并
 
-schema_version: 0.0.1
+schema_version: 0.2.0
 model_id: SF32LB52x
 lifecycle: production
 shared_pinmux: sf32lb52
@@ -62,79 +62,104 @@ pads:
   # 电源/模拟专用 Pads
   VBUS:
     type: power_input
+    subsystem: power
     description: "VBUS input"
   VBAT:
     type: power_output
+    subsystem: power
     description: "VBAT output"
   VSYS:
     type: power_output
+    subsystem: power
     description: "VSYS output"
   BUCK_LX:
     type: bidirectional
+    subsystem: power
     description: "Buck inductor switching node"
   BUCK_FB:
     type: power_output
+    subsystem: power
     description: "Buck feedback node"
   VDD_VOUT1:
     type: power_output
+    subsystem: power
     description: "Internal LDO1 output"
   VDD_VOUT2:
     type: power_output
+    subsystem: power
     description: "Internal LDO2 output"
   VDD_RET:
     type: power_output
+    subsystem: power
     description: "Retention LDO output"
   VDD_RTC:
     type: power_output
+    subsystem: power
     description: "RTC LDO output"
   VCC:
     type: power_input
+    subsystem: power
     description: "System supply input"
   VDD18_VOUT:
     type: power_output
+    subsystem: power
     description: "1.8 V SiP supply output"
     notes: "SF32LB520Ux6 requires an external source; SF32LB523/5/7Ux6 only need decoupling."
   VDD33_VOUT1:
     type: power_output
+    subsystem: power
     description: "3.3 V LDO output 1"
   VDD33_VOUT2:
     type: power_output
+    subsystem: power
     description: "3.3 V LDO output 2"
   GPADC_VREF:
     type: input
+    subsystem: analog
     description: "GPADC reference input"
   XTAL48M_XI:
     type: input
+    subsystem: crystal
     description: "48 MHz crystal input"
   XTAL48M_XO:
     type: output
+    subsystem: crystal
     description: "48 MHz crystal output"
   BRF_ANT:
     type: bidirectional
+    subsystem: rf
     description: "Bluetooth RF antenna port"
   AVDD_BRF:
     type: power_input
+    subsystem: rf
     description: "RF analog supply input"
   ADCP:
     type: input
+    subsystem: audio
     description: "Audio ADC positive input"
   MIC_BIAS:
     type: power_output
+    subsystem: audio
     description: "Microphone bias output"
   AUD_VREF:
     type: input
+    subsystem: audio
     description: "Audio reference input"
   AVDD33_AUD:
     type: power_input
+    subsystem: audio
     description: "Audio analog 3.3 V supply input"
   DACP:
     type: output
+    subsystem: audio
     description: "Audio DAC positive output"
   DACN:
     type: output
+    subsystem: audio
     description: "Audio DAC negative output"
   GND:
     type: power_input
+    subsystem: power
     description: "Exposed pad ground"
 
 variants:

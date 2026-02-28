@@ -2,7 +2,7 @@
 # pinmux 配置从 common/pinmux/sf32lb58/pinmux.yaml 合并
 # 引脚定义来自 DS5801-SF32LB58x 芯片技术规格书 V1.8.3 表 5-2/5-3/5-4
 
-schema_version: 0.0.1
+schema_version: 0.2.0
 model_id: SF32LB58x
 lifecycle: production
 shared_pinmux: sf32lb58
@@ -172,120 +172,159 @@ pads:
   # Dedicated pads
   ADC1N:
     type: input
+    subsystem: analog
     description: "ADC1 negative input"
   ADC1P:
     type: input
+    subsystem: analog
     description: "ADC1 positive input"
   ADC2N:
     type: input
+    subsystem: analog
     description: "ADC2 negative input"
   ADC2P:
     type: input
+    subsystem: analog
     description: "ADC2 positive input"
   AUD_VREF:
     type: input
+    subsystem: audio
     description: "Audio reference voltage input (VREF)"
   AUD_VREF_GND:
     type: power_input
+    subsystem: audio
     description: "Audio reference ground"
   AVDD18_DSI:
     type: power_input
+    subsystem: mipi
     description: "1.8 V DSI supply input"
   AVDD33_ANA:
     type: power_input
+    subsystem: analog
     description: "3.3 V analog supply input"
   AVDD33_AUD:
     type: power_input
+    subsystem: audio
     description: "3.3 V audio analog supply input"
   AVDD33_USB:
     type: power_input
+    subsystem: usb
     description: "3.3 V USB analog supply input"
   AVDD_BRF:
     type: power_input
+    subsystem: rf
     description: "RF analog supply input"
   AVSS33_ANA:
     type: power_input
+    subsystem: analog
     description: "3.3 V analog ground"
   AVSS33_AUD:
     type: power_input
+    subsystem: audio
     description: "3.3 V audio ground"
   AVSS_BB:
     type: power_input
+    subsystem: rf
     description: "RF ground"
   AVSS_CAU:
     type: power_input
+    subsystem: analog
     description: "Ground"
   AVSS_DSI:
     type: power_input
+    subsystem: mipi
     description: "DSI ground"
   AVSS_RRF:
     type: power_input
+    subsystem: rf
     description: "RF ground"
   AVSS_TRF:
     type: power_input
+    subsystem: rf
     description: "RF ground"
   AVSS_TRF2:
     type: power_input
+    subsystem: rf
     description: "RF ground"
   AVSS_VCO:
     type: power_input
+    subsystem: rf
     description: "RF ground"
   BOOT_MODE:
     type: input
+    subsystem: strapping
     description: "Boot mode select"
   BRF_ANT:
     type: bidirectional
+    subsystem: rf
     description: "Bluetooth RF antenna port"
   DAC1N:
     type: output
+    subsystem: audio
     description: "DAC1 differential output (N)"
   DAC1P:
     type: output
+    subsystem: audio
     description: "DAC1 differential output (P)"
   DAC2N:
     type: output
+    subsystem: audio
     description: "DAC2 differential output (N)"
   DAC2P:
     type: output
+    subsystem: audio
     description: "DAC2 differential output (P)"
   DSI_CLKN:
     type: bidirectional
+    subsystem: mipi
     description: "DSI differential clock (N)"
   DSI_CLKP:
     type: bidirectional
+    subsystem: mipi
     description: "DSI differential clock (P)"
   DSI_D0N:
     type: bidirectional
+    subsystem: mipi
     description: "DSI lane 0 (N)"
   DSI_D0P:
     type: bidirectional
+    subsystem: mipi
     description: "DSI lane 0 (P)"
   DSI_D1N:
     type: bidirectional
+    subsystem: mipi
     description: "DSI lane 1 (N)"
   DSI_D1P:
     type: bidirectional
+    subsystem: mipi
     description: "DSI lane 1 (P)"
   DSI_REXT:
     type: output
+    subsystem: mipi
     description: "DSI REXT resistor pin"
   GPADC_VREFN:
     type: power_input
+    subsystem: analog
     description: "GPADC reference ground (VREFN)"
   GPADC_VREFP:
     type: input
+    subsystem: analog
     description: "GPADC reference voltage input (VREFP)"
   HPSYS_LDO_VOUT:
     type: power_output
+    subsystem: power
     description: "HPSYS LDO output (external capacitor)"
   LPMU_VDD07_RET:
     type: power_output
+    subsystem: power
     description: "Retention LDO output (external capacitor)"
   LPMU_VDD11_RTC:
     type: power_output
+    subsystem: power
     description: "RTC LDO output (external capacitor)"
   MIC_BIAS:
     type: power_output
+    subsystem: audio
     description: "Microphone bias output"
   PBR00:
     type: bidirectional
@@ -307,84 +346,110 @@ pads:
     description: "Always-on GPIO (PBR5)"
   PMU_BUCK1_VOUT:
     type: power_input
+    subsystem: power
     description: "Buck1 feedback input"
   PMU_BUCK1_VSW:
     type: bidirectional
+    subsystem: power
     description: "Buck1 switching node (LX)"
   PMU_BUCK2_VOUT:
     type: power_input
+    subsystem: power
     description: "Buck2 feedback input"
   PMU_BUCK2_VSW:
     type: bidirectional
+    subsystem: power
     description: "Buck2 switching node (LX)"
   PVDD_PMU1:
     type: power_input
+    subsystem: power
     description: "PMU supply input (PVDD_PMU1)"
   PVDD_PMU2:
     type: power_input
+    subsystem: power
     description: "PMU supply input (PVDD_PMU2)"
   PVSS_PMU1:
     type: power_input
+    subsystem: power
     description: "PMU ground (PVSS_PMU1)"
   PVSS_PMU2:
     type: power_input
+    subsystem: power
     description: "PMU ground (PVSS_PMU2)"
   RSTN:
     type: input
     description: "Reset (active low) input"
   SDMADC_INPUT:
     type: input
+    subsystem: analog
     description: "SDMADC input"
   SDMADC_VREF:
     type: input
+    subsystem: analog
     description: "SDMADC reference voltage input (VREF)"
   SDMADC_VSS_VREF:
     type: power_input
+    subsystem: analog
     description: "SDMADC reference ground"
   USB2_DN:
     type: bidirectional
+    subsystem: usb
     description: "USB2 D-"
   USB2_DP:
     type: bidirectional
+    subsystem: usb
     description: "USB2 D+"
   USB2_REXT:
     type: output
+    subsystem: usb
     description: "USB2 REXT resistor pin"
   VDDIOA:
     type: power_input
+    subsystem: power
     description: "GPIOA bank supply input (PA12~PA93)"
   VDDIOA2:
     type: power_input
+    subsystem: power
     description: "GPIOA bank supply input (PA0~PA11)"
   VDDIOB:
     type: power_input
+    subsystem: power
     description: "GPIOB/PBR bank supply input"
   VDDIOSA:
     type: power_input
+    subsystem: power
     description: "SiP-A I/O supply input"
   VDDIOSB:
     type: power_input
+    subsystem: power
     description: "SiP-B I/O supply input"
   VDDIOSC:
     type: power_input
+    subsystem: power
     description: "SiP-C I/O supply input"
   VDD_EXT:
     type: power_input
+    subsystem: power
     description: "External VDD supply input"
   VSS:
     type: power_input
+    subsystem: power
     description: "Ground"
   XTAL32K_XI:
     type: input
+    subsystem: crystal
     description: "32 kHz crystal input"
   XTAL32K_XO:
     type: output
+    subsystem: crystal
     description: "32 kHz crystal output"
   XTAL48M_XI:
     type: input
+    subsystem: crystal
     description: "48 MHz crystal input"
   XTAL48M_XO:
     type: output
+    subsystem: crystal
     description: "48 MHz crystal output"
 
 variants:
