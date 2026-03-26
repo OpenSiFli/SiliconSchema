@@ -454,8 +454,12 @@ pads:
     description: "48 MHz crystal output"
 
 variants:
-  - part_number: SF32LB583VCC36
-    description: "8MB x8 PSRAM + 8MB x8 PSRAM + 1MB NOR Flash"
+  - part_number: SF32LB580VNN36
+    description: "512KB NOR Flash"
+    memory:
+      - mpi: mpi5
+        type: nor
+        size: 524288       # 512KB
     package: SiFli_BGA-256_8.5x6.5mm_Layout21x16_P0.4mm
     pins: &SF32LB58x_BGA256_PINS
       - {number: "A1", pad: VSS}
@@ -715,17 +719,71 @@ variants:
       - {number: "T20", pad: PB29}
       - {number: "T21", pad: VSS}
 
+  - part_number: SF32LB581VCN36
+    description: "8MB x8 PSRAM + 1MB NOR Flash"
+    memory:
+      - mpi: mpi5
+        type: nor
+        size: 1048576      # 1MB
+      - mpi: mpi1
+        type: psram
+        size: 8388608      # 8MB
+    package: SiFli_BGA-256_8.5x6.5mm_Layout21x16_P0.4mm
+    pins: *SF32LB58x_BGA256_PINS
+
+  - part_number: SF32LB583VCC36
+    description: "8MB x8 PSRAM + 8MB x8 PSRAM + 1MB NOR Flash"
+    memory:
+      - mpi: mpi5
+        type: nor
+        size: 1048576      # 1MB
+      - mpi: mpi1
+        type: psram
+        size: 8388608      # 8MB
+      - mpi: mpi2
+        type: psram
+        size: 8388608      # 8MB
+    package: SiFli_BGA-256_8.5x6.5mm_Layout21x16_P0.4mm
+    pins: *SF32LB58x_BGA256_PINS
+
   - part_number: SF32LB585V5E56
-    description: "4MB NOR Flash + 32MB x16 PSRAM + 4MB NOR Flash"
+    description: "32MB x16 PSRAM + 4MB NOR Flash"
+    memory:
+      - mpi: mpi5
+        type: nor
+        size: 4194304      # 4MB
+      - mpi: mpi1
+        type: psram
+        size: 33554432     # 32MB
     package: SiFli_BGA-256_8.5x6.5mm_Layout21x16_P0.4mm
     pins: *SF32LB58x_BGA256_PINS
 
   - part_number: SF32LB586VDD36
     description: "16MB x16 PSRAM + 16MB x16 PSRAM + 1MB NOR Flash"
+    memory:
+      - mpi: mpi5
+        type: nor
+        size: 1048576      # 1MB
+      - mpi: mpi1
+        type: psram
+        size: 16777216     # 16MB
+      - mpi: mpi2
+        type: psram
+        size: 16777216     # 16MB
     package: SiFli_BGA-256_8.5x6.5mm_Layout21x16_P0.4mm
     pins: *SF32LB58x_BGA256_PINS
 
   - part_number: SF32LB587VEE56
     description: "32MB x16 PSRAM + 32MB x16 PSRAM + 4MB NOR Flash"
+    memory:
+      - mpi: mpi5
+        type: nor
+        size: 4194304      # 4MB
+      - mpi: mpi1
+        type: psram
+        size: 33554432     # 32MB
+      - mpi: mpi2
+        type: psram
+        size: 33554432     # 32MB
     package: SiFli_BGA-256_8.5x6.5mm_Layout21x16_P0.4mm
     pins: *SF32LB58x_BGA256_PINS

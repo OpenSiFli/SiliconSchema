@@ -292,6 +292,10 @@ pads:
 variants:
   - part_number: SF32LB560UNN26
     description: "4Mb Nor Flash"
+    memory:
+      - mpi: mpi5
+        type: nor
+        size: 524288       # 512KB
     package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
     pins: &SF32LB56x_QFN68L_560_PINS
       - {number: "1", pad: BOOT_MODE}
@@ -365,8 +369,15 @@ variants:
 
   - part_number: SF32LB561UBN26
     description: "32Mb pSRAM + 4Mb Nor Flash"
+    memory:
+      - mpi: mpi5
+        type: nor
+        size: 524288       # 512KB
+      - mpi: mpi1
+        type: psram
+        size: 4194304      # 4MB
     package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
-    pins: &SF32LB56x_QFN68L_561_563_PINS
+    pins: &SF32LB56x_QFN68L_SIP_PINS
       - {number: "1", pad: BOOT_MODE}
       - {number: "2", pad: PA51}
       - {number: "3", pad: PA50}
@@ -438,8 +449,27 @@ variants:
 
   - part_number: SF32LB563UCN26
     description: "64Mb pSRAM + 4Mb Nor Flash"
+    memory:
+      - mpi: mpi5
+        type: nor
+        size: 524288       # 512KB
+      - mpi: mpi1
+        type: psram
+        size: 8388608      # 8MB
     package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
-    pins: *SF32LB56x_QFN68L_561_563_PINS
+    pins: *SF32LB56x_QFN68L_SIP_PINS
+
+  - part_number: SF32LB56WUND26
+    description: "128Mb pSRAM + 4Mb Nor Flash"
+    memory:
+      - mpi: mpi5
+        type: nor
+        size: 524288       # 512KB
+      - mpi: mpi2
+        type: psram
+        size: 16777216     # 16MB
+    package: QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm
+    pins: *SF32LB56x_QFN68L_SIP_PINS
 
   - part_number: SF32LB565
     description: "BGA175"
@@ -623,10 +653,27 @@ variants:
 
   - part_number: SF32LB566VCB36
     description: "64Mb pSRAM + 32Mb pSRAM + 4Mb Nor Flash"
+    memory:
+      - mpi: mpi5
+        type: nor
+        size: 1048576      # 1MB
+      - mpi: mpi1
+        type: psram
+        size: 8388608      # 8MB
+      - mpi: mpi2
+        type: psram
+        size: 4194304      # 4MB
     package: SiFli_BGA-175_6.5x6.1mm_Layout16x15_P0.4mm
     pins: *SF32LB56x_BGA175_PINS
 
   - part_number: SF32LB567VND36
     description: "128Mb pSRAM + 8Mb Nor Flash"
+    memory:
+      - mpi: mpi5
+        type: nor
+        size: 1048576      # 1MB
+      - mpi: mpi2
+        type: psram
+        size: 16777216     # 16MB
     package: SiFli_BGA-175_6.5x6.1mm_Layout16x15_P0.4mm
     pins: *SF32LB56x_BGA175_PINS
