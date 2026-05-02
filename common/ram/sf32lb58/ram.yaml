@@ -8,15 +8,15 @@ hpsys:
       offset: 0x00010000
       size: 0x10000      # 64KB
 
-  ram:
-    retention_ram:
-      # 64KB Retention SRAM in ITCM region
-      owner: hcpu
-      retention: true
-      hcpu:
-        offset: 0x00020000
-        size: 0x10000    # 64KB
+  retention_ram:
+    # 64KB Retention SRAM in ITCM region
+    owner: hcpu
+    retention: true
+    hcpu:
+      offset: 0x00020000
+      size: 0x10000    # 64KB
 
+  ram:
     ram0:
       # 128KB DTCM, shared with HCPU zero-wait-cycle
       owner: hcpu
