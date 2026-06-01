@@ -1,0 +1,6 @@
+sdmmcs:
+  sdmmc1:
+    base: 0x64000000
+
+  sdmmc2:
+    base: 0xA0000000
