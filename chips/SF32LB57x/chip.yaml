@@ -1,0 +1,884 @@
+schema_version: 0.2.0
+model_id: SF32LB57x
+lifecycle: planning
+shared_pinmux: sf32lb57
+
+docs: []
+
+pads:
+  PA00: {type: bidirectional}
+  PA01: {type: bidirectional}
+  PA02: {type: bidirectional}
+  PA03: {type: bidirectional}
+  PA04: {type: bidirectional}
+  PA05: {type: bidirectional}
+  PA06: {type: bidirectional}
+  PA07: {type: bidirectional}
+  PA08: {type: bidirectional}
+  PA09: {type: bidirectional}
+  PA10: {type: bidirectional}
+  PA11: {type: bidirectional}
+  PA12: {type: bidirectional}
+  PA13: {type: bidirectional}
+  PA14: {type: bidirectional}
+  PA15: {type: bidirectional}
+  PA16: {type: bidirectional}
+  PA17: {type: bidirectional}
+  PA18: {type: bidirectional}
+  PA19: {type: bidirectional}
+  PA20: {type: bidirectional}
+  PA21: {type: bidirectional}
+  PA22: {type: bidirectional}
+  PA23: {type: bidirectional}
+  PA24: {type: bidirectional}
+  PA25: {type: bidirectional}
+  PA26: {type: bidirectional}
+  PA27: {type: bidirectional}
+  PA28: {type: bidirectional}
+  PA29: {type: bidirectional}
+  PA30: {type: bidirectional}
+  PA31: {type: bidirectional}
+  PA32: {type: bidirectional}
+  PA33: {type: bidirectional}
+  PA34: {type: bidirectional}
+  PA35: {type: bidirectional}
+  PA36: {type: bidirectional}
+  PA37: {type: bidirectional}
+  PA38: {type: bidirectional}
+  PA39: {type: bidirectional}
+  PA40: {type: bidirectional}
+  PA41: {type: bidirectional}
+  PA42: {type: bidirectional}
+  PA43: {type: bidirectional}
+  PA44: {type: bidirectional}
+  PA45: {type: bidirectional}
+  PA46: {type: bidirectional}
+  PA47: {type: bidirectional}
+  PA48: {type: bidirectional}
+  PA49: {type: bidirectional}
+  PA50: {type: bidirectional}
+  PA51: {type: bidirectional}
+  PA52: {type: bidirectional}
+  PA53: {type: bidirectional}
+  PA54: {type: bidirectional}
+  PA55: {type: bidirectional}
+  PA56: {type: bidirectional}
+  PA57: {type: bidirectional}
+  PB00: {type: bidirectional}
+  PB01: {type: bidirectional}
+  PB02: {type: bidirectional}
+  PB03: {type: bidirectional}
+  SA00: {type: bidirectional}
+  SA01: {type: bidirectional}
+  SA02: {type: bidirectional}
+  SA03: {type: bidirectional}
+  SA04: {type: bidirectional}
+  SA05: {type: bidirectional}
+  SA06: {type: bidirectional}
+  SA07: {type: bidirectional}
+  SA08: {type: bidirectional}
+  SA09: {type: bidirectional}
+  SA10: {type: bidirectional}
+  SA11: {type: bidirectional}
+  SA12: {type: bidirectional}
+  SB00: {type: bidirectional}
+  SB01: {type: bidirectional}
+  SB02: {type: bidirectional}
+  SB03: {type: bidirectional}
+  SB04: {type: bidirectional}
+  SB05: {type: bidirectional}
+  SB06: {type: bidirectional}
+  SB07: {type: bidirectional}
+  SB08: {type: bidirectional}
+  SB09: {type: bidirectional}
+  SB10: {type: bidirectional}
+  SB11: {type: bidirectional}
+  SB12: {type: bidirectional}
+  VBUS:
+    type: power_input
+    subsystem: power
+    description: "VBUS power input for the internal charger"
+  VBAT:
+    type: power_output
+    subsystem: power
+    description: "VBAT power output for battery connection with internal battery voltage ADC sensing"
+  VSYS:
+    type: power_output
+    subsystem: power
+    description: "3.0 V power output with external capacitor to ground"
+  BUCK_LX:
+    type: bidirectional
+    subsystem: power
+    description: "Buck inductor switching node"
+  BUCK_FB:
+    type: power_output
+    subsystem: power
+    description: "Buck output node with external inductor and capacitor to ground"
+  VDD_VOUT1:
+    type: power_output
+    subsystem: power
+    description: "Internal LDO1 output with external capacitor to ground"
+  VDD_VOUT2:
+    type: power_output
+    subsystem: power
+    description: "Internal LDO2 output with external capacitor to ground"
+  VDD_RET:
+    type: power_output
+    subsystem: power
+    description: "Retention LDO output with external capacitor to ground"
+  VDD_RTC:
+    type: power_output
+    subsystem: power
+    description: "RTC LDO output with external capacitor to ground"
+  VCC:
+    type: power_input
+    subsystem: power
+    description: "System power input for battery connection"
+  VDD18_VOUT:
+    type: power_output
+    subsystem: power
+    description: "1.8 V LDO output with external capacitor to ground"
+  VDD33_VOUT1:
+    type: power_output
+    subsystem: power
+    description: "3.3 V LDO output 1 with external capacitor to ground, 150 mA load capability"
+  VDD33_VOUT2:
+    type: power_output
+    subsystem: power
+    description: "3.3 V LDO output 2 with external capacitor to ground, 150 mA load capability"
+  GPADC_VREF:
+    type: input
+    subsystem: analog
+    description: "GPADC reference voltage input with capacitor to ground; no external supply required"
+  XTAL48M_XI:
+    type: input
+    subsystem: crystal
+    description: "48 MHz crystal input"
+  XTAL48M_XO:
+    type: output
+    subsystem: crystal
+    description: "48 MHz crystal output"
+  BRF_ANT:
+    type: bidirectional
+    subsystem: rf
+    description: "Antenna interface"
+  AVDD_BRF:
+    type: power_input
+    subsystem: rf
+    description: "RF power input connected to VSYS"
+  AUD_VREF:
+    type: input
+    subsystem: audio
+    description: "Audio reference voltage input with capacitor to ground; no external supply required"
+  AVDD33_AUD:
+    type: power_input
+    subsystem: audio
+    description: "Audio power input connected to 3.3 V supply"
+  DACP:
+    type: output
+    subsystem: audio
+    description: "Audio DAC output"
+  DACN:
+    type: output
+    subsystem: audio
+    description: "Audio DAC output"
+  EPAD:
+    type: power_input
+    subsystem: power
+    description: "Ground"
+  VDDIOA:
+    type: power_input
+    subsystem: power
+    description: "GPIO power input"
+  VBATS:
+    type: input
+    subsystem: power
+    description: "Battery voltage sense input"
+  PVDD:
+    type: power_input
+    subsystem: power
+    description: "PMU power input; connect to VCC in battery-powered mode or to 3.3 V in normal 3.3 V mode"
+  AVDD:
+    type: power_input
+    subsystem: analog
+    description: "PMU analog power input; connect to VSYS in battery-powered mode or to PVDD in normal 3.3 V mode"
+  PMU_CONFIG:
+    type: input
+    subsystem: strapping
+    description: "PMU configuration input; connect to ground in battery-powered mode or to PVDD in normal 3.3 V mode"
+  AVDD33:
+    type: power_input
+    subsystem: analog
+    description: "Analog power input connected to 3.3 V supply"
+  PVDD_PMU:
+    type: power_input
+    subsystem: power
+    description: "PMU power input; connect to VCC in battery-powered mode or to 3.3 V in normal 3.3 V mode"
+  PVSS_PMU:
+    type: power_input
+    subsystem: power
+    description: "PMU power ground"
+  AVDD_PMU:
+    type: power_input
+    subsystem: analog
+    description: "PMU analog power input; connect to VSYS in battery-powered mode or to PVDD_PMU in normal 3.3 V mode"
+  AVSS_PMU:
+    type: power_input
+    subsystem: analog
+    description: "PMU analog ground"
+  VDDIOSA:
+    type: power_input
+    subsystem: power
+    description: "SiP SA IO power input"
+  VDDIOSB:
+    type: power_input
+    subsystem: power
+    description: "SiP SB IO power input"
+  AVDD33_ANA:
+    type: power_input
+    subsystem: analog
+    description: "Analog power input connected to 3.3 V supply"
+  AVSS33_ANA:
+    type: power_input
+    subsystem: analog
+    description: "Analog ground"
+  GPADC_VREFP:
+    type: input
+    subsystem: analog
+    description: "GPADC reference voltage input with capacitor to ground; no external supply required"
+  GPADC_VREFN:
+    type: power_input
+    subsystem: analog
+    description: "GPADC reference ground input"
+  AVSS_BB:
+    type: power_input
+    subsystem: rf
+    description: "RF ground"
+  AVSS_LO:
+    type: power_input
+    subsystem: rf
+    description: "RF ground"
+  AVSS_RRF:
+    type: power_input
+    subsystem: rf
+    description: "RF ground"
+  AVSS_TRF:
+    type: power_input
+    subsystem: rf
+    description: "RF ground"
+  AVSS_TRF2:
+    type: power_input
+    subsystem: rf
+    description: "RF ground"
+  AUD_VREF_GND:
+    type: power_input
+    subsystem: audio
+    description: "Audio ground"
+  AVSS33_AUD:
+    type: power_input
+    subsystem: audio
+    description: "Audio ground"
+  VSS:
+    type: power_input
+    subsystem: power
+    description: "Ground"
+
+variants:
+  - part_number: SF32LB575YBBN6
+    description: "PSRAM 32Mb + PSRAM 32Mb"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 4194304      # 32Mb = 4MB
+      - mpi: mpi2
+        type: psram
+        size: 4194304      # 32Mb = 4MB
+    package: QFN-80_8x8mm_T0.9mm_P0.35mm
+    pins:
+      - {number: "37", pad: PA00}
+      - {number: "36", pad: PA01}
+      - {number: "35", pad: PA02}
+      - {number: "34", pad: PA03}
+      - {number: "33", pad: PA04}
+      - {number: "32", pad: PA05}
+      - {number: "31", pad: PA06}
+      - {number: "30", pad: PA07}
+      - {number: "29", pad: PA08}
+      - {number: "28", pad: PA09}
+      - {number: "21", pad: PA10}
+      - {number: "20", pad: PA11}
+      - {number: "19", pad: PA12}
+      - {number: "18", pad: PA13}
+      - {number: "17", pad: PA14}
+      - {number: "16", pad: PA15}
+      - {number: "15", pad: PA16}
+      - {number: "14", pad: PA17}
+      - {number: "13", pad: PA18}
+      - {number: "12", pad: PA19}
+      - {number: "11", pad: PA20}
+      - {number: "10", pad: PA21}
+      - {number: "74", pad: PA22}
+      - {number: "73", pad: PA23}
+      - {number: "72", pad: PA24}
+      - {number: "71", pad: PA25}
+      - {number: "70", pad: PA26}
+      - {number: "69", pad: PA27}
+      - {number: "68", pad: PA28}
+      - {number: "67", pad: PA29}
+      - {number: "66", pad: PA30}
+      - {number: "65", pad: PA31}
+      - {number: "64", pad: PA32}
+      - {number: "62", pad: PA33}
+      - {number: "61", pad: PA34}
+      - {number: "60", pad: PA35}
+      - {number: "59", pad: PA36}
+      - {number: "58", pad: PA37}
+      - {number: "57", pad: PA38}
+      - {number: "56", pad: PA39}
+      - {number: "55", pad: PA40}
+      - {number: "54", pad: PA41}
+      - {number: "53", pad: PA42}
+      - {number: "52", pad: PA43}
+      - {number: "51", pad: PA44}
+      - {number: "50", pad: PA45}
+      - {number: "49", pad: PA46}
+      - {number: "48", pad: PA47}
+      - {number: "47", pad: PA48}
+      - {number: "46", pad: PA49}
+      - {number: "45", pad: PA50}
+      - {number: "40", pad: PA52}
+      - {number: "39", pad: PA53}
+      - {number: "38", pad: PA54}
+      - {number: "27", pad: PA55}
+      - {number: "26", pad: PA56}
+      - {number: "6", pad: VDDIOA}
+      - {number: "7", pad: VBATS}
+      - {number: "4", pad: VSYS}
+      - {number: "1", pad: BUCK_LX}
+      - {number: "80", pad: BUCK_FB}
+      - {number: "79", pad: VDD_VOUT1}
+      - {number: "78", pad: VDD_VOUT2}
+      - {number: "76", pad: VDD_RET}
+      - {number: "75", pad: VDD_RTC}
+      - {number: "9", pad: VCC}
+      - {number: "8", pad: VDD18_VOUT}
+      - {number: "3", pad: PVDD}
+      - {number: "2", pad: AVDD}
+      - {number: "5", pad: PMU_CONFIG}
+      - {number: "77", pad: AVDD33}
+      - {number: "63", pad: GPADC_VREF}
+      - {number: "44", pad: XTAL48M_XI}
+      - {number: "43", pad: XTAL48M_XO}
+      - {number: "42", pad: BRF_ANT}
+      - {number: "41", pad: AVDD_BRF}
+      - {number: "25", pad: AUD_VREF}
+      - {number: "24", pad: AVDD33_AUD}
+      - {number: "23", pad: DACP}
+      - {number: "22", pad: DACN}
+      - {number: "81", pad: EPAD}
+
+  - part_number: SF32LB573UB7N6
+    description: "PSRAM 32Mb + Nor Flash 128Mb"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 4194304      # 32Mb = 4MB
+      - mpi: mpi2
+        type: nor
+        size: 16777216     # 128Mb = 16MB
+    package: QFN-68_7x7mm_T0.9mm_P0.35mm
+    pins:
+      - {number: "51", pad: PA00}
+      - {number: "50", pad: PA01}
+      - {number: "49", pad: PA02}
+      - {number: "48", pad: PA03}
+      - {number: "47", pad: PA04}
+      - {number: "46", pad: PA05}
+      - {number: "45", pad: PA06}
+      - {number: "44", pad: PA07}
+      - {number: "43", pad: PA08}
+      - {number: "42", pad: PA09}
+      - {number: "35", pad: PA10}
+      - {number: "34", pad: PA11}
+      - {number: "33", pad: PA12}
+      - {number: "32", pad: PA13}
+      - {number: "31", pad: PA14}
+      - {number: "30", pad: PA15}
+      - {number: "29", pad: PA16}
+      - {number: "28", pad: PA17}
+      - {number: "27", pad: PA18}
+      - {number: "26", pad: PA19}
+      - {number: "25", pad: PA20}
+      - {number: "11", pad: PA22}
+      - {number: "10", pad: PA23}
+      - {number: "9", pad: PA24}
+      - {number: "8", pad: PA25}
+      - {number: "7", pad: PA26}
+      - {number: "6", pad: PA27}
+      - {number: "5", pad: PA28}
+      - {number: "4", pad: PA29}
+      - {number: "3", pad: PA30}
+      - {number: "2", pad: PA31}
+      - {number: "1", pad: PA32}
+      - {number: "67", pad: PA33}
+      - {number: "66", pad: PA34}
+      - {number: "65", pad: PA35}
+      - {number: "64", pad: PA36}
+      - {number: "63", pad: PA37}
+      - {number: "62", pad: PA38}
+      - {number: "61", pad: PA39}
+      - {number: "60", pad: PA40}
+      - {number: "59", pad: PA41}
+      - {number: "58", pad: PA42}
+      - {number: "57", pad: PA43}
+      - {number: "56", pad: PA44}
+      - {number: "41", pad: PA55}
+      - {number: "40", pad: PA56}
+      - {number: "21", pad: VBUS}
+      - {number: "20", pad: VBAT}
+      - {number: "19", pad: VSYS}
+      - {number: "18", pad: BUCK_LX}
+      - {number: "17", pad: BUCK_FB}
+      - {number: "16", pad: VDD_VOUT1}
+      - {number: "15", pad: VDD_VOUT2}
+      - {number: "13", pad: VDD_RET}
+      - {number: "12", pad: VDD_RTC}
+      - {number: "24", pad: VCC}
+      - {number: "23", pad: VDD18_VOUT}
+      - {number: "22", pad: VDD33_VOUT1}
+      - {number: "14", pad: VDD33_VOUT2}
+      - {number: "68", pad: GPADC_VREF}
+      - {number: "55", pad: XTAL48M_XI}
+      - {number: "54", pad: XTAL48M_XO}
+      - {number: "53", pad: BRF_ANT}
+      - {number: "52", pad: AVDD_BRF}
+      - {number: "39", pad: AUD_VREF}
+      - {number: "38", pad: AVDD33_AUD}
+      - {number: "37", pad: DACP}
+      - {number: "36", pad: DACN}
+      - {number: "69", pad: EPAD}
+
+  - part_number: SF32LB573UB776
+    description: "PSRAM 32Mb + Nor Flash 128Mb + Nor Flash 128Mb"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 4194304      # 32Mb = 4MB
+      - mpi: mpi2
+        type: nor
+        size: 16777216     # 128Mb = 16MB
+      - mpi: mpi3
+        type: nor
+        size: 16777216     # 128Mb = 16MB
+    package: QFN-68_7x7mm_T1.1mm_P0.35mm
+    pins:
+      - {number: "51", pad: PA00}
+      - {number: "50", pad: PA01}
+      - {number: "49", pad: PA02}
+      - {number: "48", pad: PA03}
+      - {number: "47", pad: PA04}
+      - {number: "46", pad: PA05}
+      - {number: "45", pad: PA06}
+      - {number: "44", pad: PA07}
+      - {number: "43", pad: PA08}
+      - {number: "42", pad: PA09}
+      - {number: "35", pad: PA10}
+      - {number: "34", pad: PA11}
+      - {number: "33", pad: PA12}
+      - {number: "32", pad: PA13}
+      - {number: "31", pad: PA14}
+      - {number: "30", pad: PA15}
+      - {number: "29", pad: PA16}
+      - {number: "28", pad: PA17}
+      - {number: "27", pad: PA18}
+      - {number: "26", pad: PA19}
+      - {number: "25", pad: PA20}
+      - {number: "11", pad: PA22}
+      - {number: "10", pad: PA23}
+      - {number: "9", pad: PA24}
+      - {number: "8", pad: PA25}
+      - {number: "7", pad: PA26}
+      - {number: "6", pad: PA27}
+      - {number: "5", pad: PA28}
+      - {number: "4", pad: PA29}
+      - {number: "3", pad: PA30}
+      - {number: "2", pad: PA31}
+      - {number: "1", pad: PA32}
+      - {number: "67", pad: PA33}
+      - {number: "66", pad: PA34}
+      - {number: "65", pad: PA35}
+      - {number: "64", pad: PA36}
+      - {number: "63", pad: PA37}
+      - {number: "62", pad: PA38}
+      - {number: "61", pad: PA39}
+      - {number: "60", pad: PA40}
+      - {number: "59", pad: PA41}
+      - {number: "58", pad: PA42}
+      - {number: "57", pad: PA43}
+      - {number: "56", pad: PA44}
+      - {number: "41", pad: PA55}
+      - {number: "40", pad: PA56}
+      - {number: "21", pad: VBUS}
+      - {number: "20", pad: VBAT}
+      - {number: "19", pad: VSYS}
+      - {number: "18", pad: BUCK_LX}
+      - {number: "17", pad: BUCK_FB}
+      - {number: "16", pad: VDD_VOUT1}
+      - {number: "15", pad: VDD_VOUT2}
+      - {number: "13", pad: VDD_RET}
+      - {number: "12", pad: VDD_RTC}
+      - {number: "24", pad: VCC}
+      - {number: "23", pad: VDD18_VOUT}
+      - {number: "22", pad: VDD33_VOUT1}
+      - {number: "14", pad: VDD33_VOUT2}
+      - {number: "68", pad: GPADC_VREF}
+      - {number: "55", pad: XTAL48M_XI}
+      - {number: "54", pad: XTAL48M_XO}
+      - {number: "53", pad: BRF_ANT}
+      - {number: "52", pad: AVDD_BRF}
+      - {number: "39", pad: AUD_VREF}
+      - {number: "38", pad: AVDD33_AUD}
+      - {number: "37", pad: DACP}
+      - {number: "36", pad: DACN}
+      - {number: "69", pad: EPAD}
+
+  - part_number: SF32LB577VD776
+    description: "PSRAM 128Mb + Nor Flash 128Mb + Nor Flash 128Mb"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 16777216     # 128Mb = 16MB
+      - mpi: mpi2
+        type: nor
+        size: 16777216     # 128Mb = 16MB
+      - mpi: mpi3
+        type: nor
+        size: 16777216     # 128Mb = 16MB
+    package: BGA-112_5.4x4.4mm_T1.03mm_P0.4mm
+    pins:
+      - {number: "C12", pad: PA00}
+      - {number: "C10", pad: PA01}
+      - {number: "D12", pad: PA02}
+      - {number: "D13", pad: PA03}
+      - {number: "D10", pad: PA04}
+      - {number: "E12", pad: PA05}
+      - {number: "E13", pad: PA06}
+      - {number: "E11", pad: PA07}
+      - {number: "E10", pad: PA08}
+      - {number: "F12", pad: PA09}
+      - {number: "J12", pad: PA10}
+      - {number: "H12", pad: PA11}
+      - {number: "K12", pad: PA12}
+      - {number: "H11", pad: PA13}
+      - {number: "G9", pad: PA14}
+      - {number: "G8", pad: PA15}
+      - {number: "K8", pad: PA16}
+      - {number: "J8", pad: PA17}
+      - {number: "H8", pad: PA18}
+      - {number: "H7", pad: PA19}
+      - {number: "J7", pad: PA20}
+      - {number: "G7", pad: PA21}
+      - {number: "D1", pad: PA22}
+      - {number: "D2", pad: PA23}
+      - {number: "G5", pad: PA24}
+      - {number: "G4", pad: PA25}
+      - {number: "F4", pad: PA26}
+      - {number: "E3", pad: PA27}
+      - {number: "C2", pad: PA28}
+      - {number: "D3", pad: PA29}
+      - {number: "B2", pad: PA30}
+      - {number: "B1", pad: PA31}
+      - {number: "A1", pad: PA32}
+      - {number: "D4", pad: PA33}
+      - {number: "A3", pad: PA34}
+      - {number: "B3", pad: PA35}
+      - {number: "B4", pad: PA36}
+      - {number: "C4", pad: PA37}
+      - {number: "C5", pad: PA38}
+      - {number: "B5", pad: PA39}
+      - {number: "A5", pad: PA40}
+      - {number: "D5", pad: PA41}
+      - {number: "D6", pad: PA42}
+      - {number: "B6", pad: PA43}
+      - {number: "A6", pad: PA44}
+      - {number: "D7", pad: PA45}
+      - {number: "C7", pad: PA46}
+      - {number: "B7", pad: PA47}
+      - {number: "D8", pad: PA48}
+      - {number: "C8", pad: PA49}
+      - {number: "B8", pad: PA50}
+      - {number: "B13", pad: PA51}
+      - {number: "C11", pad: PA52}
+      - {number: "D9", pad: PA53}
+      - {number: "E9", pad: PA54}
+      - {number: "G12", pad: PA55}
+      - {number: "F11", pad: PA56}
+      - {number: "F10", pad: PA57}
+      - {number: "J9", pad: SB01}
+      - {number: "K9", pad: SB02}
+      - {number: "H10", pad: SB03}
+      - {number: "J10", pad: SB07}
+      - {number: "J11", pad: SB08}
+      - {number: "K11", pad: SB09}
+      - {number: "K5", pad: VBUS}
+      - {number: "J4", pad: VBAT}
+      - {number: "J3", pad: VSYS}
+      - {number: "J1", pad: BUCK_LX}
+      - {number: "H1", pad: BUCK_FB}
+      - {number: "G2", pad: VDD_VOUT1}
+      - {number: "G1", pad: VDD_VOUT2}
+      - {number: "E2", pad: VDD_RET}
+      - {number: "E1", pad: VDD_RTC}
+      - {number: "K3", pad: VCC}
+      - {number: "K6", pad: VDD18_VOUT}
+      - {number: "H5", pad: VDD33_VOUT1}
+      - {number: "G3", pad: VDD33_VOUT2}
+      - {number: "K2", pad: PVDD_PMU}
+      - {number: "H2", pad: PVSS_PMU}
+      - {number: "J2", pad: AVDD_PMU}
+      - {number: "H3", pad: AVSS_PMU}
+      - {number: "H4", pad: VDDIOA}
+      - {number: "J6", pad: VDDIOSA}
+      - {number: "J5", pad: VDDIOSB}
+      - {number: "K1", pad: PMU_CONFIG}
+      - {number: "F2", pad: AVDD33_ANA}
+      - {number: "E5", pad: AVSS33_ANA}
+      - {number: "A2", pad: GPADC_VREFP}
+      - {number: "E4", pad: GPADC_VREFN}
+      - {number: "A8", pad: XTAL48M_XI}
+      - {number: "A9", pad: XTAL48M_XO}
+      - {number: "A11", pad: BRF_ANT}
+      - {number: "A13", pad: AVDD_BRF}
+      - {number: "B10", pad: AVSS_BB}
+      - {number: "B9", pad: AVSS_LO}
+      - {number: "B11", pad: AVSS_RRF}
+      - {number: "B12", pad: AVSS_TRF}
+      - {number: "A12", pad: AVSS_TRF2}
+      - {number: "G13", pad: AUD_VREF}
+      - {number: "F9", pad: AUD_VREF_GND}
+      - {number: "H13", pad: AVDD33_AUD}
+      - {number: "G10", pad: AVSS33_AUD}
+      - {number: "J13", pad: DACP}
+      - {number: "K13", pad: DACN}
+      - {number: "E6", pad: VSS}
+      - {number: "E7", pad: VSS}
+      - {number: "E8", pad: VSS}
+      - {number: "F5", pad: VSS}
+      - {number: "F6", pad: VSS}
+      - {number: "F7", pad: VSS}
+      - {number: "F8", pad: VSS}
+      - {number: "G6", pad: VSS}
+
+  - part_number: SF32LB579V6EN6
+    description: "Nor Flash 64Mb + PSRAM 256Mb"
+    memory:
+      - mpi: mpi1
+        type: nor
+        size: 8388608      # 64Mb = 8MB
+      - mpi: mpi2
+        type: psram
+        size: 33554432     # 256Mb = 32MB
+    package: BGA-112_5.4x4.4mm_T0.98mm_P0.4mm
+    pins:
+      - {number: "C12", pad: PA00}
+      - {number: "C10", pad: PA01}
+      - {number: "D12", pad: PA02}
+      - {number: "D13", pad: PA03}
+      - {number: "D10", pad: PA04}
+      - {number: "E12", pad: PA05}
+      - {number: "E13", pad: PA06}
+      - {number: "E11", pad: PA07}
+      - {number: "E10", pad: PA08}
+      - {number: "F12", pad: PA09}
+      - {number: "J12", pad: PA10}
+      - {number: "H12", pad: PA11}
+      - {number: "K12", pad: PA12}
+      - {number: "H11", pad: PA13}
+      - {number: "G9", pad: PA14}
+      - {number: "G8", pad: PA15}
+      - {number: "K8", pad: PA16}
+      - {number: "J8", pad: PA17}
+      - {number: "H8", pad: PA18}
+      - {number: "H7", pad: PA19}
+      - {number: "J7", pad: PA20}
+      - {number: "G7", pad: PA21}
+      - {number: "D1", pad: PA22}
+      - {number: "D2", pad: PA23}
+      - {number: "G5", pad: PA24}
+      - {number: "G4", pad: PA25}
+      - {number: "F4", pad: PA26}
+      - {number: "E3", pad: PA27}
+      - {number: "C2", pad: PA28}
+      - {number: "D3", pad: PA29}
+      - {number: "B2", pad: PA30}
+      - {number: "B1", pad: PA31}
+      - {number: "A1", pad: PA32}
+      - {number: "D4", pad: PA33}
+      - {number: "A3", pad: PA34}
+      - {number: "B3", pad: PA35}
+      - {number: "B4", pad: PA36}
+      - {number: "C4", pad: PA37}
+      - {number: "C5", pad: PA38}
+      - {number: "B5", pad: PA39}
+      - {number: "A5", pad: PA40}
+      - {number: "D5", pad: PA41}
+      - {number: "D6", pad: PA42}
+      - {number: "B6", pad: PA43}
+      - {number: "A6", pad: PA44}
+      - {number: "D7", pad: PA45}
+      - {number: "C7", pad: PA46}
+      - {number: "B7", pad: PA47}
+      - {number: "D8", pad: PA48}
+      - {number: "C8", pad: PA49}
+      - {number: "B8", pad: PA50}
+      - {number: "B13", pad: PA51}
+      - {number: "C11", pad: PA52}
+      - {number: "D9", pad: PA53}
+      - {number: "E9", pad: PA54}
+      - {number: "G12", pad: PA55}
+      - {number: "F11", pad: PA56}
+      - {number: "F10", pad: PA57}
+      - {number: "J9", pad: SB01}
+      - {number: "K9", pad: SB02}
+      - {number: "H10", pad: SB03}
+      - {number: "J10", pad: SB07}
+      - {number: "J11", pad: SB08}
+      - {number: "K11", pad: SB09}
+      - {number: "K5", pad: VBUS}
+      - {number: "J4", pad: VBAT}
+      - {number: "J3", pad: VSYS}
+      - {number: "J1", pad: BUCK_LX}
+      - {number: "H1", pad: BUCK_FB}
+      - {number: "G2", pad: VDD_VOUT1}
+      - {number: "G1", pad: VDD_VOUT2}
+      - {number: "E2", pad: VDD_RET}
+      - {number: "E1", pad: VDD_RTC}
+      - {number: "K3", pad: VCC}
+      - {number: "K6", pad: VDD18_VOUT}
+      - {number: "H5", pad: VDD33_VOUT1}
+      - {number: "G3", pad: VDD33_VOUT2}
+      - {number: "K2", pad: PVDD_PMU}
+      - {number: "H2", pad: PVSS_PMU}
+      - {number: "J2", pad: AVDD_PMU}
+      - {number: "H3", pad: AVSS_PMU}
+      - {number: "H4", pad: VDDIOA}
+      - {number: "J6", pad: VDDIOSA}
+      - {number: "J5", pad: VDDIOSB}
+      - {number: "K1", pad: PMU_CONFIG}
+      - {number: "F2", pad: AVDD33_ANA}
+      - {number: "E5", pad: AVSS33_ANA}
+      - {number: "A2", pad: GPADC_VREFP}
+      - {number: "E4", pad: GPADC_VREFN}
+      - {number: "A8", pad: XTAL48M_XI}
+      - {number: "A9", pad: XTAL48M_XO}
+      - {number: "A11", pad: BRF_ANT}
+      - {number: "A13", pad: AVDD_BRF}
+      - {number: "B10", pad: AVSS_BB}
+      - {number: "B9", pad: AVSS_LO}
+      - {number: "B11", pad: AVSS_RRF}
+      - {number: "B12", pad: AVSS_TRF}
+      - {number: "A12", pad: AVSS_TRF2}
+      - {number: "G13", pad: AUD_VREF}
+      - {number: "F9", pad: AUD_VREF_GND}
+      - {number: "H13", pad: AVDD33_AUD}
+      - {number: "G10", pad: AVSS33_AUD}
+      - {number: "J13", pad: DACP}
+      - {number: "K13", pad: DACN}
+      - {number: "E6", pad: VSS}
+      - {number: "E7", pad: VSS}
+      - {number: "E8", pad: VSS}
+      - {number: "F5", pad: VSS}
+      - {number: "F6", pad: VSS}
+      - {number: "F7", pad: VSS}
+      - {number: "F8", pad: VSS}
+      - {number: "G6", pad: VSS}
+
+  - part_number: SF32LB57BUN3N6
+    description: "Nor Flash 8Mb"
+    memory:
+      - mpi: mpi2
+        type: nor
+        size: 1048576      # 8Mb = 1MB
+    package: QFN-80_8x8mm_T0.9mm_P0.35mm
+    pins:
+      - {number: "37", pad: PA00}
+      - {number: "36", pad: PA01}
+      - {number: "35", pad: PA02}
+      - {number: "34", pad: PA03}
+      - {number: "33", pad: PA04}
+      - {number: "32", pad: PA05}
+      - {number: "31", pad: PA06}
+      - {number: "30", pad: PA07}
+      - {number: "29", pad: PA08}
+      - {number: "28", pad: PA09}
+      - {number: "21", pad: PA10}
+      - {number: "20", pad: PA11}
+      - {number: "19", pad: PA12}
+      - {number: "18", pad: PA13}
+      - {number: "17", pad: PA14}
+      - {number: "16", pad: PA15}
+      - {number: "15", pad: PA16}
+      - {number: "14", pad: PA17}
+      - {number: "13", pad: PA18}
+      - {number: "12", pad: PA19}
+      - {number: "11", pad: PA20}
+      - {number: "10", pad: PA21}
+      - {number: "74", pad: PA22}
+      - {number: "73", pad: PA23}
+      - {number: "72", pad: PA24}
+      - {number: "71", pad: PA25}
+      - {number: "70", pad: PA26}
+      - {number: "69", pad: PA27}
+      - {number: "68", pad: PA28}
+      - {number: "67", pad: PA29}
+      - {number: "66", pad: PA30}
+      - {number: "65", pad: PA31}
+      - {number: "64", pad: PA32}
+      - {number: "62", pad: PA33}
+      - {number: "61", pad: PA34}
+      - {number: "60", pad: PA35}
+      - {number: "59", pad: PA36}
+      - {number: "58", pad: PA37}
+      - {number: "57", pad: PA38}
+      - {number: "56", pad: PA39}
+      - {number: "55", pad: PA40}
+      - {number: "54", pad: PA41}
+      - {number: "53", pad: PA42}
+      - {number: "52", pad: PA43}
+      - {number: "51", pad: PA44}
+      - {number: "50", pad: PA45}
+      - {number: "49", pad: PA46}
+      - {number: "48", pad: PA47}
+      - {number: "47", pad: PA48}
+      - {number: "46", pad: PA49}
+      - {number: "45", pad: PA50}
+      - {number: "40", pad: PA52}
+      - {number: "39", pad: PA53}
+      - {number: "38", pad: PA54}
+      - {number: "27", pad: PA55}
+      - {number: "26", pad: PA56}
+      - {number: "6", pad: VDDIOA}
+      - {number: "7", pad: VBATS}
+      - {number: "4", pad: VSYS}
+      - {number: "1", pad: BUCK_LX}
+      - {number: "80", pad: BUCK_FB}
+      - {number: "79", pad: VDD_VOUT1}
+      - {number: "78", pad: VDD_VOUT2}
+      - {number: "76", pad: VDD_RET}
+      - {number: "75", pad: VDD_RTC}
+      - {number: "9", pad: VCC}
+      - {number: "8", pad: VDD18_VOUT}
+      - {number: "3", pad: PVDD}
+      - {number: "2", pad: AVDD}
+      - {number: "5", pad: PMU_CONFIG}
+      - {number: "77", pad: AVDD33}
+      - {number: "63", pad: GPADC_VREF}
+      - {number: "44", pad: XTAL48M_XI}
+      - {number: "43", pad: XTAL48M_XO}
+      - {number: "42", pad: BRF_ANT}
+      - {number: "41", pad: AVDD_BRF}
+      - {number: "25", pad: AUD_VREF}
+      - {number: "24", pad: AVDD33_AUD}
+      - {number: "23", pad: DACP}
+      - {number: "22", pad: DACN}
+      - {number: "81", pad: EPAD}

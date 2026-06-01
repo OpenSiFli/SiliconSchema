@@ -246,11 +246,14 @@ def generate_series_yaml(chip_yaml: dict, pinmux_data: dict, pinr_data: dict) ->
     b.add_blank()
     
     # Docs
-    b.add("docs:")
-    for doc in chip_yaml['docs']:
-        for doc_type, locales in doc.items():
-            locale_parts = [f'{lang}: "{url}"' for lang, url in locales.items()]
-            b.add(f"- {doc_type}: {{{', '.join(locale_parts)}}}", 1)
+    if chip_yaml['docs']:
+        b.add("docs:")
+        for doc in chip_yaml['docs']:
+            for doc_type, locales in doc.items():
+                locale_parts = [f'{lang}: "{url}"' for lang, url in locales.items()]
+                b.add(f"- {doc_type}: {{{', '.join(locale_parts)}}}", 1)
+    else:
+        b.add("docs: []")
     b.add_blank()
     
     # Pads
