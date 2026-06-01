@@ -113,7 +113,7 @@ matrix:
     - {function: I2C1_SDA, select: 17}
 ```
 
-如果矩阵信号本身还需要按接口模式解释，例如 `LCDC_IF0` 到具体 LCDC 引脚名的映射，可在源文件中增加专用解析表，供 KiCad 等下游工具使用：
+如果矩阵信号本身还需要按接口模式解释，例如 `LCDC_IF0` 到具体 LCDC 引脚名的映射，可在源文件中增加专用解析表。构建 `series.yaml` 时，builder 会把 `LCDC_IFn` 展开为表中的具体信号名，源数据仍保留 `LCDC_IFn` 以对应硬件 select：
 
 ```yaml
 lcdc_mux:

@@ -100,6 +100,33 @@ def expand_pinr_functions(function: str, pinr_data: dict) -> list[str]:
     return expanded
 
 
+def build_function_expansions(pinmux_data: dict) -> dict[str, list[str]]:
+    """Build function expansion lookup from source-level mux resolver tables."""
+    expansions: dict[str, list[str]] = {}
+
+    lcdc_mux = pinmux_data.get('lcdc_mux', {})
+    for signal in lcdc_mux.get('signals', []):
+        function = signal.get('function')
+        modes = signal.get('modes', {})
+        if not function or not isinstance(modes, dict):
+            continue
+
+        expanded_functions: list[str] = []
+        for mode_function in modes.values():
+            if mode_function not in expanded_functions:
+                expanded_functions.append(mode_function)
+
+        if expanded_functions:
+            expansions[function] = expanded_functions
+
+    return expansions
+
+
+def expand_mux_function(function: str, function_expansions: dict[str, list[str]]) -> list[str]:
+    """Expand an abstract mux function to concrete signal names."""
+    return function_expansions.get(function, [function])
+
+
 def generate_pinctrl_header(model_id: str, pinmux_data: dict, pinr_data: dict) -> str:
     """Generate Zephyr pinctrl header file content."""
     lines = []
@@ -261,11 +288,11 @@ def generate_series_yaml(chip_yaml: dict, pinmux_data: dict, pinr_data: dict) ->
     pinmux_map = pinmux_data.get('pinmux', {})
     matrix = pinmux_data.get('matrix', {})
     matrix_pads = set(matrix.get('pads', []))
-    matrix_functions = [
-        signal['function']
-        for signal in matrix.get('signals', [])
-        if 'function' in signal
-    ]
+    function_expansions = build_function_expansions(pinmux_data)
+    matrix_functions = []
+    for signal in matrix.get('signals', []):
+        if 'function' in signal:
+            matrix_functions.extend(expand_mux_function(signal['function'], function_expansions))
     
     for pad_name, pad_def in chip_yaml['pads'].items():
         b.add(f"{pad_name}: &{pad_name}", 1)
@@ -284,22 +311,24 @@ def generate_series_yaml(chip_yaml: dict, pinmux_data: dict, pinr_data: dict) ->
             b.add("functions:", 2)
             emitted_functions: set[str] = set()
 
+            def emit_function(function: str) -> None:
+                if function not in emitted_functions:
+                    b.add(f"- {function}", 3)
+                    emitted_functions.add(function)
+
             for entry in pinmux_map.get(pad_name, []):
                 func = entry['function']
                 has_pinr = entry.get('pinr', False)
                 
                 if has_pinr and pinr_data:
                     for exp_func in expand_pinr_functions(func, pinr_data):
-                        b.add(f"- {exp_func}", 3)
-                        emitted_functions.add(exp_func)
+                        emit_function(exp_func)
                 else:
-                    b.add(f"- {func}", 3)
-                    emitted_functions.add(func)
+                    for exp_func in expand_mux_function(func, function_expansions):
+                        emit_function(exp_func)
 
             for func in pad_matrix_functions:
-                if func not in emitted_functions:
-                    b.add(f"- {func}", 3)
-                    emitted_functions.add(func)
+                emit_function(func)
     b.add_blank()
     
     # Variants
