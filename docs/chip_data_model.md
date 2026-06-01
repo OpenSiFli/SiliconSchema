@@ -97,6 +97,35 @@ pinmux:
     - {function: LCDC1_8080_RSTB, select: 7}
 ```
 
+支持矩阵 pinmux 的系列可在同一文件中使用紧凑矩阵定义。构建时，`matrix.signals` 会自动追加到 `matrix.pads` 指定 pad 的 `functions` 中，不需要 `pinr.yaml` 二次路由：
+
+```yaml
+pinmux:
+  PA00:
+    - {function: GPIO_A0, select: 0}
+    - {function: LCDC1_SPI_RSTB, select: 1}
+
+matrix:
+  select_range: [16, 255]
+  pads: [PA00, PA01]
+  signals:
+    - {function: I2C1_SCL, select: 16}
+    - {function: I2C1_SDA, select: 17}
+```
+
+如果矩阵信号本身还需要按接口模式解释，例如 `LCDC_IF0` 到具体 LCDC 引脚名的映射，可在源文件中增加专用解析表，供 KiCad 等下游工具使用：
+
+```yaml
+lcdc_mux:
+  selector: IF_SEL
+  modes:
+    - {name: SPI, if_sel: 0}
+    - {name: DPI, if_sel: 3}
+  signals:
+    - function: LCDC_IF0
+      modes: {SPI: LCDC_SPI_TE, DPI: LCDC_DPI_CLK}
+```
+
 ### pinr.yaml（PINR 寄存器定义）
 
 ```yaml

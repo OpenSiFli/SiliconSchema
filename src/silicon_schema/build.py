@@ -256,6 +256,13 @@ def generate_series_yaml(chip_yaml: dict, pinmux_data: dict, pinr_data: dict) ->
     # Pads
     b.add("pads:")
     pinmux_map = pinmux_data.get('pinmux', {})
+    matrix = pinmux_data.get('matrix', {})
+    matrix_pads = set(matrix.get('pads', []))
+    matrix_functions = [
+        signal['function']
+        for signal in matrix.get('signals', [])
+        if 'function' in signal
+    ]
     
     for pad_name, pad_def in chip_yaml['pads'].items():
         b.add(f"{pad_name}: &{pad_name}", 1)
@@ -269,17 +276,27 @@ def generate_series_yaml(chip_yaml: dict, pinmux_data: dict, pinr_data: dict) ->
         if 'notes' in pad_def:
             b.add(f'notes: "{pad_def["notes"]}"', 2)
         
-        if pad_name in pinmux_map:
+        pad_matrix_functions = matrix_functions if pad_name in matrix_pads else []
+        if pad_name in pinmux_map or pad_matrix_functions:
             b.add("functions:", 2)
-            for entry in pinmux_map[pad_name]:
+            emitted_functions: set[str] = set()
+
+            for entry in pinmux_map.get(pad_name, []):
                 func = entry['function']
                 has_pinr = entry.get('pinr', False)
                 
                 if has_pinr and pinr_data:
                     for exp_func in expand_pinr_functions(func, pinr_data):
                         b.add(f"- {exp_func}", 3)
+                        emitted_functions.add(exp_func)
                 else:
                     b.add(f"- {func}", 3)
+                    emitted_functions.add(func)
+
+            for func in pad_matrix_functions:
+                if func not in emitted_functions:
+                    b.add(f"- {func}", 3)
+                    emitted_functions.add(func)
     b.add_blank()
     
     # Variants
@@ -361,7 +378,7 @@ def build_chip(chip_dir: Path, pinmux_dir: Path, output_dir: Path) -> bool:
     header_filename = f"{model_id.lower()}-pinctrl.h"
     header_path = output_dir / chip_dir.name / header_filename
 
-    skip_pinctrl_for_pinmux = {"sf32lb56", "sf32lb58"}
+    skip_pinctrl_for_pinmux = {"sf32lb56", "sf32lb57", "sf32lb58"}
     generate_pinctrl = pinmux_name not in skip_pinctrl_for_pinmux
 
     if generate_pinctrl:
