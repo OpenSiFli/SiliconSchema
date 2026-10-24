@@ -15,6 +15,9 @@ variables:
 
 sync_to_gerrit:
   stage: sync_to_gerrit
+  # Disabled: the pipeline now mirrors GitLab -> GitHub only.
+  rules:
+    - when: never
   image:
     name: $CI_REGISTRY/sifli/forge-mirror:latest
     entrypoint: [""]
