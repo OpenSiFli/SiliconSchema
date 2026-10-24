@@ -2,8 +2,6 @@ workflow:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "web"'
       when: always
-    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "master"'
-      when: always
     - when: never
 
 stages:
@@ -114,4 +112,4 @@ sync_to_github:
         echo "No tags to push."
       fi
   rules:
-    - if: '$CI_COMMIT_BRANCH == "master"'
+    - if: '$CI_PIPELINE_SOURCE == "web" && $CI_COMMIT_BRANCH == "master"'
