@@ -284,99 +284,6 @@ pads:
     description: "Ground"
 
 variants:
-  - part_number: SF32LB575YBBN6
-    description: "PSRAM 32Mb + PSRAM 32Mb"
-    memory:
-      - mpi: mpi1
-        type: psram
-        size: 4194304      # 32Mb = 4MB
-      - mpi: mpi2
-        type: psram
-        size: 4194304      # 32Mb = 4MB
-    package: QFN-80_8x8mm_T0.9mm_P0.35mm
-    pins:
-      - {number: "37", pad: PA00}
-      - {number: "36", pad: PA01}
-      - {number: "35", pad: PA02}
-      - {number: "34", pad: PA03}
-      - {number: "33", pad: PA04}
-      - {number: "32", pad: PA05}
-      - {number: "31", pad: PA06}
-      - {number: "30", pad: PA07}
-      - {number: "29", pad: PA08}
-      - {number: "28", pad: PA09}
-      - {number: "21", pad: PA10}
-      - {number: "20", pad: PA11}
-      - {number: "19", pad: PA12}
-      - {number: "18", pad: PA13}
-      - {number: "17", pad: PA14}
-      - {number: "16", pad: PA15}
-      - {number: "15", pad: PA16}
-      - {number: "14", pad: PA17}
-      - {number: "13", pad: PA18}
-      - {number: "12", pad: PA19}
-      - {number: "11", pad: PA20}
-      - {number: "10", pad: PA21}
-      - {number: "74", pad: PA22}
-      - {number: "73", pad: PA23}
-      - {number: "72", pad: PA24}
-      - {number: "71", pad: PA25}
-      - {number: "70", pad: PA26}
-      - {number: "69", pad: PA27}
-      - {number: "68", pad: PA28}
-      - {number: "67", pad: PA29}
-      - {number: "66", pad: PA30}
-      - {number: "65", pad: PA31}
-      - {number: "64", pad: PA32}
-      - {number: "62", pad: PA33}
-      - {number: "61", pad: PA34}
-      - {number: "60", pad: PA35}
-      - {number: "59", pad: PA36}
-      - {number: "58", pad: PA37}
-      - {number: "57", pad: PA38}
-      - {number: "56", pad: PA39}
-      - {number: "55", pad: PA40}
-      - {number: "54", pad: PA41}
-      - {number: "53", pad: PA42}
-      - {number: "52", pad: PA43}
-      - {number: "51", pad: PA44}
-      - {number: "50", pad: PA45}
-      - {number: "49", pad: PA46}
-      - {number: "48", pad: PA47}
-      - {number: "47", pad: PA48}
-      - {number: "46", pad: PA49}
-      - {number: "45", pad: PA50}
-      - {number: "40", pad: PA52}
-      - {number: "39", pad: PA53}
-      - {number: "38", pad: PA54}
-      - {number: "27", pad: PA55}
-      - {number: "26", pad: PA56}
-      - {number: "6", pad: VDDIOA}
-      - {number: "7", pad: VBATS}
-      - {number: "4", pad: VSYS}
-      - {number: "1", pad: BUCK_LX}
-      - {number: "80", pad: BUCK_FB}
-      - {number: "79", pad: VDD_VOUT1}
-      - {number: "78", pad: VDD_VOUT2}
-      - {number: "76", pad: VDD_RET}
-      - {number: "75", pad: VDD_RTC}
-      - {number: "9", pad: VCC}
-      - {number: "8", pad: VDD18_VOUT}
-      - {number: "3", pad: PVDD}
-      - {number: "2", pad: AVDD}
-      - {number: "5", pad: PMU_CONFIG}
-      - {number: "77", pad: AVDD33}
-      - {number: "63", pad: GPADC_VREF}
-      - {number: "44", pad: XTAL48M_XI}
-      - {number: "43", pad: XTAL48M_XO}
-      - {number: "42", pad: BRF_ANT}
-      - {number: "41", pad: AVDD_BRF}
-      - {number: "25", pad: AUD_VREF}
-      - {number: "24", pad: AVDD33_AUD}
-      - {number: "23", pad: DACP}
-      - {number: "22", pad: DACN}
-      - {number: "81", pad: EPAD}
-
   - part_number: SF32LB573UB7N6
     description: "PSRAM 32Mb + Nor Flash 128Mb"
     memory:
@@ -387,7 +294,7 @@ variants:
         type: nor
         size: 16777216     # 128Mb = 16MB
     package: QFN-68_7x7mm_T0.9mm_P0.35mm
-    pins:
+    pins: &SF32LB57x_QFN68_PINS
       - {number: "51", pad: PA00}
       - {number: "50", pad: PA01}
       - {number: "49", pad: PA02}
@@ -471,76 +378,7 @@ variants:
         type: nor
         size: 16777216     # 128Mb = 16MB
     package: QFN-68_7x7mm_T1.1mm_P0.35mm
-    pins:
-      - {number: "51", pad: PA00}
-      - {number: "50", pad: PA01}
-      - {number: "49", pad: PA02}
-      - {number: "48", pad: PA03}
-      - {number: "47", pad: PA04}
-      - {number: "46", pad: PA05}
-      - {number: "45", pad: PA06}
-      - {number: "44", pad: PA07}
-      - {number: "43", pad: PA08}
-      - {number: "42", pad: PA09}
-      - {number: "35", pad: PA10}
-      - {number: "34", pad: PA11}
-      - {number: "33", pad: PA12}
-      - {number: "32", pad: PA13}
-      - {number: "31", pad: PA14}
-      - {number: "30", pad: PA15}
-      - {number: "29", pad: PA16}
-      - {number: "28", pad: PA17}
-      - {number: "27", pad: PA18}
-      - {number: "26", pad: PA19}
-      - {number: "25", pad: PA20}
-      - {number: "11", pad: PA22}
-      - {number: "10", pad: PA23}
-      - {number: "9", pad: PA24}
-      - {number: "8", pad: PA25}
-      - {number: "7", pad: PA26}
-      - {number: "6", pad: PA27}
-      - {number: "5", pad: PA28}
-      - {number: "4", pad: PA29}
-      - {number: "3", pad: PA30}
-      - {number: "2", pad: PA31}
-      - {number: "1", pad: PA32}
-      - {number: "67", pad: PA33}
-      - {number: "66", pad: PA34}
-      - {number: "65", pad: PA35}
-      - {number: "64", pad: PA36}
-      - {number: "63", pad: PA37}
-      - {number: "62", pad: PA38}
-      - {number: "61", pad: PA39}
-      - {number: "60", pad: PA40}
-      - {number: "59", pad: PA41}
-      - {number: "58", pad: PA42}
-      - {number: "57", pad: PA43}
-      - {number: "56", pad: PA44}
-      - {number: "41", pad: PA55}
-      - {number: "40", pad: PA56}
-      - {number: "21", pad: VBUS}
-      - {number: "20", pad: VBAT}
-      - {number: "19", pad: VSYS}
-      - {number: "18", pad: BUCK_LX}
-      - {number: "17", pad: BUCK_FB}
-      - {number: "16", pad: VDD_VOUT1}
-      - {number: "15", pad: VDD_VOUT2}
-      - {number: "13", pad: VDD_RET}
-      - {number: "12", pad: VDD_RTC}
-      - {number: "24", pad: VCC}
-      - {number: "23", pad: VDD18_VOUT}
-      - {number: "22", pad: VDD33_VOUT1}
-      - {number: "14", pad: VDD33_VOUT2}
-      - {number: "68", pad: GPADC_VREF}
-      - {number: "55", pad: XTAL48M_XI}
-      - {number: "54", pad: XTAL48M_XO}
-      - {number: "53", pad: BRF_ANT}
-      - {number: "52", pad: AVDD_BRF}
-      - {number: "39", pad: AUD_VREF}
-      - {number: "38", pad: AVDD33_AUD}
-      - {number: "37", pad: DACP}
-      - {number: "36", pad: DACN}
-      - {number: "69", pad: EPAD}
+    pins: *SF32LB57x_QFN68_PINS
 
   - part_number: SF32LB577VD776
     description: "PSRAM 128Mb + Nor Flash 128Mb + Nor Flash 128Mb"
@@ -555,7 +393,7 @@ variants:
         type: nor
         size: 16777216     # 128Mb = 16MB
     package: BGA-112_5.4x4.4mm_T1.03mm_P0.4mm
-    pins:
+    pins: &SF32LB57x_BGA112_PINS
       - {number: "C12", pad: PA00}
       - {number: "C10", pad: PA01}
       - {number: "D12", pad: PA02}
@@ -679,128 +517,64 @@ variants:
         type: psram
         size: 33554432     # 256Mb = 32MB
     package: BGA-112_5.4x4.4mm_T0.98mm_P0.4mm
-    pins:
-      - {number: "C12", pad: PA00}
-      - {number: "C10", pad: PA01}
-      - {number: "D12", pad: PA02}
-      - {number: "D13", pad: PA03}
-      - {number: "D10", pad: PA04}
-      - {number: "E12", pad: PA05}
-      - {number: "E13", pad: PA06}
-      - {number: "E11", pad: PA07}
-      - {number: "E10", pad: PA08}
-      - {number: "F12", pad: PA09}
-      - {number: "J12", pad: PA10}
-      - {number: "H12", pad: PA11}
-      - {number: "K12", pad: PA12}
-      - {number: "H11", pad: PA13}
-      - {number: "G9", pad: PA14}
-      - {number: "G8", pad: PA15}
-      - {number: "K8", pad: PA16}
-      - {number: "J8", pad: PA17}
-      - {number: "H8", pad: PA18}
-      - {number: "H7", pad: PA19}
-      - {number: "J7", pad: PA20}
-      - {number: "G7", pad: PA21}
-      - {number: "D1", pad: PA22}
-      - {number: "D2", pad: PA23}
-      - {number: "G5", pad: PA24}
-      - {number: "G4", pad: PA25}
-      - {number: "F4", pad: PA26}
-      - {number: "E3", pad: PA27}
-      - {number: "C2", pad: PA28}
-      - {number: "D3", pad: PA29}
-      - {number: "B2", pad: PA30}
-      - {number: "B1", pad: PA31}
-      - {number: "A1", pad: PA32}
-      - {number: "D4", pad: PA33}
-      - {number: "A3", pad: PA34}
-      - {number: "B3", pad: PA35}
-      - {number: "B4", pad: PA36}
-      - {number: "C4", pad: PA37}
-      - {number: "C5", pad: PA38}
-      - {number: "B5", pad: PA39}
-      - {number: "A5", pad: PA40}
-      - {number: "D5", pad: PA41}
-      - {number: "D6", pad: PA42}
-      - {number: "B6", pad: PA43}
-      - {number: "A6", pad: PA44}
-      - {number: "D7", pad: PA45}
-      - {number: "C7", pad: PA46}
-      - {number: "B7", pad: PA47}
-      - {number: "D8", pad: PA48}
-      - {number: "C8", pad: PA49}
-      - {number: "B8", pad: PA50}
-      - {number: "B13", pad: PA51}
-      - {number: "C11", pad: PA52}
-      - {number: "D9", pad: PA53}
-      - {number: "E9", pad: PA54}
-      - {number: "G12", pad: PA55}
-      - {number: "F11", pad: PA56}
-      - {number: "F10", pad: PA57}
-      - {number: "J9", pad: SB01}
-      - {number: "K9", pad: SB02}
-      - {number: "H10", pad: SB03}
-      - {number: "J10", pad: SB07}
-      - {number: "J11", pad: SB08}
-      - {number: "K11", pad: SB09}
-      - {number: "K5", pad: VBUS}
-      - {number: "J4", pad: VBAT}
-      - {number: "J3", pad: VSYS}
-      - {number: "J1", pad: BUCK_LX}
-      - {number: "H1", pad: BUCK_FB}
-      - {number: "G2", pad: VDD_VOUT1}
-      - {number: "G1", pad: VDD_VOUT2}
-      - {number: "E2", pad: VDD_RET}
-      - {number: "E1", pad: VDD_RTC}
-      - {number: "K3", pad: VCC}
-      - {number: "K6", pad: VDD18_VOUT}
-      - {number: "H5", pad: VDD33_VOUT1}
-      - {number: "G3", pad: VDD33_VOUT2}
-      - {number: "K2", pad: PVDD_PMU}
-      - {number: "H2", pad: PVSS_PMU}
-      - {number: "J2", pad: AVDD_PMU}
-      - {number: "H3", pad: AVSS_PMU}
-      - {number: "H4", pad: VDDIOA}
-      - {number: "J6", pad: VDDIOSA}
-      - {number: "J5", pad: VDDIOSB}
-      - {number: "K1", pad: PMU_CONFIG}
-      - {number: "F2", pad: AVDD33_ANA}
-      - {number: "E5", pad: AVSS33_ANA}
-      - {number: "A2", pad: GPADC_VREFP}
-      - {number: "E4", pad: GPADC_VREFN}
-      - {number: "A8", pad: XTAL48M_XI}
-      - {number: "A9", pad: XTAL48M_XO}
-      - {number: "A11", pad: BRF_ANT}
-      - {number: "A13", pad: AVDD_BRF}
-      - {number: "B10", pad: AVSS_BB}
-      - {number: "B9", pad: AVSS_LO}
-      - {number: "B11", pad: AVSS_RRF}
-      - {number: "B12", pad: AVSS_TRF}
-      - {number: "A12", pad: AVSS_TRF2}
-      - {number: "G13", pad: AUD_VREF}
-      - {number: "F9", pad: AUD_VREF_GND}
-      - {number: "H13", pad: AVDD33_AUD}
-      - {number: "G10", pad: AVSS33_AUD}
-      - {number: "J13", pad: DACP}
-      - {number: "K13", pad: DACN}
-      - {number: "E6", pad: VSS}
-      - {number: "E7", pad: VSS}
-      - {number: "E8", pad: VSS}
-      - {number: "F5", pad: VSS}
-      - {number: "F6", pad: VSS}
-      - {number: "F7", pad: VSS}
-      - {number: "F8", pad: VSS}
-      - {number: "G6", pad: VSS}
+    pins: *SF32LB57x_BGA112_PINS
 
-  - part_number: SF32LB57BUN3N6
-    description: "Nor Flash 8Mb"
+  - part_number: SF32LB573UB766
+    description: "PSRAM 32Mb + Nor Flash 128Mb + Nor Flash 64Mb"
     memory:
+      - mpi: mpi1
+        type: psram
+        size: 4194304      # 32Mb = 4MB
       - mpi: mpi2
         type: nor
-        size: 1048576      # 8Mb = 1MB
+        size: 16777216     # 128Mb = 16MB
+      - mpi: mpi3
+        type: nor
+        size: 8388608      # 64Mb = 8MB
+    package: QFN-68_7x7mm_T0.9mm_P0.35mm
+    pins: *SF32LB57x_QFN68_PINS
+
+  - part_number: SF32LB575UCNN6
+    description: "PSRAM 64Mb"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 8388608      # 64Mb = 8MB
+    package: QFN-68_7x7mm_T0.9mm_P0.35mm
+    pins: *SF32LB57x_QFN68_PINS
+
+  - part_number: SF32LB575UC7N6
+    description: "PSRAM 64Mb + Nor Flash 128Mb"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 8388608      # 64Mb = 8MB
+      - mpi: mpi2
+        type: nor
+        size: 16777216     # 128Mb = 16MB
+    package: QFN-68_7x7mm_T0.9mm_P0.35mm
+    pins: *SF32LB57x_QFN68_PINS
+
+  - part_number: SF32LB577UDNN6
+    description: "PSRAM 128Mb"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 16777216     # 128Mb = 16MB
+    package: QFN-68_7x7mm_T0.9mm_P0.35mm
+    pins: *SF32LB57x_QFN68_PINS
+
+  - part_number: SF32LB57EYBBN6
+    description: "PSRAM 32Mb + PSRAM 32Mb"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 4194304      # 32Mb = 4MB
+      - mpi: mpi2
+        type: psram
+        size: 4194304      # 32Mb = 4MB
     package: QFN-80_8x8mm_T0.9mm_P0.35mm
-    pins:
+    pins: &SF32LB57x_QFN80_PINS
       - {number: "37", pad: PA00}
       - {number: "36", pad: PA01}
       - {number: "35", pad: PA02}
@@ -882,3 +656,51 @@ variants:
       - {number: "23", pad: DACP}
       - {number: "22", pad: DACN}
       - {number: "81", pad: EPAD}
+
+  - part_number: SF32LB57GVD776
+    description: "PSRAM 128Mb + Nor Flash 128Mb + Nor Flash 128Mb"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 16777216     # 128Mb = 16MB
+      - mpi: mpi2
+        type: nor
+        size: 16777216     # 128Mb = 16MB
+      - mpi: mpi3
+        type: nor
+        size: 16777216     # 128Mb = 16MB
+    package: BGA-112_5.4x4.4mm_T1.03mm_P0.4mm
+    pins: *SF32LB57x_BGA112_PINS
+
+  - part_number: SF32LB57GYD7N6
+    description: "PSRAM 128Mb + Nor Flash 128Mb"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 16777216     # 128Mb = 16MB
+      - mpi: mpi2
+        type: nor
+        size: 16777216     # 128Mb = 16MB
+    package: QFN-80_8x8mm_T0.9mm_P0.35mm
+    pins: *SF32LB57x_QFN80_PINS
+
+  - part_number: SF32BPRTUN3N6
+    description: "Nor Flash 8Mb"
+    memory:
+      - mpi: mpi2
+        type: nor
+        size: 1048576      # 8Mb = 1MB
+    package: QFN-68_7x7mm_T0.9mm_P0.35mm
+    pins: *SF32LB57x_QFN68_PINS
+
+  - part_number: SF32BPRTYB3N6
+    description: "PSRAM 32Mb + Nor Flash 8Mb"
+    memory:
+      - mpi: mpi1
+        type: psram
+        size: 4194304      # 32Mb = 4MB
+      - mpi: mpi2
+        type: nor
+        size: 1048576      # 8Mb = 1MB
+    package: QFN-80_8x8mm_T0.9mm_P0.35mm
+    pins: *SF32LB57x_QFN80_PINS
